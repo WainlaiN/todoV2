@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Task;
 use App\Form\TaskType;
+use App\Repository\TaskRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,12 +14,18 @@ class TaskController extends AbstractController
 {
     /**
      * @Route("/task", name="task_list")
+     * @param TaskRepository $repo
+     * @return Response
      */
-    public function index(): Response
+    public function index(TaskRepository $repo): Response
     {
+        $tasks = $repo->findAll();
+
         return $this->render('task/index.html.twig', [
             'controller_name' => 'TaskController',
+            'tasks' => $tasks
         ]);
+
     }
 
     /**

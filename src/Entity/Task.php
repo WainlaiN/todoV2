@@ -43,6 +43,12 @@ class Task
      */
     private $user;
 
+    public function __construct()
+    {
+        $this->createdAt = new \Datetime();
+        $this->isDone = false;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -107,4 +113,15 @@ class Task
 
         return $this;
     }
+
+    public function isDone()
+    {
+        return $this->isDone;
+    }
+
+    public function toggle($flag)
+    {
+        $this->isDone = $flag;
+    }
+
 }

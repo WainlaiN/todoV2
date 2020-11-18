@@ -13,6 +13,6 @@ import '../css/app.css';
 
 console.log('Hello Webpack Encore! Edit me in assets/app.js');
 
-require('../css/app.scss');
+import 'bootstrap';
+import '../css/app.scss';
 var $ = require('jquery');
-require('bootstrap');

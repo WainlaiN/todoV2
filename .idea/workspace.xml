@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a651329-889c-4f10-8c4c-1d80edb4b7ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/Logo_OpenClassrooms.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/todolist_content.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/todolist_homepage.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/todoV2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/todoV2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +14,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -137,9 +134,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -160,7 +157,8 @@
       <updated>1605523385605</updated>
       <workItem from="1605523386725" duration="3770000" />
       <workItem from="1605529958717" duration="81000" />
-      <workItem from="1605530387957" duration="2354000" />
+      <workItem from="1605530387957" duration="3614000" />
+      <workItem from="1605625225166" duration="2375000" />
     </task>
     <servers />
   </component>
@@ -172,6 +170,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605529178420" />
+    <state x="629" y="302" key="EditFileWatcherDialog" timestamp="1605533747689">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="629" y="302" key="EditFileWatcherDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605533747689" />
     <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1605531841438">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -180,13 +182,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="766" y="247" key="NewPhpClassDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605528777562" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1605528262857">
+    <state x="461" y="169" key="SettingsEditor" timestamp="1605533748765">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605528262857" />
-    <state x="667" y="229" width="916" height="741" key="find.popup" timestamp="1605533175751">
+    <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605533748765" />
+    <state x="667" y="229" width="916" height="741" key="find.popup" timestamp="1605626253101">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="916" height="741" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605533175751" />
+    <state x="667" y="229" width="916" height="741" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605626253101" />
   </component>
 </project>

@@ -32,6 +32,13 @@ class AppFixtures extends Fixture
 
         $manager->persist($user);
 
+        $user = new User();
+        $user->setEmail("user@gmail.com")
+            ->setPassword($this->encoder->encodePassword($user, "user"))
+            ->setRoles(['ROLE_USER']);
+
+        $manager->persist($user);
+
         //create users & tasks
         for ($i = 1; $i <= 10; $i++) {
             $user = new User();

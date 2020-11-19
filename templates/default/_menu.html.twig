@@ -1,0 +1,35 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ path('homepage') }}">To Do List app</a>
+
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+                <img src="{{ asset('img/Logo_OpenClassrooms.png') }}" alt="OpenClassrooms"/>
+
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+                {% if not app.user and 'login' != app.request.attributes.get('_route') %}
+                    <li class="nav-item">
+                        <a href="{{ path('app_login') }}" class="nav-link">Se connecter</a>
+                    </li>
+                {% endif %}
+                {% if  app.user %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a href="{{ path('user_create') }}" class="nav-link">Créer un utilisateur</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a href="{{ path('app_logout') }}" class="nav-link"><i class="fa fa-sign-out-alt"></i>
+                            Deconnexion</a>
+                    </li>
+                {% endif %}
+
+            </ul>
+
+        </form>
+    </nav>
+</div>

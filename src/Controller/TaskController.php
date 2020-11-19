@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Task;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,16 +31,25 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/create", name="task_create")
+     * @IsGranted("ROLE_USER")
      */
     public function createAction(Request $request)
     {
         $task = new Task();
         $form = $this->createForm(TaskType::class, $task);
 
+        $user = $this->getUser();
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            //assign current user to created task
+            //$user = $this->getUser();
+
+            //dd($user);
+            $task->setUser($user);
 
             $em->persist($task);
             $em->flush();

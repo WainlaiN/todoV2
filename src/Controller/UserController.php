@@ -61,17 +61,16 @@ class UserController extends AbstractController
     /**
      * @Route("/users/{id}/edit", name="user_edit")
      */
-    public function editAction(User $user, Request $request)
+    public function editAction(User $user, Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
+            $user->setPassword($encoder->encodePassword($user, $user->getPassword()));
 
-            $this->getDoctrine()->getManager()->flush();
+            $manager->flush();
 
             $this->addFlash('success', "L'utilisateur a bien été modifié");
 

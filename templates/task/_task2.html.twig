@@ -6,7 +6,7 @@
 
             <small>
                 {% if task.isDone %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}
-                {{ task.createdAt|date("m/d/Y") }}</small>
+                {{ task.createdAt|date("d/m/Y") }}</small>
         </div>
         <p class="mb-1">{{ task.content }}</p>
         <small>{{ task.user }}</small>

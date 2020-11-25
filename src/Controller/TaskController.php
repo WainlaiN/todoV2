@@ -20,7 +20,7 @@ class TaskController extends AbstractController
      */
     public function indexDone(TaskRepository $repo): Response
     {
-        $tasks = $repo->findBy(['isDone' => true] );
+        $tasks = $repo->findBy(['isDone' => false], ['createdAt' => 'DESC']);
 
         return $this->render('task/index.html.twig', [
             'controller_name' => 'TaskController',
@@ -36,7 +36,7 @@ class TaskController extends AbstractController
      */
     public function indexNotDone(TaskRepository $repo): Response
     {
-        $tasks = $repo->findBy(['isDone' => false] );
+        $tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
 
         return $this->render('task/index.html.twig', [
             'controller_name' => 'TaskController',

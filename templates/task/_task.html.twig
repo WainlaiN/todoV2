@@ -3,15 +3,16 @@
     {% for task in tasks %}
         <div class="card m-1" style="width: 18rem;">
             <div class="card-body">
-                <h4 class="pull-right">
-                    {% if task.isDone %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}
-                </h4>
+
 
                 <h5 class="card-title">{{ task.title }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{ task.user }}</h6>
                 <p class="card-text">{{ task.content }}</p>
                 <a href="{{ path('task_toggle', {'id' : task.id }) }}"
                    class="card-link btn btn-success btn-sm pull-right">{% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}</a>
+
+                    {% if task.isDone %}<i class="fas fa-check -align-right"></i>{% else %}<i class="fas fa-times"></i>{% endif %}
+
                 <a href="{{ path('task_delete', {'id' : task.id }) }}"
                    class="card-link btn btn-danger btn-sm pull-right">Supprimer</a>
             </div>

@@ -1,6 +1,6 @@
-<div class="list-group">
+<div class="list-group mt-5">
     {% for task in tasks %}
-    <a href="{{ path('task_edit', {'id' : task.id }) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+    <a href="{{ path('task_edit', {'id' : task.id }) }}" class="list-group-item list-group-item-action flex-column align-items-start m-2">
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{ task.title }}</h5>
 

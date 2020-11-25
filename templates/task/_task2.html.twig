@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-aqua">
+                <div class="box-header ui-sortable-handle" style="cursor: move;">
+                    <i class="ion ion-clipboard"></i>
+                    <h3 class="box-title">To Do List</h3>
+                    <div class="box-tools pull-right">
+                        <ul class="pagination pagination-sm inline">
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box-body">
+                    <ul class="todo-list ui-sortable">
+                        {% for task in tasks %}
+                        <li>
+                            <input type="checkbox" value="" name="">
+                            <span class="text">{{ task.title }}</span>
+                            <span class="text">{{ task.content }}</span>
+
+                            <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash"></i>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="box-footer clearfix no-border">
+                    <a href="{{ path('task_create') }}">
+                    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Ajouter une tâche
+                    </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{#
+<div class="row">
+    {% for task in tasks %}
+        <div class="card m-1" style="width: 18rem;">
+            <div class="card-body">
+
+
+                <h5 class="card-title">{{ task.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ task.user }}</h6>
+                <p class="card-text">{{ task.content }}</p>
+                <a href="{{ path('task_toggle', {'id' : task.id }) }}"
+                   class="card-link btn btn-success btn-sm pull-right">{% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}</a>
+
+                {% if task.isDone %}<i class="fas fa-check -align-right"></i>{% else %}<i class="fas fa-times"></i>{% endif %}
+
+                <a href="{{ path('task_delete', {'id' : task.id }) }}"
+                   class="card-link btn btn-danger btn-sm pull-right">Supprimer</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>  #}

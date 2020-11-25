@@ -45,6 +45,17 @@ class TaskController extends AbstractController
 
     }
 
+    public function indexInProgress(TaskRepository $repo): Response
+    {
+        $tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
+
+        return $this->render('task/index.html.twig', [
+            'controller_name' => 'TaskController',
+            'tasks' => $tasks
+        ]);
+
+    }
+
     /**
      * @Route("/tasks/create", name="task_create")
      * @IsGranted("ROLE_USER")

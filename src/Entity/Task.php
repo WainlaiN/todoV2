@@ -43,6 +43,11 @@ class Task
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $inProgress;
+
     public function __construct()
     {
         $this->createdAt = new \Datetime();
@@ -122,6 +127,18 @@ class Task
     public function toggle($flag)
     {
         $this->isDone = $flag;
+    }
+
+    public function getInProgress(): ?bool
+    {
+        return $this->inProgress;
+    }
+
+    public function setInProgress(bool $inProgress): self
+    {
+        $this->inProgress = $inProgress;
+
+        return $this;
     }
 
 }

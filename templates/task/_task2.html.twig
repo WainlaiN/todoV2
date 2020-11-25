@@ -1,16 +1,28 @@
 <div class="list-group mt-5">
     {% for task in tasks %}
-    <a href="{{ path('task_edit', {'id' : task.id }) }}" class="list-group-item list-group-item-action flex-column align-items-start m-2">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{ task.title }}</h5>
+        <a href="{{ path('task_edit', {'id' : task.id }) }}"
+           class="list-group-item list-group-item-action flex-column align-items-start m-2">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ task.title }}</h5>
 
-            <small>
-                {% if task.isDone %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}
-                {{ task.createdAt|date("d/m/Y") }}</small>
-        </div>
-        <p class="mb-1">{{ task.content }}</p>
-        <small>{{ task.user }}</small>
-    </a>
+                <small>
+                    {% if task.isDone %}
+                        <span class="btn btn-success">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    {% else %}
+                        <span class="btn btn-danger">
+                    <i class="fas fa-times"></i>
+                        </span>
+                    {% endif %}
+                    <span class="btn btn-warning">
+                    <i class="fas fa-spinner"></i>
+                        </span>
+                    {{ task.createdAt|date("d/m/Y") }}</small>
+            </div>
+            <p class="mb-1">{{ task.content }}</p>
+            <small>{{ task.user }}</small>
+        </a>
     {% endfor %}
 
 </div>

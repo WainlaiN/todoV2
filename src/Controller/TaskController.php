@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TaskController extends AbstractController
 {
     /**
-     * @Route("/task", name="task_list")
+     * @Route("/task", name="task_list_todo")
      * @param TaskRepository $repo
      * @return Response
      */
@@ -45,6 +45,11 @@ class TaskController extends AbstractController
 
     }
 
+    /**
+     * @Route("/task/done", name="task_list_progress")
+     * @param TaskRepository $repo
+     * @return Response
+     */
     public function indexInProgress(TaskRepository $repo): Response
     {
         $tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);

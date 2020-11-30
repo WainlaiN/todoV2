@@ -1,8 +1,24 @@
-
-
 {% block body %}
     <h4 class="text-center mt-4">Liste des Tâches</h4>
-    {{ include('task/_task3.html.twig') }}
+
+<div class="container mt-5 mb-20">
+    <nav class="navbar navbar-light bg-light">
+    <div class="btn-group" role="group" aria-label="task status">
+        <h4>Statut : </h4>
+        <button type="button" class="btn btn-primary m-1"><a href="{{ path('homepage') }}">Tout</a></button>
+        <button type="button" class="btn btn-danger m-1"><a href="{{ path('task_list_todo') }}">Todo</a></button>
+        <button type="button" class="btn btn-warning m-1"><a href="{{ path('task_list_progress') }}">In Progress</a</button>
+        <button type="button" class="btn btn-success m-1"><a href="{{ path('task_list_done') }}">Done</a></button>
+        <h4>Chercher :</h4>
+        <form class="form-inline">
+            <input class="mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    </nav>
+</div>
+
+    {{ include('task/_task.html.twig') }}
 
 {% endblock %}
 

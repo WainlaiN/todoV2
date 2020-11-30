@@ -3,7 +3,7 @@
         <a href="{{ path('task_edit', {'id' : task.id }) }}"
            class="list-group-item list-group-item-action flex-column align-items-start m-2">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{ task.title }}</h5>
+                <h5 class="mb-1">{{ task.title }}</h5> <small class="-align-right">by {{ task.user }}</small>
 
                 <small>
                     {% if task.isDone %}

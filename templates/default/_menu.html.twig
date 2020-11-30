@@ -6,9 +6,6 @@
             <li class="nav-item">
                 <img src="{{ asset('img/Logo_OpenClassrooms.png') }}" alt="OpenClassrooms"/>
             </li>
-            <li class="nav-item">
-                <a href="{{ path('task_create') }}" class="nav-link text-decoration-none"><i class="far fa-plus-square"></i> Créer une tâche</a>
-            </li>
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
@@ -26,7 +23,7 @@
                             <a href="{{ path('user_create') }}" class="nav-link"><i class="far fa-user"></i> Créer un utilisateur</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ path('user_list') }}" class="nav-link"><i class="far fa-user"></i> Liste des utilisateurs</a>
+                            <a href="{{ path('user_list') }}" class="nav-link"><i class="fas fa-users-cog"></i> Admin</a>
                         </li>
                     {% endif %}
                     <li class="nav-item">

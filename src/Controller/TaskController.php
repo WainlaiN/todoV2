@@ -161,7 +161,7 @@ class TaskController extends AbstractController
     {
         $user = $this->getUser();
 
-        if ($task->getUser() == $user) {
+        if ( $this->isGranted('ROLE_ADMIN') || $task->getUser() == $user) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($task);
             $em->flush();

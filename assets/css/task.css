@@ -1,0 +1,22 @@
+.checkIcon {
+    color: green;
+    font-size: 19px
+}
+
+.crossIcon {
+    color: red;
+    font-size: 19px
+}
+
+.progressIcon {
+    color: orange;
+    font-size: 19px
+}
+
+.date-time {
+    font-size: 12px
+}
+
+a {
+    text-decoration: none;
+}

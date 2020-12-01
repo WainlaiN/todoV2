@@ -46,9 +46,6 @@
   cursor: pointer
 }
 
-.activity-done {
-  font-weight: 600
-}
 
 .list-group li {
   margin-bottom: 12px
@@ -65,24 +62,8 @@
   background: #fff
 }
 
-.checkIcon {
-  color: green;
-  font-size: 19px
-}
 
-.crossIcon {
-  color: red;
-  font-size: 19px
-}
 
-.progressIcon {
-  color: orange;
-  font-size: 19px
-}
-
-.date-time {
-  font-size: 12px
-}
 
 .profile-image img {
   margin-left: 3px

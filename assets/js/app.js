@@ -15,6 +15,8 @@ console.log('Hello Webpack Encore! Edit me in assets/app.js');
 
 import 'bootstrap';
 import '../css/app.scss';
+
+require('../css/task.css');
 //var $ = require('jquery');
 const $ = require('jquery');
 

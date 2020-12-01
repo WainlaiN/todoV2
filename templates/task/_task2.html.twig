@@ -20,7 +20,7 @@
                                 {% endif %}
                                 <div class="ml-2">
                                     <a href="{{ path('task_edit', {'id' : task.id }) }}">
-                                        <h6 class="mb-0">{{ task.title }}</h6> </a>
+                                        <h6 class="mb-0">{{ task.title }} </a>  <small>par {{ task.user }}</small></h6>
                                     <div class="d-flex flex-row mt-1 text-black-50 date-time">
                                         <div><i class="fa fa-calendar-o"></i><span
                                                     class="ml-2">{{ task.createdAt|date("d/m/Y") }}</span></div>

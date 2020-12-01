@@ -48,6 +48,11 @@ class Task
      */
     private $inProgress;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="assignedTasks")
+     */
+    private $AssignedTo;
+
     public function __construct()
     {
         $this->createdAt = new \Datetime();
@@ -137,6 +142,18 @@ class Task
     public function setInProgress(bool $inProgress): self
     {
         $this->inProgress = $inProgress;
+
+        return $this;
+    }
+
+    public function getAssignedTo(): ?User
+    {
+        return $this->AssignedTo;
+    }
+
+    public function setAssignedTo(?User $AssignedTo): self
+    {
+        $this->AssignedTo = $AssignedTo;
 
         return $this;
     }

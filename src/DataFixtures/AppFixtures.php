@@ -52,10 +52,26 @@ class AppFixtures extends Fixture
                     ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
                     ->setIsDone($faker->boolean)
                     ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'))
-                    ->setUser($user);
+                    ->setUser($user)
+                    ->setInProgress(false);
+
 
                 $manager->persist($task);
             }
+
+            for ($l = 1; $l <= 2; $l++) {
+                $task = new Task();
+                $task->setTitle($faker->jobTitle)
+                    ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
+                    ->setIsDone(false)
+                    ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'))
+                    ->setUser($user)
+                    ->setAssignedTo($user)
+                    ->setInProgress(true);
+
+                $manager->persist($task);
+            }
+
         }
 
         for ($k = 1; $k <= 10; $k++) {

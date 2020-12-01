@@ -62,6 +62,26 @@ class TaskController extends AbstractController
     }
 
     /**
+     * @Route("/task/assign/{id}", name="task_assign")
+     * @return Response
+     */
+    public function assignTask(): Response
+    {
+        $user = $this->getUser();
+
+
+
+
+        return $this->render('task/index.html.twig', [
+            'controller_name' => 'TaskController',
+            'tasks' => $tasks
+        ]);
+
+    }
+
+
+
+    /**
      * @Route("/tasks/create", name="task_create")
      * @IsGranted("ROLE_USER")
      */

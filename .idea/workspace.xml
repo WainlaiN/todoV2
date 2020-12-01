@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7a651329-889c-4f10-8c4c-1d80edb4b7ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task/_task.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/_task.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/_task2.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/_task3.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +138,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SnowTricks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -173,7 +171,8 @@
       <workItem from="1606145180420" duration="2707000" />
       <workItem from="1606311157948" duration="10044000" />
       <workItem from="1606496598532" duration="2198000" />
-      <workItem from="1606727925890" duration="11121000" />
+      <workItem from="1606727925890" duration="11938000" />
+      <workItem from="1606808221750" duration="5829000" />
     </task>
     <servers />
   </component>

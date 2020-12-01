@@ -1,25 +1,44 @@
+{% block javascripts %}
+
+{% endblock %}
+
 {% block body %}
     <h4 class="text-center mt-4">Liste des Tâches</h4>
 
-<div class="container mt-5 mb-20">
-    <nav class="navbar navbar-light bg-light">
-    <div class="btn-group" role="group" aria-label="task status">
-        <h4>Statut : </h4>
-        <button type="button" class="btn btn-primary m-1"><a href="{{ path('homepage') }}">Tout</a></button>
-        <button type="button" class="btn btn-danger m-1"><a href="{{ path('task_list_todo') }}">Todo</a></button>
-        <button type="button" class="btn btn-warning m-1"><a href="{{ path('task_list_progress') }}">In Progress</a</button>
-        <button type="button" class="btn btn-success m-1"><a href="{{ path('task_list_done') }}">Done</a></button>
+    <div class="d-flex flex-row mt-5 mb-20 justify-content-between">
+
+        <div class="btn-group" role="group" aria-label="task status">
+            <button type="button" class="btn btn-primary m-1"><a href="{{ path('homepage') }}">Tout</a></button>
+            <button type="button" class="btn btn-danger m-1"><a href="{{ path('task_list_todo') }}">Todo</a></button>
+            <button type="button" class="btn btn-warning m-1"><a href="{{ path('task_list_progress') }}">In Progress</a
+            </button>
+            <button type="button" class="btn btn-success m-1"><a href="{{ path('task_list_done') }}">Done</a></button>
+        </div>
 
         <div class="align-items-end">
-            <input class="" type="search" placeholder="Search" aria-label="Chercher">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <div class="row">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <label>
+                            <input id="search" class="search-query form-control" placeholder="Chercher"/>
+                        </label>
+                        <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    </nav>
-</div>
 
     {{ include('task/_task.html.twig') }}
 
 {% endblock %}
+
+
+
+
 
 

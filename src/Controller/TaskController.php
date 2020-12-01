@@ -20,7 +20,7 @@ class TaskController extends AbstractController
      */
     public function indexDone(TaskRepository $repo): Response
     {
-        $tasks = $repo->findBy(['isDone' => false], ['createdAt' => 'DESC']);
+        $tasks = $repo->findBy(['isDone' => false, 'inProgress' => false], ['createdAt' => 'DESC']);
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'TaskController',
@@ -46,15 +46,17 @@ class TaskController extends AbstractController
     }
 
     /**
-     * @Route("/task/done", name="task_list_progress")
+     * @Route("/task/inprogress", name="task_list_progress")
      * @param TaskRepository $repo
      * @return Response
      */
     public function indexInProgress(TaskRepository $repo): Response
     {
-        $tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
+        $tasks = $repo->findBy(['inProgress' => true], ['createdAt' => 'DESC']);
 
-        return $this->render('task/index.html.twig', [
+        //dd($tasks);
+
+        return $this->render('default/index.html.twig', [
             'controller_name' => 'TaskController',
             'tasks' => $tasks
         ]);

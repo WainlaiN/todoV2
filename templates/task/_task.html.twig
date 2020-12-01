@@ -30,9 +30,11 @@
                     <div class="d-flex flex-column mr-2">
                         <div class="profile-image">
                             {% if task.isDone %}
-                                <i class="fa fa-check-circle checkicon"></i>
+                                <i class="fa fa-check-circle checkIcon"></i>
+                            {% elseif task.inProgress %}
+                                <i class="fas fa-spinner progressIcon"></i>
                             {% else %}
-                                <i class="fas fa-times-circle crossicon"></i>
+                                <i class="fas fa-times-circle crossIcon"></i>
                             {% endif %}
                         </div>
                     </div>

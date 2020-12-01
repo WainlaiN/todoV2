@@ -65,13 +65,18 @@
   background: #fff
 }
 
-.checkicon {
+.checkIcon {
   color: green;
   font-size: 19px
 }
 
-.crossicon {
+.crossIcon {
   color: red;
+  font-size: 19px
+}
+
+.progressIcon {
+  color: orange;
   font-size: 19px
 }
 

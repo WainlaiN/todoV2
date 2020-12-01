@@ -6,6 +6,8 @@ $(document).ready(function () {
         var id = $(this).attr('data-id')
         var url = 'task/assign/' + id;
 
+        alert(url)
+
         // AJAX Request
         $.ajax({
             context: this,

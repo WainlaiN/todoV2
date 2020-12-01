@@ -31,7 +31,7 @@
                                 <div class="widget-subheading"><i>de {{ task.user }}</i></div>
                             </div>
                             <div class="widget-content-right">
-                                {% if not task.assignedTo %}
+                                {% if not task.assignedTo and not task.isDone %}
                                     <button class="border-0 btn-transition btn btn-outline-warning"
                                             data-toggle="tooltip" title="Assigner" id="assign" data-id="{{ task.id }}">
                                         <i class="fas fa-people-arrows"></i>

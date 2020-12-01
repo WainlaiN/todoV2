@@ -22,10 +22,13 @@ class TaskController extends AbstractController
     {
         $tasks = $repo->findBy(['isDone' => false, 'inProgress' => false], ['createdAt' => 'DESC']);
 
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'TaskController',
-            'tasks' => $tasks
-        ]);
+        return $this->render(
+            'default/index.html.twig',
+            [
+                'controller_name' => 'TaskController',
+                'tasks' => $tasks,
+            ]
+        );
 
     }
 
@@ -38,10 +41,13 @@ class TaskController extends AbstractController
     {
         $tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
 
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'TaskController',
-            'tasks' => $tasks
-        ]);
+        return $this->render(
+            'default/index.html.twig',
+            [
+                'controller_name' => 'TaskController',
+                'tasks' => $tasks,
+            ]
+        );
 
     }
 
@@ -56,10 +62,13 @@ class TaskController extends AbstractController
 
         //dd($tasks);
 
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'TaskController',
-            'tasks' => $tasks
-        ]);
+        return $this->render(
+            'default/index.html.twig',
+            [
+                'controller_name' => 'TaskController',
+                'tasks' => $tasks,
+            ]
+        );
 
     }
 
@@ -72,15 +81,15 @@ class TaskController extends AbstractController
         $user = $this->getUser();
 
 
-
-
-        return $this->render('task/index.html.twig', [
-            'controller_name' => 'TaskController',
-            'tasks' => $tasks
-        ]);
+        return $this->render(
+            'task/index.html.twig',
+            [
+                'controller_name' => 'TaskController',
+                'tasks' => $tasks,
+            ]
+        );
 
     }
-
 
 
     /**
@@ -99,10 +108,6 @@ class TaskController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
-            //assign current user to created task
-            //$user = $this->getUser();
-
-            //dd($user);
             $task->setUser($user)
                 ->setInProgress(false);
 
@@ -135,10 +140,13 @@ class TaskController extends AbstractController
             return $this->redirectToRoute('homepage');
         }
 
-        return $this->render('task/edit.html.twig', [
-            'form' => $form->createView(),
-            'task' => $task,
-        ]);
+        return $this->render(
+            'task/edit.html.twig',
+            [
+                'form' => $form->createView(),
+                'task' => $task,
+            ]
+        );
     }
 
     /**
@@ -161,7 +169,7 @@ class TaskController extends AbstractController
     {
         $user = $this->getUser();
 
-        if ( $this->isGranted('ROLE_ADMIN') || $task->getUser() == $user) {
+        if ($this->isGranted('ROLE_ADMIN') || $task->getUser() == $user) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($task);
             $em->flush();
@@ -172,6 +180,7 @@ class TaskController extends AbstractController
 
         }
         $this->addFlash('error', 'Vous n\'avez pas le droit de supprimer cette tâche.');
+
         return $this->redirectToRoute('homepage');
 
 

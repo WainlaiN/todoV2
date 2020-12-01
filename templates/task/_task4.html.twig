@@ -14,19 +14,26 @@
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left mr-2">
                                 <div>
-                                    {% if task.isDone %}
-                                        <i class="fa fa-check-circle checkIcon"></i>
-                                    {% elseif task.inProgress %}
-                                        <i class="fas fa-spinner progressIcon"></i>
-                                    {% else %}
-                                        <i class="fas fa-times-circle crossIcon"></i>
-                                    {% endif %}
+
                                 </div>
                             </div>
                             <div class="widget-content-left">
                                 <div class="widget-heading"><a
                                             href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title }}</a>
-                                    <div class="badge badge-danger ml-2">Rejected</div>
+                                    {% if task.isDone %}
+                                        <div class="badge bg-success ml-2">
+                                            Done
+                                        </div>
+                                    {% elseif task.inProgress %}
+                                        <div class="badge bg-warning ml-2">
+                                            In progress
+                                        </div>
+                                        <div class="widget-assigned"><i>assigné à {{ task.assignedTo }}</i></div>
+                                    {% else %}
+                                        <div class="badge bg-danger ml-2">
+                                            Todo
+                                        </div>
+                                    {% endif %}
                                 </div>
                                 <div class="widget-subheading"><i>de {{ task.user }}</i></div>
                             </div>
@@ -38,20 +45,20 @@
                                     </button>
                                 {% endif %}
                                 {% if task.inProgress %}
-                                <a href="{{ path('task_toggle', {'id' : task.id }) }}">
-                                    <button class="border-0 btn-transition btn btn-outline-success"
-                                            data-toggle="tooltip" title="Cloturer">
-                                        <i class="fa fa-check"></i>
-                                    </button>
-                                </a>
+                                    <a href="{{ path('task_toggle', {'id' : task.id }) }}">
+                                        <button class="border-0 btn-transition btn btn-outline-success"
+                                                data-toggle="tooltip" title="Cloturer">
+                                            <i class="fa fa-check"></i>
+                                        </button>
+                                    </a>
                                 {% endif %}
                                 {% if task.isDone %}
-                                <a href="{{ path('task_toggle', {'id' : task.id }) }}">
-                                    <button class="border-0 btn-transition btn btn-outline-danger"
-                                            data-toggle="tooltip" title="Réouvrir">
-                                        <i class="fas fa-times-circle"></i>
-                                    </button>
-                                </a>
+                                    <a href="{{ path('task_toggle', {'id' : task.id }) }}">
+                                        <button class="border-0 btn-transition btn btn-outline-danger"
+                                                data-toggle="tooltip" title="Réouvrir">
+                                            <i class="fas fa-times-circle"></i>
+                                        </button>
+                                    </a>
                                 {% endif %}
                                 <a href="{{ path('task_delete', {'id' : task.id }) }}">
                                     <button class="border-0 btn-transition btn btn-outline-danger" data-toggle="tooltip"

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a651329-889c-4f10-8c4c-1d80edb4b7ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/_task4.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/_task4.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,12 +127,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1kMvgVdiXTzpGiWYUykqBYr2lIL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -143,11 +144,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\todoV2\templates\task" />
+      <recent name="C:\wamp64\www\todoV2\assets\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\todoV2\assets\img" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\todoV2\assets\js" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -162,11 +164,23 @@
       <workItem from="1605529958717" duration="81000" />
       <workItem from="1605530387957" duration="3614000" />
       <workItem from="1605625225166" duration="2375000" />
+      <workItem from="1605727835072" duration="769000" />
+      <workItem from="1605792153068" duration="5615000" />
+      <workItem from="1606140348378" duration="2154000" />
+      <workItem from="1606142528370" duration="2165000" />
+      <workItem from="1606145180420" duration="2707000" />
+      <workItem from="1606311157948" duration="10044000" />
+      <workItem from="1606496598532" duration="2198000" />
+      <workItem from="1606727925890" duration="11938000" />
+      <workItem from="1606808221750" duration="19236000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="179" key="#CLI_Interpreters" timestamp="1605727744491">
@@ -177,10 +191,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605726747781" />
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605529178420">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606827042447">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605529178420" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606827042447" />
     <state x="764" y="403" key="ComposerInitDialogKey" timestamp="1605727115021">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -189,10 +203,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="629" y="302" key="EditFileWatcherDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605533747689" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1605727371708">
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1606729791148">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727371708" />
+    <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606729791148" />
     <state width="1877" height="253" key="GridCell.Tab.0.bottom" timestamp="1605727751611">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -221,9 +235,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727185795" />
-    <state x="667" y="229" width="916" height="741" key="find.popup" timestamp="1605626253101">
+    <state x="667" y="229" width="916" height="741" key="find.popup" timestamp="1606756019734">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="916" height="741" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605626253101" />
+    <state x="667" y="229" width="916" height="741" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606756019734" />
   </component>
 </project>

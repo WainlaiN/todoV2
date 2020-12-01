@@ -1,37 +1,67 @@
-{% extends 'base.html.twig' %}
+{% block javascripts %}
 
-{% block header_img %}<img class="slide-image" src="{{ asset('img/todolist_content.jpg') }}" alt="todo list">{% endblock %}
+{% endblock %}
 
 {% block body %}
-    <a href="{{ path('task_create') }}" class="btn btn-info pull-right">Créer une tâche</a>
-    <div class="row">
-        {% for task in tasks %}
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="pull-right">
-                            {% if task.isDone %}<span class="glyphicon glyphicon-ok"></span>{% else %}<span class="glyphicon glyphicon-remove"></span>{% endif %}
-                        </h4>
-                        <h4><a href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title }}</a></h4>
-                        <p>{{ task.content }}</p>
-                    </div>
-                    <div>
-                        <form action="{{ path('task_toggle', {'id' : task.id }) }}">
-                            <button class="btn btn-success btn-sm pull-right">
-                                {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
-                            </button>
-                        </form>
-                        <form action="{{ path('task_delete', {'id' : task.id }) }}">
-                            <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
-                        </form>
+
+
+    <div class="d-flex flex-row m-5 justify-content-between">
+
+        <div class="btn-group" role="group" aria-label="task status">
+            <button type="button" class="btn btn-primary m-1">
+                <a href="{{ path('homepage') }}">Tout</a>
+            </button>
+            <button type="button" class="btn btn-danger m-1">
+                <a href="{{ path('task_list_todo') }}">Todo</a>
+            </button>
+            <button type="button" class="btn btn-warning m-1">
+                <a href="{{ path('task_list_progress') }}">In Progress</a>
+            </button>
+            <button type="button" class="btn btn-success m-1">
+                <a href="{{ path('task_list_done') }}">Done</a>
+            </button>
+        </div>
+
+        <div class="align-items-end">
+            <div class="row">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <label>
+                            <input id="search" class="search-query form-control" placeholder="Chercher"/>
+                        </label>
+                        <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </span>
                     </div>
                 </div>
             </div>
-        {% else %}
-            <div class="alert alert-warning" role="alert">
-                Il n'y a pas encore de tâche enregistrée. <a href="{{ path('task_create') }}" class="btn btn-warning pull-right">Créer une tâche</a>
-            </div>
-        {% endfor %}
+        </div>
     </div>
+
+    <div class="row d-flex justify-content-center container">
+        <div class="col-md-12">
+            <div class="card-hover-shadow-2x mb-3 card">
+                <div class="card-header-tab card-header">
+                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i
+                                class="fa fa-tasks"></i>&nbsp;Liste des Tâches
+                    </div>
+                </div>
+                {{ include('task/_task4.html.twig') }}
+                <div class="d-block text-right card-footer">
+                    <a href="{{ path('task_create') }}">
+                        <button class="btn btn-primary">Ajouter une tâche</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
+
+
+
+
+
 

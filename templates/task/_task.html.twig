@@ -1,0 +1,54 @@
+<div class="mt-3">
+    <ul class="list list-inline" id="tasks">
+        {% for task in tasks %}
+            <li class="d-flex justify-content-between" id="test">
+                <div class="d-flex flex-row align-items-center col-lg-7">
+
+                    <div>
+                        <span class="date-time">
+                            <i class="fas fa-clock"></i> {{ task.createdAt|date("d/m/Y") }}
+                        </span>
+                    </div>
+
+                    <div class="ml-2">
+                        <a href="{{ path('task_edit', {'id' : task.id }) }}">
+                            <h6 class="mb-0">{{ task.title }}</h6>
+                        </a>
+                        {% if task.inProgress %}
+
+                            <span><small>assigné à :
+                                {{ task.assignedTo }}</small></span>
+
+                        {% endif %}
+                        <div class="d-flex flex-row mt-1 text-black-50">
+                            <div>
+                                <span class="ml-2"> {{ task.content |striptags| slice(0, 100) ~ '...' }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row align-items-start col-lg-1">
+                    <div class="ml-2">
+                        <h6 class="mb-0"><small>{{ task.user }}</small></h6>
+
+                    </div>
+                </div>
+                <div class="d-flex flex-row align-items-center">
+                    <div class="d-flex flex-column mr-2">
+                        <div class="profile-image">
+                            {% if task.isDone %}
+                                <i class="fa fa-check-circle checkIcon"></i>
+                            {% elseif task.inProgress %}
+                                <i class="fas fa-spinner progressIcon"></i>
+                            {% else %}
+                                <i class="fas fa-times-circle crossIcon"></i>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+

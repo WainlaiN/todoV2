@@ -1,0 +1,43 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th class="col-1">Status</th>
+        <th class="col-3">Titre</th>
+        <th class="col-3">Auteur</th>
+        <th class="col-3">Assigné</th>
+        <th class="col-1">Date de création</th>
+        <th class="col-1">Trash</th>
+    </tr>
+    <tbody>
+    {% for task in tasks %}
+    <tr class="mt-1">
+        <td class="col-1">
+            {% if task.isDone %}
+                <i class="fa fa-check-circle checkIcon"></i>
+            {% elseif task.inProgress %}
+                <i class="fas fa-spinner progressIcon"></i>
+            {% else %}
+                <i class="fas fa-times-circle crossIcon"></i>
+            {% endif %}
+        </td>
+        <td class="col-3"><a href="{{ path('task_edit', {'id' : task.id }) }}">
+                <h6 class="mb-0">{{ task.title }}</h6> </a></td>
+        <td class="col-3"><small>{{ task.user }}</small></td>
+        <td class="col-3">
+
+                {% if task.assignedTo %}
+                <p>{{ task.assignedTo }}</p>
+                {% else %}
+                    <p class="font-italic">Unassigned</p>
+                    {% endif %}
+
+        </td>
+
+        <td class="col-1">{{ task.createdAt|date("d/m/Y") }}</td>
+        <td class="col-1"><a href="{{ path('task_delete', {'id' : task.id }) }}">
+                <i class="fas fa-trash-alt"></i></a></td>
+    </tr>
+        {% endfor %}
+    </tbody>
+
+</table>

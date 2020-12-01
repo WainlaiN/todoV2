@@ -5,8 +5,10 @@ namespace App\Controller;
 use App\Entity\Task;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -73,22 +75,20 @@ class TaskController extends AbstractController
     }
 
     /**
-     * @Route("/task/assign/{id}", name="task_assign")
+     * @Route("/task/assign/{id}", name="task_assign", methods={"POST"})
+     * @param Task $task
      * @return Response
      */
-    public function assignTask(): Response
+    public function assignTask(Task $task, EntityManagerInterface $manager): Response
     {
-        $user = $this->getUser();
+        $task->setAssignedTo($this->getUser());
 
+        $manager->persist($task);
+        $manager->flush();
 
-        return $this->render(
-            'task/index.html.twig',
-            [
-                'controller_name' => 'TaskController',
-                'tasks' => $tasks,
-            ]
-        );
+        $this->addFlash('success', 'La tâche vous a été assigné.');
 
+        return new JsonResponse(['success' => 1]);
     }
 
 

@@ -32,17 +32,20 @@
                             </div>
                             <div class="widget-content-right">
                                 {% if not task.assignedTo %}
-                                    <button class="border-0 btn-transition btn btn-outline-warning" data-toggle="tooltip" title="Assigner">
+                                    <button class="border-0 btn-transition btn btn-outline-warning"
+                                            data-toggle="tooltip" title="Assigner" id="assign" data-id="{{ task.id }}">
                                         <i class="fas fa-people-arrows"></i>
                                     </button>
                                 {% endif %}
                                 <a href="{{ path('task_toggle', {'id' : task.id }) }}">
-                                    <button class="border-0 btn-transition btn btn-outline-success" data-toggle="tooltip" title="Validez">
+                                    <button class="border-0 btn-transition btn btn-outline-success"
+                                            data-toggle="tooltip" title="Validez">
                                         <i class="fa fa-check"></i>
                                     </button>
                                 </a>
                                 <a href="{{ path('task_delete', {'id' : task.id }) }}">
-                                    <button class="border-0 btn-transition btn btn-outline-danger" data-toggle="tooltip" title="Supprimer">
+                                    <button class="border-0 btn-transition btn btn-outline-danger" data-toggle="tooltip"
+                                            title="Supprimer">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </a>

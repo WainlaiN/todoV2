@@ -81,7 +81,9 @@ class TaskController extends AbstractController
      */
     public function assignTask(Task $task, EntityManagerInterface $manager): Response
     {
-        $task->setAssignedTo($this->getUser());
+        $task->setAssignedTo($this->getUser())
+            ->setInProgress(true);
+
 
         $manager->persist($task);
         $manager->flush();

@@ -37,12 +37,22 @@
                                         <i class="fas fa-people-arrows"></i>
                                     </button>
                                 {% endif %}
+                                {% if task.inProgress %}
                                 <a href="{{ path('task_toggle', {'id' : task.id }) }}">
                                     <button class="border-0 btn-transition btn btn-outline-success"
-                                            data-toggle="tooltip" title="Validez">
+                                            data-toggle="tooltip" title="Cloturer">
                                         <i class="fa fa-check"></i>
                                     </button>
                                 </a>
+                                {% endif %}
+                                {% if task.isDone %}
+                                <a href="{{ path('task_toggle', {'id' : task.id }) }}">
+                                    <button class="border-0 btn-transition btn btn-outline-danger"
+                                            data-toggle="tooltip" title="Réouvrir">
+                                        <i class="fas fa-times-circle"></i>
+                                    </button>
+                                </a>
+                                {% endif %}
                                 <a href="{{ path('task_delete', {'id' : task.id }) }}">
                                     <button class="border-0 btn-transition btn btn-outline-danger" data-toggle="tooltip"
                                             title="Supprimer">

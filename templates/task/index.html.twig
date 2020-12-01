@@ -6,23 +6,7 @@
 
 
     <div class="d-flex flex-row m-5 justify-content-between">
-
-        <div class="btn-group" role="group" aria-label="task status">
-            <button type="button" class="btn btn-primary m-1">
-                <a href="{{ path('homepage') }}">Tout</a>
-            </button>
-            <button type="button" class="btn btn-danger m-1">
-                <a href="{{ path('task_list_todo') }}">Todo</a>
-            </button>
-            <button type="button" class="btn btn-warning m-1">
-                <a href="{{ path('task_list_progress') }}">In Progress</a>
-            </button>
-            <button type="button" class="btn btn-success m-1">
-                <a href="{{ path('task_list_done') }}">Done</a>
-            </button>
-        </div>
-
-        <div class="align-items-end">
+      <div class="align-items-end">
             <div class="row">
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
@@ -46,6 +30,20 @@
                 <div class="card-header-tab card-header">
                     <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i
                                 class="fa fa-tasks"></i>&nbsp;Liste des Tâches
+                    </div>
+                    <div class="btn-group" role="group" aria-label="task status">
+                        <button type="button" class="btn btn-primary m-1">
+                            <a href="{{ path('homepage') }}">Tout</a>
+                        </button>
+                        <button type="button" class="btn btn-danger m-1">
+                            <a href="{{ path('task_list_todo') }}">Todo</a>
+                        </button>
+                        <button type="button" class="btn btn-warning m-1">
+                            <a href="{{ path('task_list_progress') }}">In Progress</a>
+                        </button>
+                        <button type="button" class="btn btn-success m-1">
+                            <a href="{{ path('task_list_done') }}">Done</a>
+                        </button>
                     </div>
                 </div>
                 {{ include('task/_task4.html.twig') }}

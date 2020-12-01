@@ -40,7 +40,23 @@
         </div>
     </div>
 
-    {{ include('task/_task4.html.twig') }}
+    <div class="row d-flex justify-content-center container">
+        <div class="col-md-12">
+            <div class="card-hover-shadow-2x mb-3 card">
+                <div class="card-header-tab card-header">
+                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i
+                                class="fa fa-tasks"></i>&nbsp;Liste des Tâches
+                    </div>
+                </div>
+                {{ include('task/_task4.html.twig') }}
+                <div class="d-block text-right card-footer">
+                    <a href="{{ path('task_create') }}">
+                        <button class="btn btn-primary">Ajouter une tâche</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
 

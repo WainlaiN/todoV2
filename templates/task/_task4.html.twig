@@ -1,11 +1,4 @@
-<div class="row d-flex justify-content-center container">
-    <div class="col-md-12">
-        <div class="card-hover-shadow-2x mb-3 card">
-            <div class="card-header-tab card-header">
-                <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i
-                            class="fa fa-tasks"></i>&nbsp;Liste des Tâches
-                </div>
-            </div>
+
             <div style="position: static;" class="ps ps--active-y">
                 <div class="ps-content">
                     <ul class=" list-group list-group-flush">
@@ -40,11 +33,15 @@
                                         </div>
                                         <div class="widget-content"></div>
                                         <div class="widget-content-right">
-                                            <button class="border-0 btn-transition btn btn-outline-success"><i
-                                                        class="fa fa-check"></i></button>
+                                            <a href="{{ path('task_toggle', {'id' : task.id }) }}">
+                                                <button class="border-0 btn-transition btn btn-outline-success">
+                                                    <i class="fa fa-check"></i>
+                                                </button>
+                                            </a>
                                             <a href="{{ path('task_delete', {'id' : task.id }) }}">
-                                                <button class="border-0 btn-transition btn btn-outline-danger"><i
-                                                            class="fa fa-trash"></i></button>
+                                                <button class="border-0 btn-transition btn btn-outline-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
                                             </a>
                                         </div>
                                     </div>
@@ -55,10 +52,3 @@
                 </div>
             </div>
 
-            <div class="d-block text-right card-footer">
-                <button class="mr-2 btn btn-link btn-sm">Cancel</button>
-                <button class="btn btn-primary">Add Task</button>
-            </div>
-        </div>
-    </div>
-</div>

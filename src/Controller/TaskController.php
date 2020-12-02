@@ -110,7 +110,6 @@ class TaskController extends AbstractController
         $task->setAssignedTo($this->getUser())
             ->setInProgress(true);
 
-
         $this->manager->persist($task);
         $this->manager->flush();
 

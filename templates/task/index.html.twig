@@ -5,54 +5,40 @@
 
 {% block body %}
 
-
-    <div class="d-flex flex-row m-5 justify-content-between">
-      <div class="align-items-end">
-            <div class="row">
-                <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                        <label>
-                            <input id="search" class="search-query form-control" placeholder="Chercher"/>
-                        </label>
-                        <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </span>
-                    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header-tab card-header justify-content-between">
+                <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i
+                            class="fa fa-tasks"></i>&nbsp;Liste des Tâches
+                </div>
+                <div class="btn-group" role="group" aria-label="task status">
+                    <button type="button" class="btn btn-primary">
+                        <a href="{{ path('homepage') }}">Tout</a>
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        <a href="{{ path('task_list_todo') }}">Todo</a>
+                    </button>
+                    <button type="button" class="btn btn-warning">
+                        <a href="{{ path('task_list_progress') }}">In Progress</a>
+                    </button>
+                    <button type="button" class="btn btn-success">
+                        <a href="{{ path('task_list_done') }}">Done</a>
+                    </button>
+                </div>
+                <div>
+                    <label>
+                        <input id="search" class="search-query form-control" placeholder="Chercher"/>
+                    </label>
+                    <button class="btn btn-danger" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row d-flex justify-content-center container">
-        <div class="col-md-12">
-            <div class="card-hover-shadow-2x mb-3 card">
-                <div class="card-header-tab card-header">
-                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i
-                                class="fa fa-tasks"></i>&nbsp;Liste des Tâches
-                    </div>
-                    <div class="btn-group" role="group" aria-label="task status">
-                        <button type="button" class="btn btn-primary">
-                            <a href="{{ path('homepage') }}">Tout</a>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                            <a href="{{ path('task_list_todo') }}">Todo</a>
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                            <a href="{{ path('task_list_progress') }}">In Progress</a>
-                        </button>
-                        <button type="button" class="btn btn-success">
-                            <a href="{{ path('task_list_done') }}">Done</a>
-                        </button>
-                    </div>
-                </div>
-                {{ include('task/_task4.html.twig') }}
-                <div class="d-block text-right card-footer">
-                    <a href="{{ path('task_create') }}">
-                        <button class="btn btn-primary">Ajouter une tâche</button>
-                    </a>
-                </div>
+            {{ include('task/_task4.html.twig') }}
+            <div class="d-block text-right card-footer">
+                <a href="{{ path('task_create') }}">
+                    <button class="btn btn-primary">Ajouter une tâche</button>
+                </a>
             </div>
         </div>
     </div>

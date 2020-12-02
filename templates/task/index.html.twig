@@ -35,10 +35,15 @@
                 </div>
             </div>
             {{ include('task/_task4.html.twig') }}
-            <div class="d-block text-right card-footer">
-                <a href="{{ path('task_create') }}">
-                    <button class="btn btn-primary">Ajouter une tâche</button>
-                </a>
+            <div class="d-block card-footer d-inline-flex justify-content-between">
+                <div class="navigation">
+                    {{ knp_pagination_render(tasks) }}
+                </div>
+                <div class="text-right">
+                    <a href="{{ path('task_create') }}">
+                        <button class="btn btn-primary">Ajouter une tâche</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

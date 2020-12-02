@@ -25,6 +25,16 @@ class TaskType extends AbstractType
                 ['label' => 'Contenu']
             )
             ->add('isDone')
+            ->add('assignedTo',
+                TextType::class,
+                [
+                    'attr' => [
+                        'readonly' => true,
+                    ],
+                    'label' => 'Assigné à',
+
+                ]
+            )
             ->add(
                 'user',
                 TextType::class,

@@ -19,6 +19,46 @@ class TaskRepository extends ServiceEntityRepository
         parent::__construct($registry, Task::class);
     }
 
+    public function findAll (){
+        //return $this->findBy(array(), array('createdAt' => 'ASC'));
+        return $this->createQueryBuilder('t')
+            ->orderBy('t.createdAt', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ;
+
+    }
+
+    public function findAllDone (){
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.isDone = true')
+            ->orderBy('t.createdAt', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ;
+
+    }
+
+    public function findAllInProgress (){
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.inProgress = true')
+            ->orderBy('t.createdAt', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ;
+
+    }
+
+    public function findAllTodo (){
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.isDone = true')
+            ->orderBy('t.createdAt', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ;
+
+    }
+
     // /**
     //  * @return Task[] Returns an array of Task objects
     //  */

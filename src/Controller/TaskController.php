@@ -6,6 +6,7 @@ use App\Entity\Task;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -15,12 +16,24 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TaskController extends AbstractController
 {
+    private PaginatorInterface $paginator;
+
+    /**
+     * TaskController constructor.
+     *
+     * @param PaginatorInterface $paginator
+     */
+    public function __construct(PaginatorInterface $paginator)
+    {
+        $this->paginator = $paginator;
+    }
+
     /**
      * @Route("/task", name="task_list_todo")
      * @param TaskRepository $repo
      * @return Response
      */
-    public function indexDone(TaskRepository $repo): Response
+    public function indexTodo(TaskRepository $repo, Request $request): Response
     {
         $tasks = $repo->findBy(['isDone' => false, 'inProgress' => false], ['createdAt' => 'DESC']);
 
@@ -39,7 +52,7 @@ class TaskController extends AbstractController
      * @param TaskRepository $repo
      * @return Response
      */
-    public function indexNotDone(TaskRepository $repo): Response
+    public function indexDone(TaskRepository $repo): Response
     {
         $tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
 
@@ -61,8 +74,6 @@ class TaskController extends AbstractController
     public function indexInProgress(TaskRepository $repo): Response
     {
         $tasks = $repo->findBy(['inProgress' => true], ['createdAt' => 'DESC']);
-
-        //dd($tasks);
 
         return $this->render(
             'default/index.html.twig',

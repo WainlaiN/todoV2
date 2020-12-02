@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a651329-889c-4f10-8c4c-1d80edb4b7ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TaskType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TaskType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +180,7 @@
       <workItem from="1606727925890" duration="11938000" />
       <workItem from="1606808221750" duration="19236000" />
       <workItem from="1606842762446" duration="672000" />
-      <workItem from="1606897061116" duration="1604000" />
+      <workItem from="1606897061116" duration="5382000" />
     </task>
     <servers />
   </component>
@@ -190,6 +195,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="540" y="179" key="#CLI_Interpreters/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727744491" />
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1606902691654">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606902691654" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605726747781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -234,6 +243,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727745109" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1606900808174">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606900808174" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1605727185795">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

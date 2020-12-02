@@ -1,54 +1,73 @@
-<div class="mt-3">
-    <ul class="list list-inline" id="tasks">
-        {% for task in tasks %}
-            <li class="d-flex justify-content-between" id="test">
-                <div class="d-flex flex-row align-items-center col-lg-7">
-
-                    <div>
-                        <span class="date-time">
-                            <i class="fas fa-clock"></i> {{ task.createdAt|date("d/m/Y") }}
-                        </span>
-                    </div>
-
-                    <div class="ml-2">
-                        <a href="{{ path('task_edit', {'id' : task.id }) }}">
-                            <h6 class="mb-0">{{ task.title }}</h6>
-                        </a>
-                        {% if task.inProgress %}
-
-                            <span><small>assigné à :
-                                {{ task.assignedTo }}</small></span>
-
-                        {% endif %}
-                        <div class="d-flex flex-row mt-1 text-black-50">
-                            <div>
-                                <span class="ml-2"> {{ task.content |striptags| slice(0, 100) ~ '...' }}</span>
+<div style="position: static;" class="ps ps--active-y">
+    <div class="ps-content">
+        <ul class=" list-group list-group-flush">
+            {% for task in tasks %}
+                <li id="tasks" class="list-group-item">
+                    {% if task.isDone %}
+                        <div class="todo-indicator bg-success"></div>
+                    {% elseif task.inProgress %}
+                        <div class="todo-indicator bg-warning"></div>
+                    {% else %}
+                        <div class="todo-indicator bg-danger"></div>
+                    {% endif %}
+                    <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                            <div class="widget-content-left ml-2">
+                                <div class="widget-heading"><a
+                                            href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title }}</a>
+                                    {% if task.isDone %}
+                                        <div class="badge bg-success ml-2">
+                                            Done
+                                        </div>
+                                    {% elseif task.inProgress %}
+                                        <div class="badge bg-warning ml-2">
+                                            In progress
+                                        </div>
+                                        <div class="widget-assigned"><i>assigné à {{ task.assignedTo }}</i></div>
+                                    {% else %}
+                                        <div class="badge bg-danger ml-2">
+                                            Todo
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="widget-subheading"><i>de {{ task.user }}
+                                        le {{ task.createdAt|date("d/m/Y") }}</i></div>
+                            </div>
+                            <div class="widget-content-right">
+                                {% if not task.assignedTo and not task.isDone %}
+                                    <button class="border-0 btn-transition btn btn-outline-warning"
+                                            data-toggle="tooltip" title="Assigner" id="assign" data-id="{{ task.id }}">
+                                        <i class="fas fa-people-arrows"></i>
+                                    </button>
+                                {% endif %}
+                                {% if task.inProgress %}
+                                    <a href="{{ path('task_toggle', {'id' : task.id }) }}">
+                                        <button class="border-0 btn-transition btn btn-outline-success"
+                                                data-toggle="tooltip" title="Cloturer">
+                                            <i class="fa fa-check"></i>
+                                        </button>
+                                    </a>
+                                {% endif %}
+                                {% if task.isDone %}
+                                    <a href="{{ path('task_toggle', {'id' : task.id }) }}">
+                                        <button class="border-0 btn-transition btn btn-outline-danger"
+                                                data-toggle="tooltip" title="Réouvrir">
+                                            <i class="fas fa-times-circle"></i>
+                                        </button>
+                                    </a>
+                                {% endif %}
+                                <a href="{{ path('task_delete', {'id' : task.id }) }}">
+                                    <button class="border-0 btn-transition btn btn-outline-danger" data-toggle="tooltip"
+                                            title="Supprimer">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-flex flex-row align-items-start col-lg-1">
-                    <div class="ml-2">
-                        <h6 class="mb-0"><small>{{ task.user }}</small></h6>
-
-                    </div>
-                </div>
-                <div class="d-flex flex-row align-items-center">
-                    <div class="d-flex flex-column mr-2">
-                        <div class="profile-image">
-                            {% if task.isDone %}
-                                <i class="fa fa-check-circle checkIcon"></i>
-                            {% elseif task.inProgress %}
-                                <i class="fas fa-spinner progressIcon"></i>
-                            {% else %}
-                                <i class="fas fa-times-circle crossIcon"></i>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
-
 

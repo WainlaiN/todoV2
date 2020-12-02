@@ -18,14 +18,17 @@ class TaskController extends AbstractController
 {
     private PaginatorInterface $paginator;
 
+    private EntityManagerInterface $manager;
+
     /**
      * TaskController constructor.
      *
      * @param PaginatorInterface $paginator
      */
-    public function __construct(PaginatorInterface $paginator)
+    public function __construct(PaginatorInterface $paginator, EntityManagerInterface $manager)
     {
         $this->paginator = $paginator;
+        $this->manager = $manager;
     }
 
     /**
@@ -35,7 +38,6 @@ class TaskController extends AbstractController
      */
     public function indexTodo(TaskRepository $repo, Request $request): Response
     {
-        //$tasks = $repo->findBy(['isDone' => false, 'inProgress' => false], ['createdAt' => 'DESC']);
         $tasks = $this->paginator->paginate(
             $repo->findAllTodo(),
             $request->query->getInt('page',1),
@@ -59,7 +61,6 @@ class TaskController extends AbstractController
      */
     public function indexDone(TaskRepository $repo, Request $request): Response
     {
-        //$tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
         $tasks = $this->paginator->paginate(
             $repo->findAllDone(),
             $request->query->getInt('page',1),
@@ -83,7 +84,6 @@ class TaskController extends AbstractController
      */
     public function indexInProgress(TaskRepository $repo, Request $request): Response
     {
-        //$tasks = $repo->findBy(['inProgress' => true], ['createdAt' => 'DESC']);
         $tasks = $this->paginator->paginate(
             $repo->findAllInProgress(),
             $request->query->getInt('page',1),
@@ -105,14 +105,13 @@ class TaskController extends AbstractController
      * @param Task $task
      * @return Response
      */
-    public function assignTask(Task $task, EntityManagerInterface $manager): Response
+    public function assignTask(Task $task): Response
     {
         $task->setAssignedTo($this->getUser())
             ->setInProgress(true);
 
-
-        $manager->persist($task);
-        $manager->flush();
+        $this->manager->persist($task);
+        $this->manager->flush();
 
         $this->addFlash('success', 'La tâche vous a été assigné.');
 
@@ -134,14 +133,13 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
 
             $task->setUser($user)
                 ->setInProgress(false);
 
 
-            $em->persist($task);
-            $em->flush();
+            $this->manager->persist($task);
+            $this->manager->flush();
 
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
 
@@ -161,7 +159,8 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+
+            $this->manager->flush();
 
             $this->addFlash('success', 'La tâche a bien été modifiée.');
 
@@ -183,7 +182,8 @@ class TaskController extends AbstractController
     public function toggleTaskAction(Task $task)
     {
         $task->toggle(!$task->isDone());
-        $this->getDoctrine()->getManager()->flush();
+
+        $this->manager->flush();
 
         $this->addFlash('success', sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle()));
 
@@ -195,12 +195,11 @@ class TaskController extends AbstractController
      */
     public function deleteTaskAction(Task $task)
     {
-        $user = $this->getUser();
 
-        if ($this->isGranted('ROLE_ADMIN') || $task->getUser() == $user) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($task);
-            $em->flush();
+        if ($task->getUser() == $this->getUser()) {
+
+            $this->manager->remove($task);
+            $this->manager->flush();
 
             $this->addFlash('success', 'La tâche a bien été supprimée.');
 
@@ -210,7 +209,6 @@ class TaskController extends AbstractController
         $this->addFlash('error', 'Vous n\'avez pas le droit de supprimer cette tâche.');
 
         return $this->redirectToRoute('homepage');
-
 
     }
 }

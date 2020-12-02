@@ -44,7 +44,7 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAll(),
             $request->query->getInt('page',1),
-            8
+            7
         );
 
         return $this->render('task/index.html.twig', [
@@ -64,7 +64,7 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAllTodo(),
             $request->query->getInt('page',1),
-            8
+            7
         );
 
         return $this->render(
@@ -87,7 +87,7 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAllDone(),
             $request->query->getInt('page',1),
-            8
+            7
         );
 
         return $this->render(
@@ -110,7 +110,7 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAllInProgress(),
             $request->query->getInt('page',1),
-            8
+            7
         );
 
         return $this->render(

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a651329-889c-4f10-8c4c-1d80edb4b7ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/task.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/task.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/_header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/_menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/_menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/_header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,6 +249,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="498" height="446" key="SwitcherDM/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606900808174" />
+    <state x="152" y="140" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606937254997">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="152" y="140" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606937254997" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1605727185795">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

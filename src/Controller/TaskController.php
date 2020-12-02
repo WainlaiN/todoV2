@@ -32,7 +32,30 @@ class TaskController extends AbstractController
     }
 
     /**
-     * @Route("/task", name="task_list_todo")
+     * @Route("/task", name="task_list")
+     *
+     * @param PaginatorInterface $paginator
+     * @param TaskRepository $repo
+     * @param Request $request
+     * @return Response
+     */
+    public function indexAction(TaskRepository $repo, Request $request)
+    {
+        $tasks = $this->paginator->paginate(
+            $repo->findAll(),
+            $request->query->getInt('page',1),
+            8
+        );
+
+        return $this->render('task/index.html.twig', [
+            'controller_name' => 'TaskController',
+            'tasks' => $tasks
+        ]);
+
+    }
+
+    /**
+     * @Route("/task/todo", name="task_list_todo")
      * @param TaskRepository $repo
      * @return Response
      */
@@ -41,11 +64,11 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAllTodo(),
             $request->query->getInt('page',1),
-            5
+            8
         );
 
         return $this->render(
-            'default/index.html.twig',
+            'task/index.html.twig',
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
@@ -64,11 +87,11 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAllDone(),
             $request->query->getInt('page',1),
-            5
+            8
         );
 
         return $this->render(
-            'default/index.html.twig',
+            'task/index.html.twig',
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
@@ -87,11 +110,11 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAllInProgress(),
             $request->query->getInt('page',1),
-            5
+            8
         );
 
         return $this->render(
-            'default/index.html.twig',
+            'task/index.html.twig',
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,

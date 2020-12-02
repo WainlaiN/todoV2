@@ -32,6 +32,10 @@
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
 
+.jumbo-color {
+  background-color: darkgrey;
+}
+
 .btn > a {
   color: white!important;
   text-decoration: none;

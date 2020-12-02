@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var switches = $("#assign");
+    var switches = $(".assign");
 
     switches.click(function () {
 

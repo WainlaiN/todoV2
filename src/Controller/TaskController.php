@@ -35,7 +35,12 @@ class TaskController extends AbstractController
      */
     public function indexTodo(TaskRepository $repo, Request $request): Response
     {
-        $tasks = $repo->findBy(['isDone' => false, 'inProgress' => false], ['createdAt' => 'DESC']);
+        //$tasks = $repo->findBy(['isDone' => false, 'inProgress' => false], ['createdAt' => 'DESC']);
+        $tasks = $this->paginator->paginate(
+            $repo->findAllTodo(),
+            $request->query->getInt('page',1),
+            5
+        );
 
         return $this->render(
             'default/index.html.twig',
@@ -52,9 +57,14 @@ class TaskController extends AbstractController
      * @param TaskRepository $repo
      * @return Response
      */
-    public function indexDone(TaskRepository $repo): Response
+    public function indexDone(TaskRepository $repo, Request $request): Response
     {
-        $tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
+        //$tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
+        $tasks = $this->paginator->paginate(
+            $repo->findAllDone(),
+            $request->query->getInt('page',1),
+            5
+        );
 
         return $this->render(
             'default/index.html.twig',
@@ -71,9 +81,14 @@ class TaskController extends AbstractController
      * @param TaskRepository $repo
      * @return Response
      */
-    public function indexInProgress(TaskRepository $repo): Response
+    public function indexInProgress(TaskRepository $repo, Request $request): Response
     {
-        $tasks = $repo->findBy(['inProgress' => true], ['createdAt' => 'DESC']);
+        //$tasks = $repo->findBy(['inProgress' => true], ['createdAt' => 'DESC']);
+        $tasks = $this->paginator->paginate(
+            $repo->findAllInProgress(),
+            $request->query->getInt('page',1),
+            5
+        );
 
         return $this->render(
             'default/index.html.twig',

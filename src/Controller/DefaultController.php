@@ -17,7 +17,6 @@ class DefaultController extends AbstractController
      */
     public function indexAction(PaginatorInterface $paginator, TaskRepository $repo, Request $request)
     {
-        //$tasks = $repository->findAll();
         $tasks = $paginator->paginate(
             $repo->findAll(),
             $request->query->getInt('page',1),

@@ -5,22 +5,42 @@ namespace App\Controller;
 use App\Entity\Task;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class TaskController extends AbstractController
 {
+    private PaginatorInterface $paginator;
+
+    /**
+     * TaskController constructor.
+     *
+     * @param PaginatorInterface $paginator
+     */
+    public function __construct(PaginatorInterface $paginator)
+    {
+        $this->paginator = $paginator;
+    }
+
     /**
      * @Route("/task", name="task_list_todo")
      * @param TaskRepository $repo
      * @return Response
      */
-    public function indexDone(TaskRepository $repo): Response
+    public function indexTodo(TaskRepository $repo, Request $request): Response
     {
-        $tasks = $repo->findBy(['isDone' => false, 'inProgress' => false], ['createdAt' => 'DESC']);
+        //$tasks = $repo->findBy(['isDone' => false, 'inProgress' => false], ['createdAt' => 'DESC']);
+        $tasks = $this->paginator->paginate(
+            $repo->findAllTodo(),
+            $request->query->getInt('page',1),
+            5
+        );
 
         return $this->render(
             'default/index.html.twig',
@@ -37,9 +57,14 @@ class TaskController extends AbstractController
      * @param TaskRepository $repo
      * @return Response
      */
-    public function indexNotDone(TaskRepository $repo): Response
+    public function indexDone(TaskRepository $repo, Request $request): Response
     {
-        $tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
+        //$tasks = $repo->findBy(['isDone' => true], ['createdAt' => 'DESC']);
+        $tasks = $this->paginator->paginate(
+            $repo->findAllDone(),
+            $request->query->getInt('page',1),
+            5
+        );
 
         return $this->render(
             'default/index.html.twig',
@@ -56,11 +81,14 @@ class TaskController extends AbstractController
      * @param TaskRepository $repo
      * @return Response
      */
-    public function indexInProgress(TaskRepository $repo): Response
+    public function indexInProgress(TaskRepository $repo, Request $request): Response
     {
-        $tasks = $repo->findBy(['inProgress' => true], ['createdAt' => 'DESC']);
-
-        //dd($tasks);
+        //$tasks = $repo->findBy(['inProgress' => true], ['createdAt' => 'DESC']);
+        $tasks = $this->paginator->paginate(
+            $repo->findAllInProgress(),
+            $request->query->getInt('page',1),
+            5
+        );
 
         return $this->render(
             'default/index.html.twig',
@@ -73,22 +101,22 @@ class TaskController extends AbstractController
     }
 
     /**
-     * @Route("/task/assign/{id}", name="task_assign")
+     * @Route("/task/assign/{id}", name="task_assign", methods={"POST"})
+     * @param Task $task
      * @return Response
      */
-    public function assignTask(): Response
+    public function assignTask(Task $task, EntityManagerInterface $manager): Response
     {
-        $user = $this->getUser();
+        $task->setAssignedTo($this->getUser())
+            ->setInProgress(true);
 
 
-        return $this->render(
-            'task/index.html.twig',
-            [
-                'controller_name' => 'TaskController',
-                'tasks' => $tasks,
-            ]
-        );
+        $manager->persist($task);
+        $manager->flush();
 
+        $this->addFlash('success', 'La tâche vous a été assigné.');
+
+        return new JsonResponse(['success' => 1]);
     }
 
 

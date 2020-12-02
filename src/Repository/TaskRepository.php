@@ -9,7 +9,6 @@ use Doctrine\Persistence\ManagerRegistry;
 /**
  * @method Task|null find($id, $lockMode = null, $lockVersion = null)
  * @method Task|null findOneBy(array $criteria, array $orderBy = null)
- * @method Task[]    findAll()
  * @method Task[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class TaskRepository extends ServiceEntityRepository
@@ -17,6 +16,47 @@ class TaskRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Task::class);
+    }
+
+    public function findAll (){
+        //return $this->findBy(array(), array('createdAt' => 'ASC'));
+        return $this->createQueryBuilder('t')
+            ->orderBy('t.createdAt', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ;
+
+    }
+
+    public function findAllDone (){
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.isDone = true')
+            ->orderBy('t.createdAt', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ;
+
+    }
+
+    public function findAllInProgress (){
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.inProgress = true' )
+            ->orderBy('t.createdAt', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ;
+
+    }
+
+    public function findAllTodo (){
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.isDone = false')
+            ->andWhere('t.inProgress = false')
+            ->orderBy('t.createdAt', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ;
+
     }
 
     // /**

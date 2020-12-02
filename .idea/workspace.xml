@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7a651329-889c-4f10-8c4c-1d80edb4b7ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/knp_paginator.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task/_task4.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/_task4.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/index.html.twig" afterDir="false" />
     </list>
@@ -124,6 +126,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/../../../php/pear" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kMvgVdiXTzpGiWYUykqBYr2lIL" />
@@ -173,6 +177,8 @@
       <workItem from="1606496598532" duration="2198000" />
       <workItem from="1606727925890" duration="11938000" />
       <workItem from="1606808221750" duration="19236000" />
+      <workItem from="1606842762446" duration="672000" />
+      <workItem from="1606897061116" duration="8442000" />
     </task>
     <servers />
   </component>
@@ -187,14 +193,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="540" y="179" key="#CLI_Interpreters/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727744491" />
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1606907316212">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606907316212" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605726747781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605726747781" />
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606827042447">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606836149815">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606827042447" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606836149815" />
     <state x="764" y="403" key="ComposerInitDialogKey" timestamp="1605727115021">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -223,21 +233,25 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="253" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727751611" />
-    <state x="766" y="247" key="NewPhpClassDialog" timestamp="1605528777562">
+    <state x="766" y="247" key="NewPhpClassDialog" timestamp="1606907258928">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="766" y="247" key="NewPhpClassDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605528777562" />
+    <state x="766" y="247" key="NewPhpClassDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606907258928" />
     <state x="461" y="169" key="SettingsEditor" timestamp="1605727745109">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727745109" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1606900808174">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606900808174" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1605727185795">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727185795" />
-    <state x="667" y="229" width="916" height="741" key="find.popup" timestamp="1606756019734">
+    <state x="667" y="229" width="916" height="741" key="find.popup" timestamp="1606835694468">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="916" height="741" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606756019734" />
+    <state x="667" y="229" width="916" height="741" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606835694468" />
   </component>
 </project>

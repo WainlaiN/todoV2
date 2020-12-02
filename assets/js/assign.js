@@ -1,10 +1,12 @@
 $(document).ready(function () {
-    var switches = $(":checkbox");
+    var switches = $("#assign");
 
     switches.click(function () {
 
         var id = $(this).attr('data-id')
-        var url = 'switch/' + id;
+        var url = 'task/assign/' + id;
+
+        alert(url)
 
         // AJAX Request
         $.ajax({
@@ -16,7 +18,8 @@ $(document).ready(function () {
                 console.log(response);
                 if (response.success === 1) {
 
-                    alert("Changement de statut utilisateur validé");
+                    alert("Cette tâche vous a été assigné");
+                    location.reload();
 
                 } else {
                     alert('Problème technique.');

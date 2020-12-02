@@ -210,6 +210,5 @@ class TaskController extends AbstractController
 
         return $this->redirectToRoute('homepage');
 
-
     }
 }

@@ -3,6 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Task;
+use App\Entity\User;
+use Doctrine\DBAL\Types\BooleanType;
+use phpDocumentor\Reflection\Types\Boolean;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -37,8 +41,9 @@ class TaskType extends AbstractType
             )
             ->add(
                 'user',
-                TextType::class,
+                EntityType::class,
                 [
+                    'class' => User::class,
                     'attr' => [
                         'readonly' => true,
                     ],

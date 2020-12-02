@@ -35,7 +35,7 @@
                                         </div>
                                     {% endif %}
                                 </div>
-                                <div class="widget-subheading"><i>de {{ task.user }}</i></div>
+                                <div class="widget-subheading"><i>de {{ task.user }} le {{ task.createdAt|date("d/m/Y") }}</i></div>
                             </div>
                             <div class="widget-content-right">
                                 {% if not task.assignedTo and not task.isDone %}

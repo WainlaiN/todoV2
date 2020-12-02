@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7a651329-889c-4f10-8c4c-1d80edb4b7ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task/_task.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/_task.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/_task2.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/_task3.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/_task4.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

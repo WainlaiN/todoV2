@@ -1,5 +1,6 @@
 <!-- line modal -->
-<div class="modal fade modal-success" id="myModal{{ task.id }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade modal-success" id="myModal{{ task.id }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -19,9 +20,10 @@
                             Todo
                         </div>
                     {% endif %}
-                            <div class="widget-assigned">
-                                <b>assigné à</b>  {% if task.assignedto %}{{ task.assignedto }} {% else %} <i>personne</i> {% endif %}
-                            </div>
+                    <div class="widget-assigned">
+                        <b>assigné à</b> {% if task.assignedto %}{{ task.assignedto }} {% else %}
+                            <i>personne</i> {% endif %}
+                    </div>
                 </h3>
             </div>
             <div class="modal-body">
@@ -46,13 +48,21 @@
             <div class="modal-footer">
                 <div class="btn-group btn-group-justified" role="group" aria-label="group button">
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Fermer</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Fermer</button>
                     </div>
                     <div class="btn-group btn-delete hidden" role="group">
-                        <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Editer</button>
+                        <a href="{{ path('task_edit', {'id' : task.id }) }}">
+                            <button type="button" id="delImage" class="btn btn-default btn-hover-red" role="button">
+                                Editer
+                            </button>
+                        </a>
                     </div>
                     <div class="btn-group" role="group">
-                        <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Supprimer</button>
+                        <a href="{{ path('task_delete', {'id' : task.id }) }}">
+                            <button type="button" id="saveImage" class="btn btn-default btn-hover-green"
+                                    data-action="save" role="button">Supprimer
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

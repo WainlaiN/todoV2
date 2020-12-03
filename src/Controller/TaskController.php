@@ -244,11 +244,4 @@ class TaskController extends AbstractController
 
     }
 
-    /**
-     * @Route("/task/{id}", name="task_view", methods={"GET"})
-     */
-    public function viewTask(Task $task)
-    {
-        return $task;
-    }
 }

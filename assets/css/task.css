@@ -21,9 +21,6 @@ a {
     text-decoration: none;
     color: #0a0a0a;
 }
-
-
-
 i {
     font-style: italic
 }
@@ -77,18 +74,9 @@ i {
     white-space: nowrap
 }
 
-.btn-actions-pane-right {
-    margin-left: auto;
-    white-space: nowrap
-}
 
 .text-capitalize {
     text-transform: capitalize !important
-}
-
-.scroll-area-sm {
-    height: 288px;
-    overflow-x: hidden
 }
 
 .list-group-item {

@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="myModal{{ task.id }}" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -8,7 +8,7 @@
                 <h4 class="modal-title">{{ task.title }}</h4>
             </div>
             <div class="modal-body">
-                <p>Some text in the modal.</p>
+                <p>{{ task.content }}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

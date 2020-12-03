@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="row col-lg-8">
-        {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
-        {{ form_widget(form) }}
+    <div class="container">
+        <section class="jumbotron shadow p-3 m-5">
+            {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
+            {{ form_widget(form) }}
 
-        <button type="submit" class="btn btn-success pull-right">Modifier</button>
-        {{ form_end(form) }}
+            <button type="submit" class="btn btn-success pull-right m-2">Modifier</button>
+            {{ form_end(form) }}
+        </section>
+
+
     </div>
 {% endblock %}

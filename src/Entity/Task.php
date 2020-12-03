@@ -41,7 +41,7 @@ class Task
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tasks" ,cascade={"persist"}))
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user = "anonyme";
+    private $user;
 
     /**
      * @ORM\Column(type="boolean")

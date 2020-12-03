@@ -32,6 +32,10 @@
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
 
+.logo {
+  width: 40px!important;
+}
+
 .jumbo-color {
   background-color: darkgrey;
 }
@@ -65,9 +69,6 @@
   border-radius: 5px;
   background: #fff
 }
-
-
-
 
 .profile-image img {
   margin-left: 3px

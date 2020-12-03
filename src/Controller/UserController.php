@@ -13,11 +13,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/**
+ * Class UserController
+ *
+ * @IsGranted("ROLE_ADMIN")
+ *
+ * @package App\Controller
+ */
 class UserController extends AbstractController
 {
     /**
      * @Route("/user", name="user_list")
-     * @IsGranted("ROLE_ADMIN")
+     *
      */
     public function index(UserRepository $userRepository): Response
     {
@@ -31,7 +38,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/users/create", name="user_create")
-     * @IsGranted("ROLE_ADMIN")
+     *
      */
     public function createAction(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {

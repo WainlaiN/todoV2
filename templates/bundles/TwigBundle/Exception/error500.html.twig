@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>Problème serveur</h1>
+
+        <p>
+            La page demandée n'a pas pu être localisée. Vérifiez votre URL</p>
+        <a class="btn btn-primary btn-lg" href="{{ path('homepage') }}">
+            <i class="fas fa-house-user"></i> Retour</a>
+    </div>
+{% endblock %}

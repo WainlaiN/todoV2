@@ -17,6 +17,7 @@ import 'bootstrap';
 import '../css/app.scss';
 
 require('../css/task.css');
+require('../css/signin.css');
 //var $ = require('jquery');
 const $ = require('jquery');
 

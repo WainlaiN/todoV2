@@ -14,8 +14,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class TaskController
+ *
+ * @IsGranted("ROLE_USER")
+ *
+ * @package App\Controller
+ */
 class TaskController extends AbstractController
 {
+
+    const LIMIT = 6;
     private PaginatorInterface $paginator;
 
     private EntityManagerInterface $manager;
@@ -44,7 +53,7 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAll(),
             $request->query->getInt('page',1),
-            7
+            self::LIMIT
         );
 
         return $this->render('task/index.html.twig', [
@@ -64,7 +73,7 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAllTodo(),
             $request->query->getInt('page',1),
-            7
+            self::LIMIT
         );
 
         return $this->render(
@@ -87,7 +96,7 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAllDone(),
             $request->query->getInt('page',1),
-            7
+            self::LIMIT
         );
 
         return $this->render(
@@ -110,7 +119,7 @@ class TaskController extends AbstractController
         $tasks = $this->paginator->paginate(
             $repo->findAllInProgress(),
             $request->query->getInt('page',1),
-            7
+            self::LIMIT
         );
 
         return $this->render(
@@ -231,7 +240,7 @@ class TaskController extends AbstractController
         }
         $this->addFlash('error', 'Vous n\'avez pas le droit de supprimer cette tâche.');
 
-        return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('task_list');
 
     }
 }

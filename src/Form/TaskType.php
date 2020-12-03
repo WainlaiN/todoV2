@@ -29,17 +29,6 @@ class TaskType extends AbstractType
                 ['label' => 'Contenu']
             )
             ->add('isDone')
-            ->add('assignedTo',
-                EntityType::class,
-                [
-                    'class' => User::class,
-                    'attr' => [
-                        'readonly' => true,
-                    ],
-                    'label' => 'Assigné à',
-
-                ]
-            )
             ->add(
                 'user',
                 EntityType::class,

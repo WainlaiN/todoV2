@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="container">
-        <section class="jumbotron shadow p-3 m-5">
+        <section class="jumbotron shadow-lg p-3 m-5">
             {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
             {{ form_widget(form) }}
 

@@ -30,8 +30,9 @@ class TaskType extends AbstractType
             )
             ->add('isDone')
             ->add('assignedTo',
-                TextType::class,
+                EntityType::class,
                 [
+                    'class' => User::class,
                     'attr' => [
                         'readonly' => true,
                     ],

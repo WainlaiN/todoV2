@@ -32,6 +32,7 @@ class AppFixtures extends Fixture
 
         $manager->persist($user);
 
+        // create basic user
         $user = new User();
         $user->setEmail("user@gmail.com")
             ->setPassword($this->encoder->encodePassword($user, "user"))
@@ -80,6 +81,21 @@ class AppFixtures extends Fixture
                 ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
                 ->setIsDone($faker->boolean)
                 ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'));
+        }
+
+        //create anonymous task
+        $anonyme = new User();
+        $anonyme->setEmail("anonyme")
+                ->setPassword("anonyme");
+        for ($m = 1; $m <= 5; $m++) {
+            $task = new Task();
+            $task->setTitle($faker->jobTitle)
+                ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
+                ->setIsDone(false)
+                ->setUser($anonyme)
+                ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'));
+
+            $manager->persist($task);
         }
 
 

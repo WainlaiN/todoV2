@@ -39,8 +39,11 @@ class TaskRepository extends ServiceEntityRepository
     }
 
     public function findAllInProgress (){
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.inProgress = true' )
+        $qb = $this->createQueryBuilder('t');
+        return $qb
+            ->andWhere('t.isDone = false')
+            ->andWhere('t.AssignedTo != :val')
+            ->setParameter('val', 'null')
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
             ->getQuery()
@@ -51,7 +54,6 @@ class TaskRepository extends ServiceEntityRepository
     public function findAllTodo (){
         return $this->createQueryBuilder('t')
             ->andWhere('t.isDone = false')
-            ->andWhere('t.inProgress = false')
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
             ->getQuery()

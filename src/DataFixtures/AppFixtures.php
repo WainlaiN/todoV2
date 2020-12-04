@@ -58,7 +58,7 @@ class AppFixtures extends Fixture
         for ($j = 1; $j <= 30; $j++) {
             $task = new Task();
             $task->setTitle($faker->jobTitle)
-                ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
+                ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
                 ->setIsDone(false)
                 ->setCreatedAt($faker->dateTimeBetween('-1 years', 'now'))
                 ->setUser($faker->randomElement($users));
@@ -70,7 +70,7 @@ class AppFixtures extends Fixture
         for ($l = 1; $l <= 30; $l++) {
             $task = new Task();
             $task->setTitle($faker->jobTitle)
-                ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
+                ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
                 ->setIsDone(false)
                 ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'))
                 ->setUser($faker->randomElement($users))
@@ -83,7 +83,7 @@ class AppFixtures extends Fixture
         for ($k = 1; $k <= 30; $k++) {
             $task = new Task();
             $task->setTitle($faker->jobTitle)
-                ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
+                ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
                 ->setIsDone(true)
                 ->setUser($faker->randomElement($users))
                 ->setAssignedTo($faker->randomElement($users))

@@ -48,7 +48,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function indexAction(TaskRepository $repo, Request $request)
+    public function indexAction(TaskRepository $repo, Request $request): Response
     {
         $tasks = $this->paginator->paginate(
             $repo->findAll(),
@@ -78,8 +78,6 @@ class TaskController extends AbstractController
             $request->query->getInt('page', 1),
             self::LIMIT
         );
-
-        //dd($tasks);
 
         return $this->render(
             'task/index.html.twig',
@@ -140,9 +138,9 @@ class TaskController extends AbstractController
     /**
      * @Route("/task/assign/{id}", name="task_assign", methods={"POST"})
      * @param Task $task
-     * @return Response
+     * @return JsonResponse
      */
-    public function assignTask(Task $task): Response
+    public function assignTask(Task $task): JsonResponse
     {
         $task->setAssignedTo($this->getUser());
 
@@ -159,7 +157,7 @@ class TaskController extends AbstractController
      * @Route("/tasks/create", name="task_create")
      * @IsGranted("ROLE_USER")
      */
-    public function createAction(Request $request)
+    public function createAction(Request $request): Response
     {
         $task = new Task();
         $form = $this->createForm(TaskType::class, $task);
@@ -178,7 +176,7 @@ class TaskController extends AbstractController
 
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('task_list');
         }
 
         return $this->render('task/create.html.twig', ['form' => $form->createView()]);
@@ -187,7 +185,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/edit", name="task_edit")
      */
-    public function editAction(Task $task, Request $request)
+    public function editAction(Task $task, Request $request): Response
     {
         $form = $this->createForm(TaskType::class, $task);
 
@@ -199,7 +197,7 @@ class TaskController extends AbstractController
 
             $this->addFlash('success', 'La tâche a bien été modifiée.');
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('task_list');
         }
 
         return $this->render(
@@ -214,7 +212,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/toggle", name="task_toggle")
      */
-    public function toggleTaskAction(Task $task)
+    public function toggleTaskAction(Task $task): Response
     {
         if ($task->isDone()) {
 
@@ -235,13 +233,13 @@ class TaskController extends AbstractController
 
 
 
-        return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('task_list');
     }
 
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      */
-    public function deleteTaskAction(Task $task)
+    public function deleteTaskAction(Task $task): Response
     {
 
         if ($task->getUser() == $this->getUser()) {

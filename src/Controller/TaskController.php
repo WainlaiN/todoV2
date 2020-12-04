@@ -76,6 +76,8 @@ class TaskController extends AbstractController
             self::LIMIT
         );
 
+        //dd($tasks);
+
         return $this->render(
             'task/index.html.twig',
             [

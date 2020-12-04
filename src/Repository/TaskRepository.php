@@ -19,7 +19,6 @@ class TaskRepository extends ServiceEntityRepository
     }
 
     public function findAll (){
-        //return $this->findBy(array(), array('createdAt' => 'ASC'));
         return $this->createQueryBuilder('t')
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
@@ -42,7 +41,7 @@ class TaskRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('t');
         return $qb
             ->andWhere('t.isDone = false')
-            ->andWhere('t.AssignedTo != :val')
+            ->andWhere('t.assignedTo != :val')
             ->setParameter('val', 'null')
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
@@ -52,8 +51,11 @@ class TaskRepository extends ServiceEntityRepository
     }
 
     public function findAllTodo (){
+
+        $qb =$this->createQueryBuilder('t');
         return $this->createQueryBuilder('t')
-            ->andWhere('t.isDone = false')
+            ->where('t.isDone = false')
+            ->andWhere($qb->expr()->isNull('t.assignedTo'))
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
             ->getQuery()

@@ -160,16 +160,16 @@ class TaskController extends AbstractController
     public function createAction(Request $request): Response
     {
         $task = new Task();
-        $form = $this->createForm(TaskType::class, $task);
-
         $user = $this->getUser();
+        $task->setUser($user);
+
+        $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $task->setUser($user);
-
 
             $this->manager->persist($task);
             $this->manager->flush();

@@ -8,7 +8,7 @@
                 <li id="tasks" class="list-group-item">
                     {% if task.isDone %}
                         <div class="todo-indicator bg-success"></div>
-                    {% elseif task.inProgress %}
+                    {% elseif task.assignedTo %}
                         <div class="todo-indicator bg-warning"></div>
                     {% else %}
                         <div class="todo-indicator bg-danger"></div>
@@ -24,7 +24,7 @@
                                         <div class="badge bg-success ml-2">
                                             Done
                                         </div>
-                                    {% elseif task.inProgress %}
+                                    {% elseif task.assignedTo %}
                                         <div class="badge bg-warning ml-2">
                                             In progress
                                         </div>
@@ -49,7 +49,7 @@
                                         <i class="fas fa-people-arrows"></i>
                                     </button>
                                 {% endif %}
-                                {% if task.inProgress %}
+                                {% if task.assignedTo %}
                                     <a href="{{ path('task_toggle', {'id' : task.id }) }}">
                                         <button class="border-0 btn-transition btn btn-outline-success"
                                                 data-toggle="tooltip" title="Cloturer">

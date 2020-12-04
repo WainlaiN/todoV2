@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Task;
+use App\Entity\User;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -188,6 +189,8 @@ class TaskController extends AbstractController
     public function editAction(Task $task, Request $request): Response
     {
         $form = $this->createForm(TaskType::class, $task);
+
+        //dd($form->getErrors());
 
         $form->handleRequest($request);
 

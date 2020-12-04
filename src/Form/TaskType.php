@@ -18,7 +18,6 @@ class TaskType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            //->add('createdAt')
             ->add('title',
             TextType::class,
                 [ 'label' => 'Titre'
@@ -32,10 +31,12 @@ class TaskType extends AbstractType
                 'user',
                 TextType::class,
                 [
+
                     'attr' => [
+                        'class' => User::class,
                         'readonly' => true,
                     ],
-                        'label' => 'Auteur',
+                    'label' => 'Auteur',
 
                 ]
             );

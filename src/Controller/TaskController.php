@@ -243,4 +243,5 @@ class TaskController extends AbstractController
         return $this->redirectToRoute('task_list');
 
     }
+
 }

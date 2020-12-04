@@ -46,7 +46,7 @@ class Task
     /**
      * @ORM\Column(type="boolean")
      */
-    private $inProgress;
+    private $inProgress = false;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="assignedTasks")

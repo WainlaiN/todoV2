@@ -14,7 +14,7 @@
                                 class="fa fa-tasks"></i>&nbsp;Liste des Tâches ({{ tasks.getTotalItemCount }})
                     </div>
                     <div class="btn-group" role="group" aria-label="task status">
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" id= "add_resume1">
                             <a href="{{ path('task_list') }}"><i class="fas fa-list-ul"></i> Tout</a>
                         </button>
                         <button type="button" class="btn btn-danger">
@@ -48,6 +48,8 @@
 {% block javascripts %}
     {{ parent() }}
     {{ encore_entry_script_tags('assign') }}
+    {{ encore_entry_script_tags('modal') }}
+    {{ encore_entry_script_tags('button') }}
 {% endblock %}
 
 

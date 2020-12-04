@@ -124,11 +124,6 @@ class Task
         return $this->isDone;
     }
 
-    public function toggle($flag)
-    {
-        $this->isDone = $flag;
-    }
-
     public function getAssignedTo(): ?User
     {
         return $this->assignedTo;

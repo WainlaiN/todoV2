@@ -52,14 +52,17 @@ class TaskController extends AbstractController
     {
         $tasks = $this->paginator->paginate(
             $repo->findAll(),
-            $request->query->getInt('page',1),
+            $request->query->getInt('page', 1),
             self::LIMIT
         );
 
-        return $this->render('task/index.html.twig', [
-            'controller_name' => 'TaskController',
-            'tasks' => $tasks
-        ]);
+        return $this->render(
+            'task/index.html.twig',
+            [
+                'controller_name' => 'TaskController',
+                'tasks' => $tasks,
+            ]
+        );
 
     }
 
@@ -72,7 +75,7 @@ class TaskController extends AbstractController
     {
         $tasks = $this->paginator->paginate(
             $repo->findAllTodo(),
-            $request->query->getInt('page',1),
+            $request->query->getInt('page', 1),
             self::LIMIT
         );
 
@@ -97,7 +100,7 @@ class TaskController extends AbstractController
     {
         $tasks = $this->paginator->paginate(
             $repo->findAllDone(),
-            $request->query->getInt('page',1),
+            $request->query->getInt('page', 1),
             self::LIMIT
         );
 
@@ -120,7 +123,7 @@ class TaskController extends AbstractController
     {
         $tasks = $this->paginator->paginate(
             $repo->findAllInProgress(),
-            $request->query->getInt('page',1),
+            $request->query->getInt('page', 1),
             self::LIMIT
         );
 
@@ -141,8 +144,7 @@ class TaskController extends AbstractController
      */
     public function assignTask(Task $task): Response
     {
-        $task->setAssignedTo($this->getUser())
-            ->setInProgress(true);
+        $task->setAssignedTo($this->getUser());
 
         $this->manager->persist($task);
         $this->manager->flush();
@@ -168,8 +170,7 @@ class TaskController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $task->setUser($user)
-                ->setInProgress(false);
+            $task->setUser($user);
 
 
             $this->manager->persist($task);
@@ -215,11 +216,24 @@ class TaskController extends AbstractController
      */
     public function toggleTaskAction(Task $task)
     {
-        $task->toggle(!$task->isDone());
+        if ($task->isDone()) {
+
+            $task->setIsDone(false)
+                ->setAssignedTo(null);
+
+            $this->addFlash('success', sprintf('La tâche %s a été réinitialisé.', $task->getTitle()));
+
+        } else {
+
+            $task->setIsDone(true);
+
+            $this->addFlash('success', sprintf('La tâche %s a été marqué comme validé.', $task->getTitle()));
+
+        }
 
         $this->manager->flush();
 
-        $this->addFlash('success', sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle()));
+
 
         return $this->redirectToRoute('homepage');
     }

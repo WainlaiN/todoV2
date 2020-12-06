@@ -42,7 +42,7 @@ class TaskController extends AbstractController
     }
 
     /**
-     * @Route("/task", name="task_list")
+     * @Route("/task/all", name="task_list")
      *
      * @param PaginatorInterface $paginator
      * @param TaskRepository $repo

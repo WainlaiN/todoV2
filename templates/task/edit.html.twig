@@ -5,6 +5,7 @@
         <section class="jumbotron shadow-lg p-3 m-5">
             {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
             {{ form_widget(form) }}
+            <p>Auteur : {{ task.user }}</p>
 
             <button type="submit" class="btn btn-success pull-right m-2">Modifier</button>
             {{ form_end(form) }}

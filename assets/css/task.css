@@ -173,3 +173,7 @@ i {
 .card-footer {
     background-color: #fff
 }
+
+.btn:disabled {
+    opacity: 0.5;
+}

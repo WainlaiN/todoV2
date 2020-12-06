@@ -26,19 +26,7 @@ class TaskType extends AbstractType
             ->add('content',
             TextareaType::class,
                 ['label' => 'Contenu']
-            )
-            ->add(
-                'user',
-                TextType::class,
-                [
 
-                    'attr' => [
-                        'class' => User::class,
-                        'readonly' => true,
-                    ],
-                    'label' => 'Auteur',
-
-                ]
             );
     }
 

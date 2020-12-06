@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/TaskType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TaskType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/edit.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +185,7 @@
       <workItem from="1606897061116" duration="8442000" />
       <workItem from="1606923904698" duration="370000" />
       <workItem from="1606981786952" duration="22770000" />
+      <workItem from="1607269125543" duration="1965000" />
     </task>
     <servers />
   </component>

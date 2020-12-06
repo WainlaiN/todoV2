@@ -173,3 +173,7 @@ i {
 .card-footer {
     background-color: #fff
 }
+
+.ButtonNotClicked {
+    background-color:white;
+}

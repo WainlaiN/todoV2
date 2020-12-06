@@ -35,7 +35,7 @@ class Task
     /**
      * @ORM\Column(type="boolean")
      */
-    private ?bool $isDone;
+    private ?bool $isDone = false;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tasks" ,cascade={"persist"}))
@@ -44,14 +44,9 @@ class Task
     private $user;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $inProgress = false;
-
-    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="assignedTasks")
      */
-    private $AssignedTo;
+    private $assignedTo;
 
     public function __construct()
     {
@@ -129,31 +124,14 @@ class Task
         return $this->isDone;
     }
 
-    public function toggle($flag)
-    {
-        $this->isDone = $flag;
-    }
-
-    public function getInProgress(): ?bool
-    {
-        return $this->inProgress;
-    }
-
-    public function setInProgress(bool $inProgress): self
-    {
-        $this->inProgress = $inProgress;
-
-        return $this;
-    }
-
     public function getAssignedTo(): ?User
     {
-        return $this->AssignedTo;
+        return $this->assignedTo;
     }
 
     public function setAssignedTo(?User $AssignedTo): self
     {
-        $this->AssignedTo = $AssignedTo;
+        $this->assignedTo = $AssignedTo;
 
         return $this;
     }

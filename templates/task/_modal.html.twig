@@ -10,7 +10,7 @@
                         <div class="badge bg-success ml-2">
                             Done
                         </div>
-                    {% elseif task.inProgress %}
+                    {% elseif task.assignedTo %}
                         <div class="badge bg-warning ml-2">
                             In progress
                         </div>
@@ -20,8 +20,12 @@
                             Todo
                         </div>
                     {% endif %}
+
+                    <div class="widget-subheading">
+                        <label for="username">Créé par {{ task.user }}</label>
+                    </div>
                     <div class="widget-assigned">
-                        <b>assigné à</b> {% if task.assignedto %}{{ task.assignedto }} {% else %}
+                        <b>assigné à :</b> {% if task.assignedto %}{{ task.assignedto }} {% else %}
                             <i>personne</i> {% endif %}
                     </div>
                 </h3>
@@ -30,9 +34,7 @@
 
                 <!-- content goes here -->
                 <form>
-                    <div class="form-group">
-                        <label for="username"><b>Créé par</b> {{ task.user }}</label>
-                    </div>
+
                     <div class="form-group">
                         {{ task.content }}
 

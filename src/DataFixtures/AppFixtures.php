@@ -23,6 +23,7 @@ class AppFixtures extends Fixture
     {
         $faker = \Faker\Factory::create('fr_FR');
 
+        $users = [];
 
         // create Admin
         $user = new User();
@@ -31,74 +32,65 @@ class AppFixtures extends Fixture
             ->setRoles(['ROLE_ADMIN']);
 
         $manager->persist($user);
+        $users[] = $user;
 
-        // create basic user
+        // create anonymous user
         $user = new User();
-        $user->setEmail("user@gmail.com")
-            ->setPassword($this->encoder->encodePassword($user, "user"))
+        $user->setEmail("anonymous")
+            ->setPassword($this->encoder->encodePassword($user, "anonymous"))
             ->setRoles(['ROLE_USER']);
 
         $manager->persist($user);
+        $users[] = $user;
 
-        //create users & tasks
-        for ($i = 1; $i <= 10; $i++) {
+        //create users list
+        for ($i = 1; $i <= 20; $i++) {
             $user = new User();
             $user->setEmail($faker->email)
                 ->setPassword($this->encoder->encodePassword($user, $faker->password))
                 ->setRoles(['ROLE_USER']);
 
-            for ($j = 1; $j <= 5; $j++) {
-                $task = new Task();
-                $task->setTitle($faker->jobTitle)
-                    ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
-                    ->setIsDone($faker->boolean)
-                    ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'))
-                    ->setUser($user)
-                    ->setInProgress(false);
-
-
-                $manager->persist($task);
-            }
-
-            for ($l = 1; $l <= 2; $l++) {
-                $task = new Task();
-                $task->setTitle($faker->jobTitle)
-                    ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
-                    ->setIsDone(false)
-                    ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'))
-                    ->setUser($user)
-                    ->setAssignedTo($user)
-                    ->setInProgress(true);
-
-                $manager->persist($task);
-            }
-
+            $manager->persist($user);
+            $users[] = $user;
         }
 
-        for ($k = 1; $k <= 10; $k++) {
+        //create tasks todolist
+        for ($j = 1; $j <= 30; $j++) {
             $task = new Task();
             $task->setTitle($faker->jobTitle)
-                ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
-                ->setIsDone($faker->boolean)
-                ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'));
-        }
-
-        //create anonymous task
-        $anonyme = new User();
-        $anonyme->setEmail("anonyme")
-                ->setPassword("anonyme");
-        for ($m = 1; $m <= 5; $m++) {
-            $task = new Task();
-            $task->setTitle($faker->jobTitle)
-                ->setContent($faker->sentence($nbWords = 6, $variableNbWords = true))
+                ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
                 ->setIsDone(false)
-                ->setUser($anonyme)
-                ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'));
+                ->setCreatedAt($faker->dateTimeBetween('-1 years', 'now'))
+                ->setUser($faker->randomElement($users));
 
             $manager->persist($task);
         }
 
+        //create tasks list in progress
+        for ($l = 1; $l <= 30; $l++) {
+            $task = new Task();
+            $task->setTitle($faker->jobTitle)
+                ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
+                ->setIsDone(false)
+                ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'))
+                ->setUser($faker->randomElement($users))
+                ->setAssignedTo($faker->randomElement($users));
 
+            $manager->persist($task);
+        }
+
+        //create tasks list done
+        for ($k = 1; $k <= 30; $k++) {
+            $task = new Task();
+            $task->setTitle($faker->jobTitle)
+                ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
+                ->setIsDone(true)
+                ->setUser($faker->randomElement($users))
+                ->setAssignedTo($faker->randomElement($users))
+                ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'));
+
+            $manager->persist($task);
+        }
 
         $manager->flush();
     }

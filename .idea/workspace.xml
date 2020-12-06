@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a651329-889c-4f10-8c4c-1d80edb4b7ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/button.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TaskType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TaskType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/edit.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +144,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -184,6 +185,7 @@
       <workItem from="1606897061116" duration="8442000" />
       <workItem from="1606923904698" duration="370000" />
       <workItem from="1606981786952" duration="22770000" />
+      <workItem from="1607269125543" duration="1965000" />
     </task>
     <servers />
   </component>
@@ -258,17 +260,21 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="152" y="140" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606937254997" />
-    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1607014277336">
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1607095091374">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607014277336" />
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607095091374" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1605727185795">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727185795" />
-    <state x="667" y="229" width="916" height="741" key="find.popup" timestamp="1607014546766">
+    <state x="667" y="229" width="916" height="741" key="find.popup" timestamp="1607076897297">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="916" height="741" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607014546766" />
+    <state x="667" y="229" width="916" height="741" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607076897297" />
+    <state x="616" y="243" width="672" height="677" key="run.anything.popup" timestamp="1607099796428">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" width="672" height="677" key="run.anything.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607099796428" />
   </component>
 </project>

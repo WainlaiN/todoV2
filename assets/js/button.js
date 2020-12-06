@@ -1,12 +1,24 @@
-$(document).ready(function() {
-    $("#add_resume1").on("click", function(e) {
-        e.preventDefault;
-        //your ajax here
-        $("#success").html('<div class="alert alert success">Basic details saved successfully.<div>');
-        $('#basicdetails').val('');
-        $('.btn.btn-home.save-button')
-            .removeClass('disabled')
-            .prop('disabled', false);
-        $('#add_resume1').prop('disabled', true);
-    });
-});
+$(document).ready(function () {
+
+    if (window.location.href.indexOf('all') > 0) {
+        $('.btnTodo').css('opacity', '0.5');
+        $('.btnProgress').css('opacity', '0.5');
+        $('.btnDone').css('opacity', '0.5');
+    }
+    if (window.location.href.indexOf('todo') > 0) {
+        $('.btnDone').css('opacity', '0.5');
+        $('.btnAll').css('opacity', '0.5');
+        $('.btnProgress').css('opacity', '0.5');
+    }
+    if (window.location.href.indexOf('inprogress') > 0) {
+        $('.btnTodo').css('opacity', '0.5');
+        $('.btnAll').css('opacity', '0.5');
+        $('.btnDone').css('opacity', '0.5');
+    }
+    if (window.location.href.indexOf('done') > 0) {
+        $('.btnTodo').css('opacity', '0.5');
+        $('.btnAll').css('opacity', '0.5');
+        $('.btnProgress').css('opacity', '0.5');
+    }
+})
+

@@ -52,6 +52,8 @@ class UserController extends AbstractController
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 
+        //dd($request);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -62,6 +64,8 @@ class UserController extends AbstractController
             $manager->flush();
 
             $this->addFlash('success', "L'utilisateur a bien été ajouté.");
+
+            //return $this->forward('App\Controller\ResetPasswordController::request');
 
             return $this->redirectToRoute('user_list');
         }
@@ -80,7 +84,7 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $user->setPassword($encoder->encodePassword($user, $user->getPassword()));
+            //$user->setPassword($encoder->encodePassword($user, $user->getPassword()));
 
             $manager->flush();
 

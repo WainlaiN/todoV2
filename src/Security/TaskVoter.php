@@ -49,6 +49,10 @@ class TaskVoter extends Voter
 
         throw new \LogicException('Vous n\'avez pas accès à cette fonction');
 
+    }
 
+    private function canDelete(Task $task, User $user)
+    {
+        return $user === $task->getUser();
     }
 }

@@ -69,6 +69,7 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/task/todo", name="task_list_todo")
+     *
      * @param TaskRepository $repo
      * @return Response
      */
@@ -92,6 +93,7 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/task/done", name="task_list_done")
+     *
      * @param TaskRepository $repo
      * @return Response
      */
@@ -115,6 +117,7 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/task/inprogress", name="task_list_progress")
+     *
      * @param TaskRepository $repo
      * @return Response
      */
@@ -138,6 +141,7 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/task/assign/{id}", name="task_assign", methods={"POST"})
+     *
      * @param Task $task
      * @return JsonResponse
      */

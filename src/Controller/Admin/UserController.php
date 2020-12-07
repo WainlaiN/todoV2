@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\User;
 use App\Form\UserType;
@@ -19,17 +19,23 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface;
 
 /**
- * Class UserController
- *
+ * @Route("/admin")
  * @IsGranted("ROLE_ADMIN")
+ *
+ * Class UserController
  *
  * @package App\Controller
  */
 class UserController extends AbstractController
 {
+
     /**
      * @Route("/user", name="user_list")
      *
+     * @param UserRepository $repo
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
      */
     public function index(UserRepository $repo, PaginatorInterface $paginator, Request $request): Response
     {
@@ -53,6 +59,13 @@ class UserController extends AbstractController
     /**
      * @Route("/users/create", name="user_create")
      *
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param ResetPasswordHelperInterface $resetPasswordHelper
+     * @param MailerInterface $mailer
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @throws \SymfonyCasts\Bundle\ResetPassword\Exception\ResetPasswordExceptionInterface
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
      */
     public function createAction(
         Request $request,
@@ -62,8 +75,6 @@ class UserController extends AbstractController
     ) {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
-
-        //dd($request);
 
         $form->handleRequest($request);
 
@@ -99,22 +110,26 @@ class UserController extends AbstractController
         return $this->render('user/create.html.twig', ['form' => $form->createView()]);
     }
 
+
     /**
      * @Route("/users/{id}/edit", name="user_edit")
+     *
+     * @param User $user
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function editAction(
         User $user,
         Request $request,
-        EntityManagerInterface $manager,
-        UserPasswordEncoderInterface $encoder
+        EntityManagerInterface $manager
     ) {
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            //$user->setPassword($encoder->encodePassword($user, $user->getPassword()));
 
             $manager->flush();
 

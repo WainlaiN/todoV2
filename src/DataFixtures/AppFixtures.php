@@ -37,8 +37,8 @@ class AppFixtures extends Fixture
         // create anonymous user
         $user = new User();
         $user->setEmail("anonymous")
-            ->setPassword($this->encoder->encodePassword($user, "anonymous"));
-            //->setRoles(['ROLE_USER']);
+            ->setPassword($this->encoder->encodePassword($user, "anonymous"))
+            ->setRoles(['ROLE_USER']);
 
         $manager->persist($user);
         $users[] = $user;
@@ -47,8 +47,8 @@ class AppFixtures extends Fixture
         for ($i = 1; $i <= 20; $i++) {
             $user = new User();
             $user->setEmail($faker->email)
-                ->setPassword($this->encoder->encodePassword($user, $faker->password));
-                //->setRoles(['ROLE_USER']);
+                ->setPassword($this->encoder->encodePassword($user, $faker->password))
+                ->setRoles(['ROLE_USER']);
 
             $manager->persist($user);
             $users[] = $user;

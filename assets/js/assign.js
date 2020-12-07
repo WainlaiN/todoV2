@@ -3,8 +3,12 @@ $(document).ready(function () {
 
     switches.click(function () {
 
+
+
         var id = $(this).attr('data-id')
-        var url = 'task/assign/' + id;
+        var url = '/task/assign/' + id;
+
+        alert(url)
 
 
         // AJAX Request

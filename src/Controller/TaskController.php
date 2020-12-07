@@ -49,7 +49,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function indexAction(TaskRepository $repo, Request $request): Response
+    public function indexAll(TaskRepository $repo, Request $request): Response
     {
         $tasks = $this->paginator->paginate(
             $repo->findAll(),
@@ -194,8 +194,6 @@ class TaskController extends AbstractController
     {
         $form = $this->createForm(TaskType::class, $task);
 
-        //dd($form->getErrors());
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -238,8 +236,6 @@ class TaskController extends AbstractController
 
         $this->manager->flush();
 
-
-
         return $this->redirectToRoute('task_list');
     }
 
@@ -249,7 +245,8 @@ class TaskController extends AbstractController
     public function deleteTaskAction(Task $task): Response
     {
 
-        if ($task->getUser() == $this->getUser()) {
+        //if ($task->getUser() == $this->getUser()) {
+        $this->denyAccessUnlessGranted('delete', $task);
 
             $this->manager->remove($task);
             $this->manager->flush();
@@ -258,10 +255,10 @@ class TaskController extends AbstractController
 
             return $this->redirectToRoute('task_list');
 
-        }
-        $this->addFlash('error', 'Vous n\'avez pas le droit de supprimer cette tâche.');
+        //}
+        //$this->addFlash('error', 'Vous n\'avez pas le droit de supprimer cette tâche.');
 
-        return $this->redirectToRoute('task_list');
+        //return $this->redirectToRoute('task_list');
 
     }
 

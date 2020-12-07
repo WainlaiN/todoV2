@@ -49,7 +49,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function indexAction(TaskRepository $repo, Request $request): Response
+    public function indexAll(TaskRepository $repo, Request $request): Response
     {
         $tasks = $this->paginator->paginate(
             $repo->findAll(),
@@ -194,8 +194,6 @@ class TaskController extends AbstractController
     {
         $form = $this->createForm(TaskType::class, $task);
 
-        //dd($form->getErrors());
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -237,8 +235,6 @@ class TaskController extends AbstractController
         }
 
         $this->manager->flush();
-
-
 
         return $this->redirectToRoute('task_list');
     }

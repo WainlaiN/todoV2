@@ -6,12 +6,20 @@ namespace App\Security;
 
 use App\Entity\Task;
 use App\Entity\User;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 
 class TaskVoter extends Voter
 {
     const DELETE = 'delete';
+
+    private SessionInterface $session;
+
+    public function __construct(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
 
     protected function supports(string $attribute, $subject)
     {
@@ -37,7 +45,7 @@ class TaskVoter extends Voter
             return false;
         }
 
-        // you know $subject is a Post object, thanks to `supports()`
+        // you know $subject is a Task object, thanks to `supports()`
         /** @var Task $task */
         $task = $subject;
 
@@ -46,7 +54,7 @@ class TaskVoter extends Voter
                 return $this->canDelete($task, $user);
 
         }
-
+        //$this->session->getFlashBag()->add('warning', 'Vous n\'avez pas accès à cette fonction');
         throw new \LogicException('Vous n\'avez pas accès à cette fonction');
 
     }

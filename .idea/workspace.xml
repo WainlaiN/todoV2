@@ -4,8 +4,7 @@
     <list default="true" id="7a651329-889c-4f10-8c4c-1d80edb4b7ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +184,7 @@
       <workItem from="1606923904698" duration="370000" />
       <workItem from="1606981786952" duration="22770000" />
       <workItem from="1607269125543" duration="1965000" />
-      <workItem from="1607330330108" duration="11556000" />
+      <workItem from="1607330330108" duration="11941000" />
     </task>
     <servers />
   </component>
@@ -252,10 +251,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605727745109" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1606900808174">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1607348675466">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1606900808174" />
+    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607348675466" />
     <state x="152" y="140" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606937254997">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

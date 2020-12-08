@@ -5,9 +5,8 @@
       <change beforePath="$PROJECT_DIR$/../Projet 3" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/index2.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DefaultControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DefaultControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TaskControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TaskControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +166,7 @@
       <updated>1607369125417</updated>
       <workItem from="1607369126470" duration="979000" />
       <workItem from="1607414920708" duration="3121000" />
-      <workItem from="1607435112287" duration="2134000" />
+      <workItem from="1607435112287" duration="2892000" />
     </task>
     <servers />
   </component>
@@ -175,22 +174,22 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1607437127563">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1607437842946">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607437127563" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1607437127563">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607437842946" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1607437842946">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607437127563" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1607437127563">
+    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607437842946" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1607437842945">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607437127563" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1607437127563">
+    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607437842945" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1607437842946">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607437127563" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607437842946" />
     <state x="461" y="169" key="SettingsEditor" timestamp="1607369823105">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

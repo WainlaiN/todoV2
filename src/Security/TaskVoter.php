@@ -30,7 +30,7 @@ class TaskVoter extends Voter
     protected function supports(string $attribute, $subject)
     {
         // if the attribute isn't one we support, return false
-        if (!in_array($attribute, [self::DELETE, self::VALIDATE])) {
+        if (!in_array($attribute, [self::DELETE, self::VALIDATE, self::EDIT])) {
             return false;
         }
 

@@ -192,8 +192,7 @@ class TaskController extends AbstractController
      */
     public function editAction(Task $task, Request $request): Response
     {
-
-        if ($this->isGranted('validate', $task)) {
+        if ($this->isGranted('edit', $task)) {
 
             $form = $this->createForm(TaskType::class, $task);
 

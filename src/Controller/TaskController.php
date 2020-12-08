@@ -219,6 +219,9 @@ class TaskController extends AbstractController
      */
     public function toggleTaskAction(Task $task): Response
     {
+
+        $this->denyAccessUnlessGranted('validate', $task);
+
         if ($task->isDone()) {
 
             $task->setIsDone(false)

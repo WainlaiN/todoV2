@@ -9,22 +9,27 @@ use App\Entity\User;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
+use Symfony\Component\Security\Core\Security;
 
 class TaskVoter extends Voter
 {
     const DELETE = 'delete';
+    const VALIDATE = 'validate';
 
     private SessionInterface $session;
 
-    public function __construct(SessionInterface $session)
+    private Security $security;
+
+    public function __construct(SessionInterface $session, Security $security)
     {
         $this->session = $session;
+        $this->security = $security;
     }
 
     protected function supports(string $attribute, $subject)
     {
         // if the attribute isn't one we support, return false
-        if (!in_array($attribute, [self::DELETE])) {
+        if (!in_array($attribute, [self::DELETE, self::VALIDATE])) {
             return false;
         }
 
@@ -52,6 +57,8 @@ class TaskVoter extends Voter
         switch ($attribute) {
             case self::DELETE:
                 return $this->canDelete($task, $user);
+            case self::VALIDATE:
+                return $this->canValidate($task, $user);
 
         }
         //$this->session->getFlashBag()->add('warning', 'Vous n\'avez pas accès à cette fonction');
@@ -62,5 +69,10 @@ class TaskVoter extends Voter
     private function canDelete(Task $task, User $user)
     {
         return $user === $task->getUser();
+    }
+
+    private function canValidate(Task $task, User $user)
+    {
+        return ($user === $task->getAssignedTo() || $this->security->isGranted('ROLE_ADMIN'));
     }
 }

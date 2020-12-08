@@ -192,26 +192,35 @@ class TaskController extends AbstractController
      */
     public function editAction(Task $task, Request $request): Response
     {
-        $form = $this->createForm(TaskType::class, $task);
 
-        $form->handleRequest($request);
+        if ($this->isGranted('validate', $task)) {
 
-        if ($form->isSubmitted() && $form->isValid()) {
+            $form = $this->createForm(TaskType::class, $task);
 
-            $this->manager->flush();
+            $form->handleRequest($request);
 
-            $this->addFlash('success', 'La tâche a bien été modifiée.');
+            if ($form->isSubmitted() && $form->isValid()) {
 
-            return $this->redirectToRoute('task_list');
+                $this->manager->flush();
+
+                $this->addFlash('success', 'La tâche a bien été modifiée.');
+
+                return $this->redirectToRoute('task_list');
+            }
+
+            return $this->render(
+                'task/edit.html.twig',
+                [
+                    'form' => $form->createView(),
+                    'task' => $task,
+                ]
+            );
         }
 
-        return $this->render(
-            'task/edit.html.twig',
-            [
-                'form' => $form->createView(),
-                'task' => $task,
-            ]
-        );
+        $this->addFlash('error', 'Vous n\'avez pas le droit d\'editer cette tâche.');
+
+        return $this->redirectToRoute('task_list');
+
     }
 
     /**

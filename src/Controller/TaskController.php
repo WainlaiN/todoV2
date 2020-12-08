@@ -220,36 +220,39 @@ class TaskController extends AbstractController
     public function toggleTaskAction(Task $task): Response
     {
 
-        $this->denyAccessUnlessGranted('validate', $task);
+        if ($this->isGranted('validate', $task)) {
 
-        if ($task->isDone()) {
+            if ($task->isDone()) {
 
-            $task->setIsDone(false)
-                ->setAssignedTo(null);
+                $task->setIsDone(false)
+                    ->setAssignedTo(null);
 
-            $this->addFlash('success', sprintf('La tâche %s a été réinitialisé.', $task->getTitle()));
+                $this->addFlash('success', sprintf('La tâche %s a été réinitialisé.', $task->getTitle()));
 
-        } else {
+            } else {
 
-            $task->setIsDone(true);
+                $task->setIsDone(true);
 
-            $this->addFlash('success', sprintf('La tâche %s a été marqué comme validé.', $task->getTitle()));
+                $this->addFlash('success', sprintf('La tâche %s a été marqué comme validé.', $task->getTitle()));
 
+            }
+
+            $this->manager->flush();
+
+            return $this->redirectToRoute('task_list');
         }
-
-        $this->manager->flush();
+        $this->addFlash('error', 'Vous n\'avez pas le droit de modifier cette tâche.');
 
         return $this->redirectToRoute('task_list');
     }
+
 
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      */
     public function deleteTaskAction(Task $task): Response
     {
-
-        //if ($task->getUser() == $this->getUser()) {
-        $this->denyAccessUnlessGranted('delete', $task);
+        if ($this->isGranted('delete', $task)) {
 
             $this->manager->remove($task);
             $this->manager->flush();
@@ -257,11 +260,11 @@ class TaskController extends AbstractController
             $this->addFlash('success', 'La tâche a bien été supprimée.');
 
             return $this->redirectToRoute('task_list');
+        }
 
-        //}
-        //$this->addFlash('error', 'Vous n\'avez pas le droit de supprimer cette tâche.');
+        $this->addFlash('error', 'Vous n\'avez pas le droit de supprimer cette tâche.');
 
-        //return $this->redirectToRoute('task_list');
+        return $this->redirectToRoute('task_list');
 
     }
 

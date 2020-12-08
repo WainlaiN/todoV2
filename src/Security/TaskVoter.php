@@ -61,7 +61,6 @@ class TaskVoter extends Voter
                 return $this->canValidate($task, $user);
 
         }
-        //$this->session->getFlashBag()->add('warning', 'Vous n\'avez pas accès à cette fonction');
         throw new \LogicException('Vous n\'avez pas accès à cette fonction');
 
     }

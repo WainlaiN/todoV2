@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+    {{ btn }}
 
     <div class="container pb-5">
         <div class="col-md-12">
@@ -15,13 +16,13 @@
                     </div>
                     <div class="list-group-horizontal">
 
-                            <a class="btn btn-primary btnAll {% if not btn == 'btnAll' %} opacity-0 {% else %} opacity-1 {% endif %}" href="{{ path('task_list') }}"><i class="fas fa-list-ul"></i> Tout</a>
+                            <a class="btn {% if btn == 'btnAll' %}  btn-primary {% else %} btn-outline-primary{% endif %}" href="{{ path('task_list') }}"><i class="fas fa-list-ul"></i> Tout</a>
 
-                            <a class="btn btn-danger btnTodo" href="{{ path('task_list_todo') }}"><i class="fas fa-times-circle"></i> Todo</a>
+                            <a class="btn {% if btn == 'btnTodo' %} btn-danger {% else %} btn-outline-danger{% endif %}" href="{{ path('task_list_todo') }}"><i class="fas fa-times-circle"></i> Todo</a>
 
-                            <a class="btn btn-warning btnProgress" href="{{ path('task_list_progress') }}"><i class="fas fa-spinner"></i> In Progress</a>
+                            <a class="btn {% if btn == 'btnInProgress' %} btn-warning {% else %} btn-outline-warning{% endif %}" href="{{ path('task_list_progress') }}"><i class="fas fa-spinner"></i> In Progress</a>
 
-                            <a class="btn btn-success btnDone" href="{{ path('task_list_done') }}"><i class="fa fa-check"></i> Done</a>
+                            <a class="btn {% if btn == 'btnDone' %} btn-success {% else %} btn-outline-success{% endif %}" href="{{ path('task_list_done') }}"><i class="fa fa-check"></i> Done</a>
 
                     </div>
                 </div>

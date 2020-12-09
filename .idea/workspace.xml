@@ -6,7 +6,10 @@
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/button.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,6 +181,8 @@
       <workItem from="1607369126470" duration="979000" />
       <workItem from="1607414920708" duration="3121000" />
       <workItem from="1607435112287" duration="5669000" />
+      <workItem from="1607447238233" duration="744000" />
+      <workItem from="1607521338785" duration="842000" />
     </task>
     <servers />
   </component>
@@ -189,6 +194,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="540" y="179" key="#Test_Frameworks/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607439474175" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607443719418">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607443719418" />
     <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1607438246958">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

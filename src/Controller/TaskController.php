@@ -62,6 +62,7 @@ class TaskController extends AbstractController
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
+                'btn' => 'btnAll'
             ]
         );
 

@@ -6,7 +6,9 @@
             {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
             {{ form_row(form.title) }}
             {{ form_row(form.content) }}
+            {% if is_granted('ROLE_ADMIN') %}
             {{ form_row(form.assignedTo) }}
+            {% endif %}
             {{ form_widget(form) }}
             <p>Auteur : {{ task.user }}</p>
 

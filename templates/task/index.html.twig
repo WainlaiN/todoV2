@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block body %}
-    {{ btn }}
 
     <div class="container pb-5">
         <div class="col-md-12">
@@ -16,7 +15,7 @@
                     </div>
                     <div class="list-group-horizontal">
 
-                            <a class="btn btn-primary btnAll {% if not btn == 'btnAll' %} opacity-0 {% endif %}" href="{{ path('task_list') }}"><i class="fas fa-list-ul"></i> Tout</a>
+                            <a class="btn btn-primary btnAll {% if not btn == 'btnAll' %} opacity-0 {% else %} opacity-1 {% endif %}" href="{{ path('task_list') }}"><i class="fas fa-list-ul"></i> Tout</a>
 
                             <a class="btn btn-danger btnTodo" href="{{ path('task_list_todo') }}"><i class="fas fa-times-circle"></i> Todo</a>
 

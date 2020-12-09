@@ -87,6 +87,7 @@ class TaskController extends AbstractController
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
+                'btn' => 'btnTodo'
             ]
         );
 
@@ -111,6 +112,7 @@ class TaskController extends AbstractController
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
+                'btn' => 'btnDone'
             ]
         );
 
@@ -135,6 +137,7 @@ class TaskController extends AbstractController
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
+                'btn' => 'btnInProgress'
             ]
         );
 

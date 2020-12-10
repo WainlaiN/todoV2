@@ -151,7 +151,8 @@ class TaskController extends AbstractController
      */
     public function assignTask(Task $task): JsonResponse
     {
-        $task->setAssignedTo($this->getUser());
+        $task->setAssignedTo($this->getUser())
+            ->setAssignedAt(new \DateTime('NOW'));
 
         $this->manager->persist($task);
         $this->manager->flush();

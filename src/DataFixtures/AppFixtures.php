@@ -54,7 +54,7 @@ class AppFixtures extends Fixture
             $users[] = $user;
         }
 
-        //create tasks todolist
+        //create tasks todo
         for ($j = 1; $j <= 30; $j++) {
             $task = new Task();
             $task->setTitle($faker->jobTitle)
@@ -66,7 +66,7 @@ class AppFixtures extends Fixture
             $manager->persist($task);
         }
 
-        //create tasks list in progress
+        //create tasks in progress
         for ($l = 1; $l <= 30; $l++) {
             $dateCreated = $faker->dateTimeBetween('-1 years', 'now');
             $dateAssigned = $faker->dateTimeBetween($dateCreated, 'now');
@@ -82,15 +82,18 @@ class AppFixtures extends Fixture
             $manager->persist($task);
         }
 
-        //create tasks list done
+        //create tasks done
         for ($k = 1; $k <= 30; $k++) {
+            $dateCreated = $faker->dateTimeBetween('-1 years', 'now');
+            $dateAssigned = $faker->dateTimeBetween($dateCreated, 'now');
             $task = new Task();
             $task->setTitle($faker->jobTitle)
                 ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
                 ->setIsDone(true)
                 ->setUser($faker->randomElement($users))
                 ->setAssignedTo($faker->randomElement($users))
-                ->setCreatedAt($faker->dateTimeBetween('-1 years', 'now'));
+                ->setCreatedAt($dateCreated)
+                ->setAssignedAt($dateAssigned);
 
             $manager->persist($task);
         }

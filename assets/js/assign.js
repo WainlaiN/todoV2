@@ -16,7 +16,6 @@ $(document).ready(function () {
                 console.log(response);
                 if (response.success === 1) {
 
-                    alert("Cette tâche vous a été assigné");
                     location.reload();
 
                 } else {

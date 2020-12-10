@@ -32,9 +32,13 @@ class UserTest extends KernelTestCase
 
     }
 
-    public function testInvalidUser()
+    public function testInvalidEmailUser()
     {
         $this->assertHasErrors($this->getEntity()->setEmail("testtest.com"), 1);
+    }
+
+    public function testInvalidRoleUser()
+    {
     }
 
 

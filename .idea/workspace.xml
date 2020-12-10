@@ -5,10 +5,10 @@
       <change beforePath="$PROJECT_DIR$/../Projet 3" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Entity/TaskTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Entity/TaskTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Repository/UserRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Repository/UserRepositoryTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Entity/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Entity/UserTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +183,7 @@
       <workItem from="1607447238233" duration="744000" />
       <workItem from="1607521338785" duration="5182000" />
       <workItem from="1607595981263" duration="10000" />
-      <workItem from="1607604058830" duration="6615000" />
+      <workItem from="1607604058830" duration="9535000" />
     </task>
     <servers />
   </component>
@@ -227,9 +227,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607441186459" />
-    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1607609169848">
+    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1607612502477">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607609169848" />
+    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607612502477" />
   </component>
 </project>

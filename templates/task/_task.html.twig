@@ -30,7 +30,7 @@
                                             In progress
                                         </div>
                                         <small><i class="far fa-clock"></i>
-                                            depuis {{ date( task.createdAt|date ).diff(date()).days }} jours</small>
+                                            depuis {{ date( task.assignedAt|date ).diff(date()).days }} jours</small>
                                         <div class="widget-assigned">
                                             assigné à : {{ task.assignedTo }}
                                         </div>

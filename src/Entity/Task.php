@@ -51,6 +51,11 @@ class Task
      */
     private $assignedTo;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $AssignedAt;
+
     public function __construct()
     {
         $this->createdAt = new \Datetime();
@@ -135,6 +140,18 @@ class Task
     public function setAssignedTo(?User $AssignedTo): self
     {
         $this->assignedTo = $AssignedTo;
+
+        return $this;
+    }
+
+    public function getAssignedAt(): ?\DateTimeInterface
+    {
+        return $this->AssignedAt;
+    }
+
+    public function setAssignedAt(?\DateTimeInterface $AssignedAt): self
+    {
+        $this->AssignedAt = $AssignedAt;
 
         return $this;
     }

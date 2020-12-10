@@ -9,13 +9,16 @@
             {% if is_granted('ROLE_ADMIN') %}
             {{ form_row(form.assignedTo) }}
             {% endif %}
-            {{ form_widget(form) }}
+
             <p>Auteur : {{ task.user }}</p>
 
 
             <button type="submit" class="btn btn-success pull-right m-2">Modifier</button>
-            {{ form_end(form) }}
         </section>
+
+        <div id="divCheckbox" style="display: none;">
+            {{ form_rest(form) }}
+        </div>
 
 
     </div>

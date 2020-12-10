@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../Projet 3" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/TaskType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TaskType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
@@ -179,7 +180,9 @@
       <workItem from="1607414920708" duration="3121000" />
       <workItem from="1607435112287" duration="5669000" />
       <workItem from="1607447238233" duration="744000" />
-      <workItem from="1607521338785" duration="4543000" />
+      <workItem from="1607521338785" duration="5182000" />
+      <workItem from="1607595981263" duration="10000" />
+      <workItem from="1607604058830" duration="2137000" />
     </task>
     <servers />
   </component>
@@ -195,10 +198,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607443719418" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1607438246958">
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1607605183015">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607438246958" />
+    <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607605183015" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1607439475695">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -28,13 +28,19 @@ class TaskTest extends KernelTestCase
     public function testValidTask()
     {
         $this->assertHasErrors($this->getEntity(), 0);
-
     }
 
-    public function testInvalidTask()
+    public function testInvalidBlankTitleTask()
     {
-        $task = $this->getEntity()->setTitle("")->setContent("");
-        $this->assertHasErrors($task, 2);
+        $task = $this->getEntity()->setTitle("");
+        $this->assertHasErrors($task, 1);
     }
+
+    public function testInvalidBlankContentTask()
+    {
+        $task = $this->getEntity()->setContent("");
+        $this->assertHasErrors($task, 1);
+    }
+
 
 }

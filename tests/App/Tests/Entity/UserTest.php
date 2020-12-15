@@ -37,6 +37,45 @@ class UserTest extends KernelTestCase
         $this->assertHasErrors($this->getEntity()->setEmail("testtest.com"), 1);
     }
 
+    public function testValidEmailUser()
+    {
+        $emailToTest = $this->getEntity()->getEmail();
+        $this->assertSame($emailToTest, filter_var($emailToTest, FILTER_VALIDATE_EMAIL));
+    }
+
+
+    public function testValidPassword()
+    {
+        $this->assertHasErrors($this->getEntity()->setPassword("password"), 0);
+    }
+
+    public function testInValidPassword()
+    {
+        $this->assertHasErrors($this->getEntity()->setPassword("pass"), 1);
+    }
+
+    public function testInvalidUsernameUser()
+    {
+        $this->assertHasErrors($this->getEntity()->setEmail("testtest.com"), 1);
+    }
+
+    public function testValidUsernameUser()
+    {
+        $emailToTest = $this->getEntity()->getUsername();
+        $this->assertSame($emailToTest, filter_var($emailToTest, FILTER_VALIDATE_EMAIL));
+    }
+
+    public function testValidRoleUser()
+    {
+
+
+    }
+
+    public function testInvalidRoleUser()
+    {
+
+    }
+
 
 
 }

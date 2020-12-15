@@ -5,10 +5,9 @@
       <change beforePath="$PROJECT_DIR$/../Projet 3" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/App/Tests/Entity/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Entity/UserTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Repository/UserRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Repository/UserRepositoryTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="C:\wamp64\www\todoV2\public" selected_validation_type="LOCAL" web_path_to_validation_script="http://127.0.0.1:8000/" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
@@ -143,7 +143,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SnowTricks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -183,7 +183,10 @@
       <workItem from="1607447238233" duration="744000" />
       <workItem from="1607521338785" duration="5182000" />
       <workItem from="1607595981263" duration="10000" />
-      <workItem from="1607604058830" duration="9535000" />
+      <workItem from="1607604058830" duration="10164000" />
+      <workItem from="1607617462496" duration="612000" />
+      <workItem from="1608019255276" duration="678000" />
+      <workItem from="1608023287959" duration="3423000" />
     </task>
     <servers />
   </component>
@@ -199,10 +202,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607443719418" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1607605183015">
+    <state x="675" y="347" width="570" height="588" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1608026328404">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607605183015" />
+    <state x="675" y="347" width="570" height="588" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608026328404" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1608025806539">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608025806539" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1607439475695">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

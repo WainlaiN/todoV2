@@ -4,6 +4,7 @@
 namespace App\Tests\Entity;
 
 
+use App\Entity\Task;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -67,15 +68,29 @@ class UserTest extends KernelTestCase
 
     public function testValidRoleUser()
     {
-
+        $this->assertSame(['ROLE_USER'], $this->getEntity()->getRoles());
 
     }
 
-    public function testInvalidRoleUser()
+    public function testAddTask()
     {
+        $task = new Task();
+        $task->setContent("contenu de test")
+            ->setTitle("titre de test");
+        $this->assertHasErrors($this->getEntity()
+            ->addTask($task), 0);
 
     }
 
+    public function testAddInvalidTask()
+    {
+        $task = new Task();
+        //$task->setContent("")
+            //->setTitle("titre de test");
+        $this->assertHasErrors($this->getEntity()
+            ->addTask($task), 0);
+
+    }
 
 
 }

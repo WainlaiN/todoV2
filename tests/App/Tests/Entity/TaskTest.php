@@ -42,5 +42,23 @@ class TaskTest extends KernelTestCase
         $this->assertHasErrors($task, 1);
     }
 
+    public function testValidDateCreatedTask()
+    {
+        $this->assertHasErrors($this->getEntity()->setCreatedAt(New \DateTime()), 0);
+    }
+
+    public function testValidDateAssignedTask()
+    {
+        $this->assertHasErrors($this->getEntity()->setAssignedAt(New \DateTime()), 0);
+    }
+
+    public function testIsDone()
+    {
+        $task = $this->getEntity()->setIsDone(true);
+        $this->assertIsBool($task->getIsDone());
+    }
+
+
+
 
 }

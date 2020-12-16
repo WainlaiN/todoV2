@@ -68,10 +68,10 @@ class TaskTest extends KernelTestCase
         $this->assertHasErrors($this->getEntity()->setAssignedAt(new \DateTime()), 0);
     }
 
-    public function testValidIsDoneTask()
+    public function testVIsDoneTask()
     {
         $task = $this->getEntity()->setIsDone(true);
-        $this->assertEquals($task->getIsDone(), true);
+        $this->assertEquals(true, $task->getIsDone());
     }
 
     public function testSetDateCreatedTask()

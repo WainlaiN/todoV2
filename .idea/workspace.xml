@@ -5,92 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../Projet 3" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.css/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.css/nv.d3.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.css/octicons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.icons/file-code.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.icons/file-directory.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.js/d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.js/file.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.js/nv.d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/.js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Controller/Admin/ResetPasswordController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Controller/Admin/UserController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Controller/Admin/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Controller/Admin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Controller/DefaultController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Controller/SecurityController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Controller/TaskController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Controller/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Controller/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/DataFixtures/AppFixtures.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/DataFixtures/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/DataFixtures/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Entity/ResetPasswordRequest.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Entity/Task.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Entity/User.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Entity/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Entity/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Form/ChangePasswordFormType.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Form/ResetPasswordRequestFormType.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Form/TaskType.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Form/UserType.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Form/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Form/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Kernel.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Repository/ResetPasswordRequestRepository.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Repository/TaskRepository.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Repository/UserRepository.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Repository/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Repository/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Security/LoginFormAuthenticator.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Security/TaskVoter.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Security/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/Security/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/coverage-report/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/App/Tests/Entity/TaskTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Entity/TaskTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Entity/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Entity/UserTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/ResetPasswordController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/ResetPasswordController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/DefaultController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/DefaultController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/SecurityController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/SecurityController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/TaskController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/TaskController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/DataFixtures/AppFixtures.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/DataFixtures/AppFixtures.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/DataFixtures/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/DataFixtures/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/DataFixtures/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/DataFixtures/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/ResetPasswordRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/ResetPasswordRequest.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/Task.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/Task.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/User.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/User.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Form/ChangePasswordFormType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Form/ChangePasswordFormType.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Form/ResetPasswordRequestFormType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Form/ResetPasswordRequestFormType.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Form/TaskType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Form/TaskType.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Form/UserType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Form/UserType.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Form/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Form/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Form/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Form/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Kernel.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Kernel.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/ResetPasswordRequestRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/ResetPasswordRequestRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/TaskRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/TaskRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/UserRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/UserRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/LoginFormAuthenticator.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/LoginFormAuthenticator.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/TaskVoter.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/TaskVoter.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -237,9 +152,13 @@
       <recent name="C:\wamp64\www\todoV2\tests\Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.UserRepositoryTest">
+  <component name="RunManager" selected="PHPUnit.TaskTest.testSetDateCreatedTask">
     <configuration name="DefaultControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\DefaultControllerTest" file="$PROJECT_DIR$/tests/Controller/DefaultControllerTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TaskTest.testSetDateCreatedTask" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Entity\TaskTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/App/Tests/Entity/TaskTest.php" method="testSetDateCreatedTask" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="UserRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -248,6 +167,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.TaskTest.testSetDateCreatedTask" />
         <item itemvalue="PHPUnit.UserRepositoryTest" />
         <item itemvalue="PHPUnit.DefaultControllerTest" />
       </list>
@@ -272,7 +192,7 @@
       <workItem from="1608019255276" duration="678000" />
       <workItem from="1608023287959" duration="4456000" />
       <workItem from="1608040015451" duration="3829000" />
-      <workItem from="1608106832884" duration="4878000" />
+      <workItem from="1608106832884" duration="5457000" />
     </task>
     <servers />
   </component>

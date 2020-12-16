@@ -45,14 +45,19 @@ class UserTest extends KernelTestCase
     }
 
 
-    public function testValidPassword()
+    public function testValidPasswordUser()
     {
         $this->assertHasErrors($this->getEntity()->setPassword("password"), 0);
     }
 
-    public function testInValidPassword()
+    public function testInValidPasswordUser()
     {
         $this->assertHasErrors($this->getEntity()->setPassword("pass"), 1);
+    }
+
+    public function testGetPasswordUser()
+    {
+        $this->assertEquals("password", $this->getEntity()->getPassword());
     }
 
     public function testInvalidUsernameUser()
@@ -72,7 +77,7 @@ class UserTest extends KernelTestCase
 
     }
 
-    public function testAddTask()
+    public function testAddTaskUser()
     {
         $task = new Task();
         $this->assertHasErrors($this->getEntity()
@@ -80,11 +85,11 @@ class UserTest extends KernelTestCase
 
     }
 
-    public function testAddInvalidTask()
+    public function testRemoveTaskUser()
     {
         $task = new Task();
-        $this->assertHasErrors($this->getEntity()
-            ->addTask($task), 0);
+        $this->getEntity()->addTask($task);
+        $this->assertHasErrors($this->getEntity()->removeTask($task), 0);
 
     }
 

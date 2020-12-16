@@ -5,6 +5,7 @@ namespace App\Tests\Entity;
 
 
 use App\Entity\Task;
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class TaskTest extends KernelTestCase
@@ -14,7 +15,16 @@ class TaskTest extends KernelTestCase
         return (new Task())
             ->setTitle("titre")
             ->setContent("contenu");
+    }
 
+    public function getEntityWithUser(): Task
+    {
+        return $this->getEntity()->setUser(
+            (new User())
+                ->setEmail("test@test.com")
+                ->setPassword("password")
+                ->setRoles(['ROLE_USER'])
+        );
     }
 
     public function assertHasErrors(Task $task, int $number = 0)
@@ -22,7 +32,6 @@ class TaskTest extends KernelTestCase
         self::bootKernel();
         $error = self::$container->get('validator')->validate($task);
         $this->assertCount($number, $error);
-
     }
 
     public function testValidTask()
@@ -36,29 +45,54 @@ class TaskTest extends KernelTestCase
         $this->assertHasErrors($task, 1);
     }
 
+    public function testValidTitleTask()
+    {
+        $title = $this->getEntity()->getTitle();
+        $this->assertEquals($title, "titre");
+    }
+
+    public function testValidContentTask()
+    {
+        $content = $this->getEntity()->getContent();
+        $this->assertEquals($content, "contenu");
+    }
+
     public function testInvalidBlankContentTask()
     {
         $task = $this->getEntity()->setContent("");
         $this->assertHasErrors($task, 1);
     }
 
-    public function testValidDateCreatedTask()
+    public function testAssignedAtTask()
     {
-        $this->assertHasErrors($this->getEntity()->setCreatedAt(New \DateTime()), 0);
+        $this->assertHasErrors($this->getEntity()->setAssignedAt(new \DateTime()), 0);
     }
 
-    public function testValidDateAssignedTask()
-    {
-        $this->assertHasErrors($this->getEntity()->setAssignedAt(New \DateTime()), 0);
-    }
-
-    public function testIsDone()
+    public function testValidIsDoneTask()
     {
         $task = $this->getEntity()->setIsDone(true);
-        $this->assertIsBool($task->getIsDone());
+        $this->assertEquals($task->getIsDone(), true);
     }
 
+    public function testSetDateCreatedTask()
+    {
+        $this->assertHasErrors($this->getEntity()->setCreatedAt(new \DateTime()), 0);
+    }
 
+    public function testValidGetCreatedAtTask()
+    {
+        $this->getEntity()->setCreatedAt(new \DateTime());
+        $date1 = $this->getEntity()->getCreatedAt();
+        $date2 = new \DateTime();
+        $this->assertEqualsWithDelta($date1, $date2, 5);
+    }
+
+    public function testValidGetUserTask()
+    {
+        $task = $this->getEntityWithUser();
+
+        $this->assertEquals($task->getUser()->getEmail(), "test@test.com");
+    }
 
 
 }

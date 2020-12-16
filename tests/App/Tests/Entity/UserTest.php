@@ -75,8 +75,6 @@ class UserTest extends KernelTestCase
     public function testAddTask()
     {
         $task = new Task();
-        $task->setContent("contenu de test")
-            ->setTitle("titre de test");
         $this->assertHasErrors($this->getEntity()
             ->addTask($task), 0);
 
@@ -85,8 +83,6 @@ class UserTest extends KernelTestCase
     public function testAddInvalidTask()
     {
         $task = new Task();
-        //$task->setContent("")
-            //->setTitle("titre de test");
         $this->assertHasErrors($this->getEntity()
             ->addTask($task), 0);
 

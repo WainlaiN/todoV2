@@ -2,64 +2,74 @@
 
 namespace App\Tests\Controller;
 
+use App\Entity\Task;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class TaskControllerTest extends WebTestCase
 {
-    public function login($client)
+    public function login()
     {
+        $client = static::createClient();
         $userRepository = static::$container->get(UserRepository::class);
         $basicUser = $userRepository->findOneByEmail('user@gmail.com');
 
         $client->loginUser($basicUser);
+        return $client;
     }
 
-    public function loginAdmin($client)
+    public function loginAdmin()
     {
+        $client = static::createClient();
         $userRepository = static::$container->get(UserRepository::class);
         $adminUser = $userRepository->findOneByEmail('admin@gmail.com');
 
         $client->loginUser($adminUser);
+        return $client;
+    }
+
+    public function testInvalidAccess()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/task/all');
+        $this->assertResponseRedirects("/login");
     }
 
     public function testIndexAll()
     {
-        $client = static::createClient();
-        $this->login($client);
-
+        $client = $this->login();
         $client->request('GET', '/task/all');
-
         $this->assertResponseIsSuccessful();
     }
 
     public function testIndexTodo()
     {
-        $client = static::createClient();
-        $this->login($client);
-
+        $client = $this->login();
         $client->request('GET', '/task/todo');
-
         $this->assertResponseIsSuccessful();
     }
 
     public function testIndexDone()
     {
-        $client = static::createClient();
-        $this->login($client);
-
+        $client = $this->login();
         $client->request('GET', '/task/done');
-
         $this->assertResponseIsSuccessful();
     }
 
     public function testIndexInProgress()
     {
-        $client = static::createClient();
-        $this->login($client);
-
+        $client = $this->login();
         $client->request('GET', '/task/inprogress');
-
         $this->assertResponseIsSuccessful();
     }
+
+    /**public function testAssignTask()
+    {
+        $task = (new Task())
+            ->setTitle("titre de test")
+            ->setContent("contenu de test");
+
+        $client = $this->login();
+
+    }**/
 }

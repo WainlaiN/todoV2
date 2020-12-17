@@ -4,6 +4,7 @@ namespace App\Tests\Controller;
 
 use App\Entity\Task;
 use App\Entity\User;
+use App\Repository\TaskRepository;
 use App\Repository\UserRepository;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -67,28 +68,15 @@ class TaskControllerTest extends WebTestCase
 
     public function testAssignTask()
     {
-        //$task = (new Task())
-            //->setTitle("titre de test")
-            //->setContent("contenu de test");
-
-        $user = $this->createMock(User::class);
-        $task = $this->createMock(Task::class);
-        //$this->login();
+        $user = new User();
+        $task = new Task();
 
         $user->addAssignedTask($task);
 
-        $this->assertHasErrors($user, 0);
+        $this->assertEquals($user, $task->getAssignedTo());
 
-        //$user = static::createClient();
-        //$user = $this->login();
 
     }
 
-    public function assertHasErrors(User $user, int $number = 0)
-    {
-        self::bootKernel();
-        $error = self::$container->get('validator')->validate($user);
-        $this->assertCount($number, $error);
 
-    }
 }

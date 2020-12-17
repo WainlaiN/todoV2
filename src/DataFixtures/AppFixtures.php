@@ -8,7 +8,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Faker\Factory;
-use Faker\Generator;
 
 class AppFixtures extends Fixture
 {
@@ -21,7 +20,7 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $faker = \Faker\Factory::create('fr_FR');
+        $faker = Factory::create('fr_FR');
 
         $users = [];
 
@@ -30,6 +29,15 @@ class AppFixtures extends Fixture
         $user->setEmail("admin@gmail.com")
             ->setPassword($this->encoder->encodePassword($user, "admin"))
             ->setRoles(['ROLE_ADMIN']);
+
+        $manager->persist($user);
+        $users[] = $user;
+
+        // create Normal User for test
+        $user = new User();
+        $user->setEmail("user@gmail.com")
+            ->setPassword($this->encoder->encodePassword($user, "user"))
+            ->setRoles(['ROLE_USER']);
 
         $manager->persist($user);
         $users[] = $user;

@@ -4,7 +4,10 @@
 namespace App\Tests\Security;
 
 
-class TaskVoterTest
+use PHPUnit\Framework\TestCase;
+
+class TaskVoterTest extends TestCase
 {
+    
 
 }

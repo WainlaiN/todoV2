@@ -9,8 +9,22 @@ use App\Repository\UserRepository;
 
 class UserRepositoryTest extends KernelTestCase
 {
+    /**
+     * @var \Doctrine\ORM\EntityManager
+     */
+    private $entityManager;
+
+    protected function setUp(): void
+    {
+        $kernel = self::bootKernel();
+
+        $this->entityManager = $kernel->getContainer()
+            ->get('doctrine')
+            ->getManager();
+    }
+
     public function testCount() {
-        self::bootKernel();
+
         $users = self::$container->get(UserRepository::class)->count([]);
         $this->assertEquals(23, $users);
     }

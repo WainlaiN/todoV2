@@ -27,7 +27,6 @@
             <directory suffix=".php">src/Entity</directory>
             <directory suffix=".php">src/Security</directory>
             <directory suffix=".php">src/Repository</directory>
-            <directory suffix=".php">src/Form</directory>
         </whitelist>
     </filter>
 

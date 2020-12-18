@@ -2,11 +2,7 @@
 
 namespace App\Tests\Controller;
 
-use App\Entity\Task;
-use App\Entity\User;
-use App\Repository\TaskRepository;
 use App\Repository\UserRepository;
-use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class TaskControllerTest extends WebTestCase
@@ -66,17 +62,6 @@ class TaskControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    public function testAssignTask()
-    {
-        $user = new User();
-        $task = new Task();
-
-        $user->addAssignedTask($task);
-
-        $this->assertEquals($user, $task->getAssignedTo());
-
-
-    }
 
 
 }

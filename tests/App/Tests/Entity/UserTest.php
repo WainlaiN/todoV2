@@ -34,8 +34,8 @@ class UserTest extends KernelTestCase
     {
         self::bootKernel();
         $userRepository = static::$container->get(UserRepository::class);
-        /** @var User $basicUser */
         $basicUser = $userRepository->findOneByEmail('user@gmail.com');
+
         return $basicUser;
     }
 
@@ -50,7 +50,7 @@ class UserTest extends KernelTestCase
     public function testGetIdUser()
     {
         $user = $this->getDatabaseUser();
-        $this->assertIsInt( $user->getId());
+        $this->assertIsInt($user->getId());
     }
 
     public function testValidUser()
@@ -125,13 +125,49 @@ class UserTest extends KernelTestCase
 
     }
 
-    /**public function testRemoveTaskUser()
-     * {
-     * $user = $this->addTaskToEntity();
-     * //$user->removeTask();
-     *
-     *
-     * }**/
+    public function testRemoveTaskUser()
+    {
+        $task = new Task();
+        $this->getEntity()->addTask($task);
+        $task->setUser($this->getEntity());
+        $this->assertHasErrors($this->getEntity()->removeTask($task), 0);
+        $task->setUser(null);
+        $this->assertEquals(null, $task->getUser());
+
+    }
+
+
+    public function testAddAssignedTaskUser()
+    {
+        $user = new User();
+        $task = new Task();
+        $user->addAssignedTask($task);
+        $this->assertEquals($user, $task->getAssignedTo());
+    }
+
+    public function testGetAssignedTasksUser()
+    {
+        $user = $this->getDatabaseUser();
+        $tasks = $user->getAssignedTasks();
+        $this->assertCount("3", $tasks);
+    }
+
+    public function testRemoveAssignedTaskUser()
+    {
+        $user = $this->getDatabaseUser();
+        $tasks = $user->getAssignedTasks();
+        $user->removeAssignedTask($tasks[0]);
+        $this->assertCount("2", $tasks);
+    }
+
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function testEraseCredentials()
+    {
+        $this->doesNotPerformAssertions();
+    }
+
 
 
 }

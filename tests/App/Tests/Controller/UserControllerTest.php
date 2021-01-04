@@ -9,25 +9,14 @@ use Doctrine\ORM\EntityManager;
 
 class UserControllerTest extends AbstractControllerTest
 {
-    //private EntityManager $em;
 
     /** @var UserRepository */
     protected $userRepository;
 
-    /** @var ResetPasswordRequestRepository */
-    protected $resetRepository;
-
     protected function setUp(): void
     {
         parent::setUp();
-        //$this->em->getConnection()->beginTransaction();
         $this->userRepository = self::$container->get(UserRepository::class);
-        $this->resetRepository = self::$container->get(ResetPasswordRequestRepository::class);
-    }
-    protected function tearDown(): void
-    {
-        parent::tearDown();
-        //$this->em->getConnection()->rollback();
     }
 
     public function testInvalidAccess()
@@ -66,14 +55,5 @@ class UserControllerTest extends AbstractControllerTest
         self::assertInstanceOf(User::class, $user);
         self::assertEquals('admin2@gmail.com', $user->getEmail());
         self::assertEquals('ROLE_ADMIN', $user->getRoles()[0]);
-
-        $em = $this->client->getContainer()->get('doctrine.orm.entity_manager');
-        $reset = $this->resetRepository->findOneBy(['user' => $user->getId()]);
-        //$user = $this->userRepository->findOneBy(['email' => 'admin2@gmail.com']);
-        $em->remove($reset);
-        $em->flush();
-
-        $em->remove($user);
-        $em->flush();
     }
 }

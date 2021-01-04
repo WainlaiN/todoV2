@@ -21,25 +21,30 @@ class AbstractControllerTest extends WebTestCase
 
         $buttonCrawlerMode = $crawler->filter('form');
         $form = $buttonCrawlerMode->form([
-            'login[email]' => 'admin@gmail.com',
-            'login[password]' => 'admin'
+            'email' => 'admin@gmail.com',
+            'password' => 'admin'
         ]);
 
-        $this->client->submit($form);
+        //$this->client->submit($form);
+
+        $form['email']->setValue('admin@gmail.com');
+        $form['password']->setValue('admin');
+
+        dd($form);
     }
 
-    public function loginWithUser(): void
+    /**public function loginWithUser(): void
     {
         $crawler = $this->client->request('GET', '/login');
 
         $buttonCrawlerMode = $crawler->filter('form');
         $form = $buttonCrawlerMode->form([
-            'login[username]' => 'user@gmail.com',
-            'login[password]' => 'user'
+            'inputEmail' => 'user@gmail.com',
+            'inputPassword' => 'user'
         ]);
 
         $this->client->submit($form);
-    }
+    }**/
 
 
 }

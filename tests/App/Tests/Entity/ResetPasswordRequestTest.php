@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 class ResetPasswordRequestTest extends KernelTestCase
 {
 
-    public function testGetId()
+    /**public function testGetId()
     {
 
 
@@ -18,6 +18,6 @@ class ResetPasswordRequestTest extends KernelTestCase
     public function testGetUser()
     {
 
-    }
+    }**/
 
 }

@@ -48,11 +48,10 @@ class UserControllerTest extends AbstractControllerTest
 
         $this->client->submit($form);
 
-        //test if user exist in repo
         $user = $this->userRepository->findOneBy(['email' => 'admin2@gmail.com']);
-        self::assertInstanceOf(User::class, $user);
-        self::assertEquals('admin2@gmail.com', $user->getEmail());
-        self::assertEquals('ROLE_ADMIN', $user->getRoles()[0]);
+        $this->assertInstanceOf(User::class, $user);
+        $this->assertEquals('admin2@gmail.com', $user->getEmail());
+        $this->assertEquals('ROLE_ADMIN', $user->getRoles()[0]);
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
 
@@ -61,4 +60,31 @@ class UserControllerTest extends AbstractControllerTest
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
     }
+
+    public function testEditAction()
+    {
+        $this->loginWithAdmin();
+        $crawler = $this->client->request('GET', 'admin/users/26/edit');
+        $this->assertResponseIsSuccessful();
+
+        $form = $crawler->selectButton('Modifier')->form();
+        $form['user[email]'] = 'renault.georges2@orange.fr';
+        $form['user[roles]'] = 'ROLE_ADMIN';
+
+        $this->client->submit($form);
+
+        $user = $this->userRepository->findOneBy(['email' => 'renault.georges2@orange.fr']);
+        $this->assertInstanceOf(User::class, $user);
+        $this->assertEquals('renault.georges2@orange.fr', $user->getEmail());
+        $this->assertEquals('ROLE_ADMIN', $user->getRoles()[0]);
+
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+
+        $crawler = $this->client->followRedirect();
+
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
+
+    }
+
 }

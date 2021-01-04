@@ -48,12 +48,17 @@ class UserControllerTest extends AbstractControllerTest
 
         $this->client->submit($form);
 
-        $this->assertResponseIsSuccessful();
-
         //test if user exist in repo
         $user = $this->userRepository->findOneBy(['email' => 'admin2@gmail.com']);
         self::assertInstanceOf(User::class, $user);
         self::assertEquals('admin2@gmail.com', $user->getEmail());
         self::assertEquals('ROLE_ADMIN', $user->getRoles()[0]);
+
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+
+        $crawler = $this->client->followRedirect();
+
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
     }
 }

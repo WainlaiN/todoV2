@@ -3,7 +3,6 @@
 namespace App\Tests\Controller;
 
 use App\Controller\AbstractControllerTest;
-use App\Repository\UserRepository;
 
 class TaskControllerTest extends AbstractControllerTest
 {
@@ -16,8 +15,7 @@ class TaskControllerTest extends AbstractControllerTest
 
     public function testInvalidAccess()
     {
-        $client = static::createClient();
-        $client->request('GET', '/task/all');
+        $this->client->request('GET', '/task/all');
         $this->assertResponseRedirects("/login");
     }
 
@@ -30,25 +28,22 @@ class TaskControllerTest extends AbstractControllerTest
 
     public function testIndexTodo()
     {
-        $client = $this->login();
-        $client->request('GET', '/task/todo');
+        $this->loginWithAdmin();
+        $this->client->request('GET', '/task/all');
         $this->assertResponseIsSuccessful();
     }
 
     public function testIndexDone()
     {
-        $client = $this->login();
-        $client->request('GET', '/task/done');
+        $this->loginWithAdmin();
+        $this->client->request('GET', '/task/all');
         $this->assertResponseIsSuccessful();
     }
 
     public function testIndexInProgress()
     {
-        $client = $this->login();
-        $client->request('GET', '/task/inprogress');
+        $this->loginWithAdmin();
+        $this->client->request('GET', '/task/all');
         $this->assertResponseIsSuccessful();
     }
-
-
-
 }

@@ -2,15 +2,32 @@
 
 namespace App\Tests\Controller;
 
-use App\Controller\AbstractControllerTest;
+use App\Entity\User;
+use App\Repository\ResetPasswordRequestRepository;
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Doctrine\ORM\EntityManager;
 
 class UserControllerTest extends AbstractControllerTest
 {
+    //private EntityManager $em;
+
+    /** @var UserRepository */
+    protected $userRepository;
+
+    /** @var ResetPasswordRequestRepository */
+    protected $resetRepository;
+
     protected function setUp(): void
     {
         parent::setUp();
+        //$this->em->getConnection()->beginTransaction();
+        $this->userRepository = self::$container->get(UserRepository::class);
+        $this->resetRepository = self::$container->get(ResetPasswordRequestRepository::class);
+    }
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        //$this->em->getConnection()->rollback();
     }
 
     public function testInvalidAccess()
@@ -33,30 +50,30 @@ class UserControllerTest extends AbstractControllerTest
         $this->loginWithAdmin();
         $crawler = $this->client->request('GET', 'admin/users/create');
         $this->assertResponseIsSuccessful();
-        //$this->assertEquals(200, $this->client->getResponse()->getStatusCode());
 
-        /**$crawler = $this->client->request('GET', '/users/create');
-        self::assertEquals(200, $this->client->getResponse()->getStatusCode());
-        self::assertContains('Créer un utilisateur', $crawler->filter('h1')->text());
-
-        $form = $crawler->selectButton('Se connecter')->form();
-
-        $form['email']->setValue('admin@gmail.com');
-        $form['roles']->setValue('ROLE_USER');
+        $this->assertContains('Créer un utilisateur', $crawler->filter('h1')->text());
 
         $form = $crawler->selectButton('Ajouter')->form();
-        $form['user[username]'] = 'autre';
-        $form['user[password][first]'] = 'autre';
-        $form['user[password][second]'] = 'autre';
-        $form['user[email]'] = 'autre@autre.org';
-        $form['user[roles][0]']->tick();
+        $form['user[email]'] = 'admin2@gmail.com';
+        $form['user[roles]'] = 'ROLE_ADMIN';
+
         $this->client->submit($form);
 
-        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+        $this->assertResponseIsSuccessful();
 
-        $crawler = $this->client->followRedirect();
+        //test if user exist in repo
+        $user = $this->userRepository->findOneBy(['email' => 'admin2@gmail.com']);
+        self::assertInstanceOf(User::class, $user);
+        self::assertEquals('admin2@gmail.com', $user->getEmail());
+        self::assertEquals('ROLE_ADMIN', $user->getRoles()[0]);
 
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
-        $this->assertEquals(1, $crawler->filter('div.alert-success')->count());**/
+        $em = $this->client->getContainer()->get('doctrine.orm.entity_manager');
+        $reset = $this->resetRepository->findOneBy(['user' => $user->getId()]);
+        //$user = $this->userRepository->findOneBy(['email' => 'admin2@gmail.com']);
+        $em->remove($reset);
+        $em->flush();
+
+        $em->remove($user);
+        $em->flush();
     }
 }

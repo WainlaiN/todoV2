@@ -2,7 +2,6 @@
 
 namespace App\Tests\Controller;
 
-use App\Controller\AbstractControllerTest;
 
 class TaskControllerTest extends AbstractControllerTest
 {

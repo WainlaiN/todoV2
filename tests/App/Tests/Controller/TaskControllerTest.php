@@ -12,7 +12,6 @@ class TaskControllerTest extends AbstractControllerTest
         parent::setUp();
     }
 
-
     public function testInvalidAccess()
     {
         $this->client->request('GET', '/task/all');
@@ -29,21 +28,21 @@ class TaskControllerTest extends AbstractControllerTest
     public function testIndexTodo()
     {
         $this->loginWithAdmin();
-        $this->client->request('GET', '/task/all');
+        $this->client->request('GET', '/task/todo');
         $this->assertResponseIsSuccessful();
     }
 
     public function testIndexDone()
     {
         $this->loginWithAdmin();
-        $this->client->request('GET', '/task/all');
+        $this->client->request('GET', '/task/done');
         $this->assertResponseIsSuccessful();
     }
 
     public function testIndexInProgress()
     {
         $this->loginWithAdmin();
-        $this->client->request('GET', '/task/all');
+        $this->client->request('GET', '/task/inprogress');
         $this->assertResponseIsSuccessful();
     }
 }

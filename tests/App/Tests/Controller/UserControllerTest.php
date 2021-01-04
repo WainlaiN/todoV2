@@ -2,42 +2,47 @@
 
 namespace App\Tests\Controller;
 
+use App\Controller\AbstractControllerTest;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class UserControllerTest extends WebTestCase
+class UserControllerTest extends AbstractControllerTest
 {
-
-    private $client;
-
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->client = self::createClient();
+        parent::setUp();
     }
 
-    public function loginAdmin()
+    public function testInvalidAccess()
     {
-
-        $userRepository = static::$container->get(UserRepository::class);
-        $adminUser = $userRepository->findOneByEmail('admin@gmail.com');
-
-        $this->client->loginUser($adminUser);
-        return $this->client;
+        $this->loginWithUser();
+        $this->client->request('GET', '/admin/user');
+        //ROLE_USER are denied to admin
+        $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
     }
 
     public function testIndexAllUsers()
     {
-        $this->loginAdmin();
+        $this->loginWithAdmin();
         $this->client->request('GET', '/admin/user');
         $this->assertResponseIsSuccessful();
     }
 
     public function testCreateAction()
     {
-        $this->loginAdmin();
-
+        $this->loginWithAdmin();
         $crawler = $this->client->request('GET', 'admin/users/create');
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertResponseIsSuccessful();
+        //$this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+
+        /**$crawler = $this->client->request('GET', '/users/create');
+        self::assertEquals(200, $this->client->getResponse()->getStatusCode());
+        self::assertContains('Créer un utilisateur', $crawler->filter('h1')->text());
+
+        $form = $crawler->selectButton('Se connecter')->form();
+
+        $form['email']->setValue('admin@gmail.com');
+        $form['roles']->setValue('ROLE_USER');
 
         $form = $crawler->selectButton('Ajouter')->form();
         $form['user[username]'] = 'autre';
@@ -52,6 +57,6 @@ class UserControllerTest extends WebTestCase
         $crawler = $this->client->followRedirect();
 
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
-        $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
+        $this->assertEquals(1, $crawler->filter('div.alert-success')->count());**/
     }
 }

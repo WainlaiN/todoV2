@@ -2,30 +2,17 @@
 
 namespace App\Tests\Controller;
 
+use App\Controller\AbstractControllerTest;
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class TaskControllerTest extends WebTestCase
+class TaskControllerTest extends AbstractControllerTest
 {
-    public function login()
-    {
-        $client = static::createClient();
-        $userRepository = static::$container->get(UserRepository::class);
-        $basicUser = $userRepository->findOneByEmail('user@gmail.com');
 
-        $client->loginUser($basicUser);
-        return $client;
+    protected function setUp(): void
+    {
+        parent::setUp();
     }
 
-    public function loginAdmin()
-    {
-        $client = static::createClient();
-        $userRepository = static::$container->get(UserRepository::class);
-        $adminUser = $userRepository->findOneByEmail('admin@gmail.com');
-
-        $client->loginUser($adminUser);
-        return $client;
-    }
 
     public function testInvalidAccess()
     {
@@ -34,10 +21,10 @@ class TaskControllerTest extends WebTestCase
         $this->assertResponseRedirects("/login");
     }
 
-    public function testIndexAll()
+    public function testIndexAllTasks()
     {
-        $client = $this->login();
-        $client->request('GET', '/task/all');
+        $this->loginWithUser();
+        $this->client->request('GET', '/task/all');
         $this->assertResponseIsSuccessful();
     }
 

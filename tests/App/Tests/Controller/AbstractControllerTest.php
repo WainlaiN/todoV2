@@ -25,7 +25,7 @@ class AbstractControllerTest extends WebTestCase
             'password' => 'admin'
         ]);
 
-        //$this->client->submit($form);
+        $this->client->submit($form);
 
         $form['email']->setValue('admin@gmail.com');
         $form['password']->setValue('admin');

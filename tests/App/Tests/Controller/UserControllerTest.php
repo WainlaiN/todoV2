@@ -3,9 +3,7 @@
 namespace App\Tests\Controller;
 
 use App\Entity\User;
-use App\Repository\ResetPasswordRequestRepository;
 use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManager;
 
 class UserControllerTest extends AbstractControllerTest
 {

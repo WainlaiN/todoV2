@@ -3,6 +3,7 @@
 {% block body %}
     <div class="container">
         <section class="jumbotron shadow-lg p-3 m-5">
+            <h2 class="jumbotron-heading text-center">Éditer une tâche</h2>
             {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
             {{ form_row(form.title) }}
             {{ form_row(form.content) }}

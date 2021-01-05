@@ -38,5 +38,4 @@ class AbstractControllerTest extends WebTestCase
         $this->client->submit($form);
     }
 
-
 }

@@ -55,7 +55,7 @@ class UserControllerTest extends AbstractControllerTest
 
         $crawler = $this->client->followRedirect();
 
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
     }
 
@@ -80,7 +80,7 @@ class UserControllerTest extends AbstractControllerTest
 
         $crawler = $this->client->followRedirect();
 
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
 
     }

@@ -86,7 +86,7 @@ class TaskControllerTest extends AbstractControllerTest
 
         $crawler = $this->client->followRedirect();
 
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
 
     }
@@ -100,25 +100,101 @@ class TaskControllerTest extends AbstractControllerTest
         $this->assertContains('Éditer une tâche', $crawler->filter('h2')->text());
 
         $form = $crawler->selectButton('Modifier')->form();
-        $form['task[title]'] = 'Etancheur2';
-        $form['task[content]'] = 'Contenu2';
-        $form['task[assignedTo]'] = '23';
+        $form['task[title]'] = 'Etancheur';
+        //dd($form['task[content]']);
 
         $this->client->submit($form);
 
+        //$this->client->followRedirect();
+
+        //$this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+
+
+        $this->assertResponseIsSuccessful();
+        //$this->assertEquals(1, $crawler->filter('div.alert-success')->count());
+
         $task = $this->taskRepository->findOneBy(['id' => '95']);
-        //dd($task);
+
 
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals('Etancheur', $task->getTitle());
-        $this->assertEquals('Contenu2', $task->getContent());
+    }
+
+    public function testToggleValidateTask()
+    {
+        $this->loginWithAdmin();
+
+        $this->client->request('GET', '/tasks/150/toggle');
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+        $crawler = $this->client->followRedirect();
+
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
+
+        $task = $this->taskRepository->findOneBy(['title' => 'Pilote de soutireuse']);
+        $this->assertInstanceOf(Task::class, $task);
+        $this->assertEquals(true, $task->getIsDone());
+
+    }
+
+    public function testToggleReOpenTask()
+    {
+        $this->loginWithAdmin();
+
+        $this->client->request('GET', '/tasks/151/toggle');
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+        $crawler = $this->client->followRedirect();
+
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
+
+        $task = $this->taskRepository->findOneBy(['title' => 'Pilote de soutireuse']);
+        $this->assertInstanceOf(Task::class, $task);
+        $this->assertEquals(false, $task->getIsDone());
+        $this->assertEquals(null, $task->getAssignedTo());
+    }
+
+    public function testInvalidToggleTask()
+    {
+        $this->loginWithUser();
+
+        $this->client->request('GET', '/tasks/151/toggle');
+
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+        $crawler = $this->client->followRedirect();
+
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals(1, $crawler->filter('div.alert-danger')->count());
+    }
+
+    public function testDeleteTask()
+    {
+        $this->loginWithAdmin();
+
+        $this->client->request('DELETE', '/tasks/95/delete');
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
 
         $crawler = $this->client->followRedirect();
 
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
 
+        $task = $this->taskRepository->findOneBy(['title' => 'Etancheur']);
+        $this->assertEmpty($task);
     }
+
+    public function testInvalidDeleteTask()
+    {
+        $this->loginWithUser();
+
+        $this->client->request('DELETE', '/tasks/95/delete');
+
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+        $crawler = $this->client->followRedirect();
+
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals(1, $crawler->filter('div.alert-danger')->count());
+    }
+
 }

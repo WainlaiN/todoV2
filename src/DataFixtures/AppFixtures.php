@@ -8,7 +8,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Faker\Factory;
-use Faker\Generator;
 
 class AppFixtures extends Fixture
 {
@@ -21,7 +20,7 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $faker = \Faker\Factory::create('fr_FR');
+        $faker = Factory::create('fr_FR');
 
         $users = [];
 
@@ -30,6 +29,15 @@ class AppFixtures extends Fixture
         $user->setEmail("admin@gmail.com")
             ->setPassword($this->encoder->encodePassword($user, "admin"))
             ->setRoles(['ROLE_ADMIN']);
+
+        $manager->persist($user);
+        $users[] = $user;
+
+        // create Normal User for test
+        $user = new User();
+        $user->setEmail("user@gmail.com")
+            ->setPassword($this->encoder->encodePassword($user, "user"))
+            ->setRoles(['ROLE_USER']);
 
         $manager->persist($user);
         $users[] = $user;
@@ -54,7 +62,7 @@ class AppFixtures extends Fixture
             $users[] = $user;
         }
 
-        //create tasks todolist
+        //create tasks todo
         for ($j = 1; $j <= 30; $j++) {
             $task = new Task();
             $task->setTitle($faker->jobTitle)
@@ -66,28 +74,34 @@ class AppFixtures extends Fixture
             $manager->persist($task);
         }
 
-        //create tasks list in progress
+        //create tasks in progress
         for ($l = 1; $l <= 30; $l++) {
+            $dateCreated = $faker->dateTimeBetween('-1 years', 'now');
+            $dateAssigned = $faker->dateTimeBetween($dateCreated, 'now');
             $task = new Task();
             $task->setTitle($faker->jobTitle)
                 ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
                 ->setIsDone(false)
-                ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'))
+                ->setCreatedAt($dateCreated)
+                ->setAssignedAt($dateAssigned)
                 ->setUser($faker->randomElement($users))
                 ->setAssignedTo($faker->randomElement($users));
 
             $manager->persist($task);
         }
 
-        //create tasks list done
+        //create tasks done
         for ($k = 1; $k <= 30; $k++) {
+            $dateCreated = $faker->dateTimeBetween('-1 years', 'now');
+            $dateAssigned = $faker->dateTimeBetween($dateCreated, 'now');
             $task = new Task();
             $task->setTitle($faker->jobTitle)
                 ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
                 ->setIsDone(true)
                 ->setUser($faker->randomElement($users))
                 ->setAssignedTo($faker->randomElement($users))
-                ->setCreatedAt($faker->dateTimeBetween('-2 years', 'now'));
+                ->setCreatedAt($dateCreated)
+                ->setAssignedAt($dateAssigned);
 
             $manager->persist($task);
         }

@@ -23,11 +23,15 @@
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src</directory>
+            <directory suffix=".php">src/Controller</directory>
+            <directory suffix=".php">src/Entity</directory>
+            <directory suffix=".php">src/Security</directory>
+            <directory suffix=".php">src/Repository</directory>
         </whitelist>
     </filter>
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+        <listener class="\DAMA\DoctrineTestBundle\PHPUnit\PHPUnitListener" />
     </listeners>
 </phpunit>

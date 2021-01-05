@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TaskRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TaskRepository::class)
@@ -24,11 +25,13 @@ class Task
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private ?string $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private ?string $content;
 
@@ -47,6 +50,11 @@ class Task
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="assignedTasks")
      */
     private $assignedTo;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $AssignedAt;
 
     public function __construct()
     {
@@ -132,6 +140,18 @@ class Task
     public function setAssignedTo(?User $AssignedTo): self
     {
         $this->assignedTo = $AssignedTo;
+
+        return $this;
+    }
+
+    public function getAssignedAt(): ?\DateTimeInterface
+    {
+        return $this->AssignedAt;
+    }
+
+    public function setAssignedAt(?\DateTimeInterface $AssignedAt): self
+    {
+        $this->AssignedAt = $AssignedAt;
 
         return $this;
     }

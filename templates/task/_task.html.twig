@@ -22,18 +22,24 @@
                                         <div class="badge bg-success ml-2">
                                             Done
                                         </div>
+                                        <div class="widget-assigned">
+                                            validé par : {{ task.assignedTo }}
+                                        </div>
                                     {% elseif task.assignedTo %}
                                         <div class="badge bg-warning ml-2">
                                             In progress
                                         </div>
                                         <small><i class="far fa-clock"></i>
-                                            depuis {{ date( task.createdAt|date ).diff(date()).days }} jours</small>
+                                            depuis {{ date( task.assignedAt|date ).diff(date()).days }} jours</small>
                                         <div class="widget-assigned">
-                                            assigné à {{ task.assignedTo }}
+                                            assigné à : {{ task.assignedTo }}
                                         </div>
                                     {% else %}
                                         <div class="badge bg-danger ml-2">
                                             Todo
+                                        </div>
+                                        <div class="widget-assigned">
+                                            assigné à : <i>personne</i>
                                         </div>
                                     {% endif %}
                                 </div>

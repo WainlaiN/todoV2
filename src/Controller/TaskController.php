@@ -62,6 +62,7 @@ class TaskController extends AbstractController
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
+                'btn' => 'btnAll'
             ]
         );
 
@@ -86,6 +87,7 @@ class TaskController extends AbstractController
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
+                'btn' => 'btnTodo'
             ]
         );
 
@@ -110,6 +112,7 @@ class TaskController extends AbstractController
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
+                'btn' => 'btnDone'
             ]
         );
 
@@ -134,6 +137,7 @@ class TaskController extends AbstractController
             [
                 'controller_name' => 'TaskController',
                 'tasks' => $tasks,
+                'btn' => 'btnInProgress'
             ]
         );
 
@@ -147,7 +151,8 @@ class TaskController extends AbstractController
      */
     public function assignTask(Task $task): JsonResponse
     {
-        $task->setAssignedTo($this->getUser());
+        $task->setAssignedTo($this->getUser())
+            ->setAssignedAt(new \DateTime('NOW'));
 
         $this->manager->persist($task);
         $this->manager->flush();
@@ -192,26 +197,34 @@ class TaskController extends AbstractController
      */
     public function editAction(Task $task, Request $request): Response
     {
-        $form = $this->createForm(TaskType::class, $task);
+        if ($this->isGranted('edit', $task)) {
 
-        $form->handleRequest($request);
+            $form = $this->createForm(TaskType::class, $task);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+            $form->handleRequest($request);
 
-            $this->manager->flush();
+            if ($form->isSubmitted() && $form->isValid()) {
 
-            $this->addFlash('success', 'La tâche a bien été modifiée.');
+                $this->manager->flush();
 
-            return $this->redirectToRoute('task_list');
+                $this->addFlash('success', 'La tâche a bien été modifiée.');
+
+                return $this->redirectToRoute('task_list');
+            }
+
+            return $this->render(
+                'task/edit.html.twig',
+                [
+                    'form' => $form->createView(),
+                    'task' => $task,
+                ]
+            );
         }
 
-        return $this->render(
-            'task/edit.html.twig',
-            [
-                'form' => $form->createView(),
-                'task' => $task,
-            ]
-        );
+        $this->addFlash('error', 'Vous n\'avez pas le droit d\'editer cette tâche.');
+
+        return $this->redirectToRoute('task_list');
+
     }
 
     /**
@@ -225,7 +238,8 @@ class TaskController extends AbstractController
             if ($task->isDone()) {
 
                 $task->setIsDone(false)
-                    ->setAssignedTo(null);
+                    ->setAssignedTo(null)
+                    ->setAssignedAt(null);
 
                 $this->addFlash('success', sprintf('La tâche %s a été réinitialisé.', $task->getTitle()));
 

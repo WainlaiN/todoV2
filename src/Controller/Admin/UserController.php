@@ -144,9 +144,8 @@ class UserController extends AbstractController
     /**
      * @Route("/users/{id}/delete", name="user_delete")
      */
-    public function deleteUserAction(User $user, EntityManagerInterface $manager): Response
+    /**public function deleteUserAction(User $user, EntityManagerInterface $manager): Response
     {
-
 
         $manager->remove($user);
         $manager->flush();
@@ -156,7 +155,7 @@ class UserController extends AbstractController
         return $this->redirectToRoute('user_list');
 
 
-    }
+    }**/
 
 
 }

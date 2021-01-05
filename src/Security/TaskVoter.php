@@ -15,6 +15,7 @@ class TaskVoter extends Voter
 {
     const DELETE = 'delete';
     const VALIDATE = 'validate';
+    const EDIT = 'edit';
 
     private SessionInterface $session;
 
@@ -29,7 +30,7 @@ class TaskVoter extends Voter
     protected function supports(string $attribute, $subject)
     {
         // if the attribute isn't one we support, return false
-        if (!in_array($attribute, [self::DELETE, self::VALIDATE])) {
+        if (!in_array($attribute, [self::DELETE, self::VALIDATE, self::EDIT])) {
             return false;
         }
 
@@ -59,6 +60,8 @@ class TaskVoter extends Voter
                 return $this->canDelete($task, $user);
             case self::VALIDATE:
                 return $this->canValidate($task, $user);
+            case self::EDIT:
+                return $this->canEdit($task, $user);
 
         }
         throw new \LogicException('Vous n\'avez pas accès à cette fonction');
@@ -73,5 +76,10 @@ class TaskVoter extends Voter
     private function canValidate(Task $task, User $user)
     {
         return ($user === $task->getAssignedTo() || $this->security->isGranted('ROLE_ADMIN'));
+    }
+
+    private function canEdit(Task $task, User $user)
+    {
+        return ($user === $task->getAssignedTo() || $this->security->isGranted('ROLE_ADMIN') || $user === $task->getUser());
     }
 }

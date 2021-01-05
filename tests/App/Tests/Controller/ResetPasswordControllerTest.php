@@ -52,7 +52,11 @@ class ResetPasswordControllerTest extends AbstractControllerTest
 
         $this->assertEmpty($user);
 
-        $this->assertResponseRedirects("/reset-password");
+        $crawler = $this->client->followRedirect();
+
+        //$this->assertResponseRedirects("/reset-password");
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals(1, $crawler->filter('div.alert-danger')->count());
     }
 
 

@@ -6,6 +6,8 @@
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Controller/TaskControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Controller/TaskControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/ResetPasswordController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/ResetPasswordController.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" afterDir="false" />
@@ -229,7 +231,7 @@
       <workItem from="1609753860994" duration="4086000" />
       <workItem from="1609768901623" duration="1618000" />
       <workItem from="1609772725491" duration="11227000" />
-      <workItem from="1609836520010" duration="1493000" />
+      <workItem from="1609836520010" duration="2488000" />
     </task>
     <servers />
   </component>
@@ -245,10 +247,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609786729028" />
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609787815570">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609839114215">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609787815570" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609839114215" />
     <state x="675" y="347" width="570" height="588" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1608026328404">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -282,9 +284,9 @@
     </state>
     <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607441186459" />
     <state x="2381" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1608141365937" />
-    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1609786406009">
+    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1609838761832">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609786406009" />
+    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609838761832" />
   </component>
 </project>

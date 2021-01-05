@@ -238,7 +238,8 @@ class TaskController extends AbstractController
             if ($task->isDone()) {
 
                 $task->setIsDone(false)
-                    ->setAssignedTo(null);
+                    ->setAssignedTo(null)
+                    ->setAssignedAt(null);
 
                 $this->addFlash('success', sprintf('La tâche %s a été réinitialisé.', $task->getTitle()));
 

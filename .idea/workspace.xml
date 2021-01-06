@@ -7,8 +7,6 @@
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/App/Tests/Controller/ResetPasswordControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Controller/ResetPasswordControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Controller/UserControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Controller/UserControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Repository/UserRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Repository/UserRepositoryTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +216,7 @@
       <workItem from="1609768901623" duration="1618000" />
       <workItem from="1609772725491" duration="11227000" />
       <workItem from="1609836520010" duration="27944000" />
-      <workItem from="1609920770731" duration="4470000" />
+      <workItem from="1609920770731" duration="9677000" />
     </task>
     <servers />
   </component>
@@ -279,10 +277,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609856005180" />
-    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1609865525948">
+    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1609938033573">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609865525948" />
+    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609938033573" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/todoV2@TaskControllerTest.xml" NAME="TaskControllerTest Coverage Results" MODIFIED="1609856011333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

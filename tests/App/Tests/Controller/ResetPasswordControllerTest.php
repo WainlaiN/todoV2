@@ -59,5 +59,4 @@ class ResetPasswordControllerTest extends AbstractControllerTest
         $this->assertEquals(1, $crawler->filter('div.alert-danger')->count());
     }
 
-
 }

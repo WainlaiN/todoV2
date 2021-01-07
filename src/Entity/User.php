@@ -160,7 +160,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function removeTask(Task $task): self
+    /**public function removeTask(Task $task): self
     {
         if ($this->tasks->removeElement($task)) {
             // set the owning side to null (unless already changed)
@@ -170,7 +170,7 @@ class User implements UserInterface
         }
 
         return $this;
-    }
+    }**/
 
     public function __toString()
     {

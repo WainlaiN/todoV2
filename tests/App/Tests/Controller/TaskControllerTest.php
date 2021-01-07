@@ -100,10 +100,14 @@ class TaskControllerTest extends AbstractControllerTest
         $this->assertContains('Éditer une tâche', $crawler->filter('h2')->text());
 
         $form = $crawler->selectButton('Modifier')->form();
-        $form['task[title]'] = 'Etancheur';
+        $form['task[title]'] = '';
         //dd($form['task[content]']);
 
         $this->client->submit($form);
+
+        $error = self::$container->get('validator')->validate($form);
+
+        dd($error);
 
         //$this->client->followRedirect();
 
@@ -117,7 +121,7 @@ class TaskControllerTest extends AbstractControllerTest
 
 
         $this->assertInstanceOf(Task::class, $task);
-        $this->assertEquals('Etancheur', $task->getTitle());
+        $this->assertEquals('Etancheur2', $task->getTitle());
     }
 
     public function testToggleValidateTask()

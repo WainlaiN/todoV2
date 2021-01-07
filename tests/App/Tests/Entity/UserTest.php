@@ -118,6 +118,17 @@ class UserTest extends AbstractEntityTest
         $this->assertCount("3", $tasks);
     }
 
+    public function testUpgradePassword()
+    {
+        $user = $this->getDatabaseUser();
+        $newPassword = "new";
+
+        $userRepository = static::$container->get(UserRepository::class);
+        $userRepository->upgradePassword($user, $newPassword);
+
+        $this->assertEquals($newPassword, $user->getPassword());
+    }
+
     /**
      * @doesNotPerformAssertions
      */

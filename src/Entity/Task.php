@@ -41,7 +41,7 @@ class Task
     private ?bool $isDone = false;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tasks" ,cascade={"persist"}))
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tasks" ,cascade={"persist"}, fetch="EAGER")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;

@@ -190,6 +190,9 @@ class ResetPasswordController extends AbstractController
 
             return $this->redirectToRoute('app_check_email');
         }
+
+        $this->addFlash('error', 'Cet utilisateur n\'existe pas.');
+
         return $this->redirectToRoute('app_forgot_password_request');
 
     }

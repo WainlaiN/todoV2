@@ -8,8 +8,7 @@ use App\Repository\UserRepository;
 class UserControllerTest extends AbstractControllerTest
 {
 
-    /** @var UserRepository */
-    protected $userRepository;
+    protected UserRepository $userRepository;
 
     protected function setUp(): void
     {

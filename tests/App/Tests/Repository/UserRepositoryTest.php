@@ -3,16 +3,15 @@
 namespace App\Tests\Repository;
 
 
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use App\Repository\UserRepository;
 
 
 class UserRepositoryTest extends KernelTestCase
 {
-    /**
-     * @var \Doctrine\ORM\EntityManager
-     */
-    private $entityManager;
+
+    private EntityManager $entityManager;
 
     protected function setUp(): void
     {
@@ -28,5 +27,8 @@ class UserRepositoryTest extends KernelTestCase
         $users = self::$container->get(UserRepository::class)->count([]);
         $this->assertEquals(23, $users);
     }
+
+
+
 
 }

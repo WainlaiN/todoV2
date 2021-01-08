@@ -7,29 +7,9 @@ namespace App\Tests\Entity;
 use App\Entity\Task;
 use App\Entity\User;
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class UserTest extends KernelTestCase
+class UserTest extends AbstractEntityTest
 {
-
-    private function getEntity(): User
-    {
-        return (new User())
-            ->setEmail("test@test.com")
-            ->setRoles(['ROLE_USER'])
-            ->setPassword('password');
-    }
-
-    private function addTaskToEntity(): User
-    {
-        $user = $this->getEntity();
-        $task = (new Task())
-            ->setTitle("title")
-            ->setContent("content");
-
-        return $user->addTask($task);
-    }
-
     private function getDatabaseUser(): User
     {
         self::bootKernel();
@@ -37,14 +17,6 @@ class UserTest extends KernelTestCase
         $basicUser = $userRepository->findOneByEmail('user@gmail.com');
 
         return $basicUser;
-    }
-
-    private function assertHasErrors(User $user, int $number = 0)
-    {
-        self::bootKernel();
-        $error = self::$container->get('validator')->validate($user);
-        $this->assertCount($number, $error);
-
     }
 
     public function testGetIdUser()
@@ -55,59 +27,59 @@ class UserTest extends KernelTestCase
 
     public function testValidUser()
     {
-        $this->assertHasErrors($this->getEntity(), 0);
+        $this->assertUserHasErrors($this->getEntityUser(), 0);
 
     }
 
     public function testInvalidEmailUser()
     {
-        $this->assertHasErrors($this->getEntity()->setEmail("testtest.com"), 1);
+        $this->assertUserHasErrors($this->getEntityUser()->setEmail("testtest.com"), 1);
     }
 
     public function testValidEmailUser()
     {
-        $emailToTest = $this->getEntity()->getEmail();
+        $emailToTest = $this->getEntityUser()->getEmail();
         $this->assertSame($emailToTest, filter_var($emailToTest, FILTER_VALIDATE_EMAIL));
     }
 
 
     public function testValidPasswordUser()
     {
-        $this->assertHasErrors($this->getEntity()->setPassword("password"), 0);
+        $this->assertUserHasErrors($this->getEntityUser()->setPassword("password"), 0);
     }
 
     public function testInValidPasswordUser()
     {
-        $this->assertHasErrors($this->getEntity()->setPassword("pass"), 1);
+        $this->assertUserHasErrors($this->getEntityUser()->setPassword("pass"), 1);
     }
 
     public function testGetPasswordUser()
     {
-        $this->assertEquals("password", $this->getEntity()->getPassword());
+        $this->assertEquals("password", $this->getEntityUser()->getPassword());
     }
 
     public function testInvalidUsernameUser()
     {
-        $this->assertHasErrors($this->getEntity()->setEmail("testtest.com"), 1);
+        $this->assertUserHasErrors($this->getEntityUser()->setEmail("testtest.com"), 1);
     }
 
     public function testValidUsernameUser()
     {
-        $emailToTest = $this->getEntity()->getUsername();
+        $emailToTest = $this->getEntityUser()->getUsername();
         $this->assertSame($emailToTest, filter_var($emailToTest, FILTER_VALIDATE_EMAIL));
     }
 
     public function testValidRoleUser()
     {
-        $this->assertSame(['ROLE_USER'], $this->getEntity()->getRoles());
+        $this->assertSame(['ROLE_USER'], $this->getEntityUser()->getRoles());
 
     }
 
     public function testAddTaskUser()
     {
         $task = new Task();
-        $this->assertHasErrors(
-            $this->getEntity()
+        $this->assertUserHasErrors(
+            $this->getEntityUser()
                 ->addTask($task),
             0
         );
@@ -116,26 +88,20 @@ class UserTest extends KernelTestCase
 
     public function testGetTaskUser()
     {
-        $user = $this->addTaskToEntity();
+        $user = $this->getEntityUser()->addTask($this->getEntityTask());
         /** @var Task $task */
         $task = $user->getTasks()[0];
-        $this->assertEquals("title", $task->getTitle());
-        $this->assertEquals("content", $task->getContent());
-
-
+        $this->assertEquals("titre", $task->getTitle());
+        $this->assertEquals("contenu", $task->getContent());
     }
 
-    public function testRemoveTaskUser()
+    public function testRemoveAssignedTaskUser()
     {
-        $task = new Task();
-        $this->getEntity()->addTask($task);
-        $task->setUser($this->getEntity());
-        $this->assertHasErrors($this->getEntity()->removeTask($task), 0);
-        $task->setUser(null);
-        $this->assertEquals(null, $task->getUser());
-
+        $user = $this->getDatabaseUser();
+        $tasks = $user->getAssignedTasks();
+        $user->removeAssignedTask($tasks[0]);
+        $this->assertCount("2", $tasks);
     }
-
 
     public function testAddAssignedTaskUser()
     {
@@ -152,12 +118,15 @@ class UserTest extends KernelTestCase
         $this->assertCount("3", $tasks);
     }
 
-    public function testRemoveAssignedTaskUser()
+    public function testUpgradePassword()
     {
         $user = $this->getDatabaseUser();
-        $tasks = $user->getAssignedTasks();
-        $user->removeAssignedTask($tasks[0]);
-        $this->assertCount("2", $tasks);
+        $newPassword = "new";
+
+        $userRepository = static::$container->get(UserRepository::class);
+        $userRepository->upgradePassword($user, $newPassword);
+
+        $this->assertEquals($newPassword, $user->getPassword());
     }
 
     /**

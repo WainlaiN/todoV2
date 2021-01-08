@@ -24,7 +24,13 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src/Controller</directory>
+            <exclude>
+                <file>src/Controller/Admin/ResetPasswordController.php</file>
+            </exclude>
             <directory suffix=".php">src/Entity</directory>
+            <exclude>
+                <file>src/Entity/ResetPasswordRequest.php</file>
+            </exclude>
             <directory suffix=".php">src/Security</directory>
             <directory suffix=".php">src/Repository</directory>
         </whitelist>

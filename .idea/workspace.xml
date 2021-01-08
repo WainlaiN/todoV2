@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35c0f74a-249f-48f9-b5f3-fe348068dd8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/App/Tests/Controller/ResetPasswordControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 3" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/ResetPasswordController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/ResetPasswordController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Task.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/index.html" afterDir="false" />
@@ -17,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/TaskController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/TaskController.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/ResetPasswordRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/ResetPasswordRequest.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/Task.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/Task.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/User.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/User.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/dashboard.html" afterDir="false" />
@@ -68,14 +67,11 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
       <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/vendor/ocramius/proxy-manager" />
       <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
@@ -158,6 +154,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/vendor/dama/doctrine-test-bundle" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lLGnaBYdvn12GSbcvOWstQ1NCT" />
@@ -241,7 +241,10 @@
       <workItem from="1609753860994" duration="4086000" />
       <workItem from="1609768901623" duration="1618000" />
       <workItem from="1609772725491" duration="11227000" />
-      <workItem from="1609836520010" duration="25834000" />
+      <workItem from="1609836520010" duration="27944000" />
+      <workItem from="1609920770731" duration="9721000" />
+      <workItem from="1610024605778" duration="7870000" />
+      <workItem from="1610124112893" duration="4366000" />
     </task>
     <servers />
   </component>
@@ -257,10 +260,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609786729028" />
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609862534038">
+    <state x="645" y="216" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610028818273">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609862534038" />
+    <state x="645" y="216" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610028818273" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610028971103">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610028971103" />
     <state x="675" y="347" width="570" height="588" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1608026328404">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -269,26 +276,26 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609857277389" />
-    <state width="1877" height="352" key="GridCell.Tab.0.bottom" timestamp="1609857556925">
+    <state width="1877" height="352" key="GridCell.Tab.0.bottom" timestamp="1609868187778">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609857556925" />
-    <state width="1877" height="352" key="GridCell.Tab.0.center" timestamp="1609857556925">
+    <state width="1877" height="352" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609868187778" />
+    <state width="1877" height="352" key="GridCell.Tab.0.center" timestamp="1609868187778">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609857556925" />
-    <state width="1877" height="352" key="GridCell.Tab.0.left" timestamp="1609857556925">
+    <state width="1877" height="352" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609868187778" />
+    <state width="1877" height="352" key="GridCell.Tab.0.left" timestamp="1609868187778">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609857556925" />
-    <state width="1877" height="352" key="GridCell.Tab.0.right" timestamp="1609857556925">
+    <state width="1877" height="352" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609868187778" />
+    <state width="1877" height="352" key="GridCell.Tab.0.right" timestamp="1609868187778">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609857556925" />
-    <state x="788" y="247" key="NewPhpClassDialog" timestamp="1609861834602">
+    <state width="1877" height="352" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609868187778" />
+    <state x="788" y="247" key="NewPhpClassDialog" timestamp="1610028716547">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="788" y="247" key="NewPhpClassDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609861834602" />
+    <state x="788" y="247" key="NewPhpClassDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610028716547" />
     <state x="794" y="448" key="NewPhpFileDialog" timestamp="1609860872818">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -298,14 +305,18 @@
     </state>
     <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609857284725" />
     <state x="2381" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1608141365937" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1610031440383">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610031440383" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1609856005180">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609856005180" />
-    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1609865001527">
+    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1610124776618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609865001527" />
+    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610124776618" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/todoV2@TaskControllerTest.xml" NAME="TaskControllerTest Coverage Results" MODIFIED="1609856011333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

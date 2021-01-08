@@ -105,6 +105,10 @@ class TaskControllerTest extends AbstractControllerTest
 
         $this->client->submit($form);
 
+        //$error = self::$container->get('validator')->validate($form);
+
+        //dd($error);
+
         //$this->client->followRedirect();
 
         //$this->assertEquals(302, $this->client->getResponse()->getStatusCode());
@@ -118,6 +122,17 @@ class TaskControllerTest extends AbstractControllerTest
 
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals('Etancheur', $task->getTitle());
+    }
+
+    public function testCantEdit()
+    {
+        $this->loginWithUser();
+        $this->client->request('GET', 'tasks/95/edit');
+
+        $crawler = $this->client->followRedirect();
+
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals(1, $crawler->filter('div.alert-danger')->count());
     }
 
     public function testToggleValidateTask()

@@ -5,42 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../Projet 3" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Task.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/.css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/.css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/.css/octicons.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/.css/octicons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/.css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/.css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/.js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/.js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/.js/d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/.js/d3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/.js/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/.js/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/.js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/.js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/.js/nv.d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/.js/nv.d3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/.js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/.js/popper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/DefaultController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/DefaultController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/SecurityController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/SecurityController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/TaskController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/TaskController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/Task.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/Task.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/User.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/User.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/ResetPasswordRequestRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/ResetPasswordRequestRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/TaskRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/TaskRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/UserRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/UserRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/LoginFormAuthenticator.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/LoginFormAuthenticator.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/TaskVoter.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/TaskVoter.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,9 +144,9 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todooriginal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Bilemo" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -257,7 +222,7 @@
       <workItem from="1610380626568" duration="2111000" />
       <workItem from="1610384490793" duration="1716000" />
       <workItem from="1610386963137" duration="30000" />
-      <workItem from="1610895724757" duration="681000" />
+      <workItem from="1610895724757" duration="4916000" />
     </task>
     <servers />
   </component>
@@ -285,10 +250,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="675" y="347" width="570" height="588" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608026328404" />
-    <state x="770" y="377" key="FileChooserDialogImpl" timestamp="1610385606866">
+    <state x="770" y="377" key="FileChooserDialogImpl" timestamp="1610897135105">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610385606866" />
+    <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610897135105" />
     <state width="1877" height="352" key="GridCell.Tab.0.bottom" timestamp="1609868187778">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -313,10 +278,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="794" y="448" key="NewPhpFileDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609860872818" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1610384539956">
+    <state x="461" y="169" key="SettingsEditor" timestamp="1610899336575">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610384539956" />
+    <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610899336575" />
     <state x="2381" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1608141365937" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1610031440383">
       <screen x="0" y="0" width="1920" height="1050" />

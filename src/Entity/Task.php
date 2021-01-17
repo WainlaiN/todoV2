@@ -47,7 +47,7 @@ class Task
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="assignedTasks")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="assignedTasks", fetch="EAGER")
      */
     private $assignedTo;
 

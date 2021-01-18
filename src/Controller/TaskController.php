@@ -24,7 +24,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class TaskController extends AbstractController
 {
-    const LIMIT = 6;
+    private const LIMIT = 6;
     private PaginatorInterface $paginator;
 
     private EntityManagerInterface $manager;

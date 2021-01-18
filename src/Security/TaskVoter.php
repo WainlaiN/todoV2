@@ -11,9 +11,9 @@ use Symfony\Component\Security\Core\Security;
 
 class TaskVoter extends Voter
 {
-    const DELETE = 'delete';
-    const VALIDATE = 'validate';
-    const EDIT = 'edit';
+    private const DELETE = 'delete';
+    private const VALIDATE = 'validate';
+    private const EDIT = 'edit';
 
     private SessionInterface $session;
 

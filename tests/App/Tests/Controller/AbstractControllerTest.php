@@ -13,7 +13,6 @@ abstract class AbstractControllerTest extends WebTestCase
     protected function setUp(): void
     {
         $this->client = static::createClient();
-        self::bootKernel();
     }
 
     public function loginWithAdmin(): void

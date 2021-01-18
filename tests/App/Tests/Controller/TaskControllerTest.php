@@ -25,7 +25,16 @@ class TaskControllerTest extends AbstractControllerTest
 
     public function testIndexAllTasks()
     {
-        $this->loginWithAdmin();
+        $crawler = $this->client->request('GET', '/login');
+        $form = $crawler->selectButton('Se connecter')->form();
+
+        $form['email']->setValue('admin@gmail.com');
+        $form['password']->setValue('admin');
+
+        $this->client->submit($form);
+
+        $this->client->followRedirect();
+
         $this->client->request('GET', '/task/all');
         $this->assertResponseIsSuccessful();
     }

@@ -24,7 +24,6 @@ abstract class AbstractControllerTest extends WebTestCase
         $form['password']->setValue('admin');
 
         $this->client->submit($form);
-
     }
 
     public function loginWithUser(): void

@@ -20,7 +20,6 @@
     <testsuites>
         <testsuite name="Project Test Suite">
             <directory>tests</directory>
-            <exclude>./App/Tests/Controller/AbstractControllerTest.php</exclude>
         </testsuite>
     </testsuites>
 

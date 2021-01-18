@@ -15,8 +15,6 @@
         <server name="SYMFONY_PHPUNIT_VERSION" value="7.5" />
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="disabled" />
 
-        <env name="BOOTSTRAP_RESET_DATABASE" value="1" />
-        <env name="DATABASE_URL" value="mysql:///%kernel.project_dir%/var/test.db"/>
     </php>
 
     <testsuites>

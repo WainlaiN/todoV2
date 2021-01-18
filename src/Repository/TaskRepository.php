@@ -60,5 +60,4 @@ class TaskRepository extends ServiceEntityRepository
             ->setMaxResults(10)
             ->getQuery();
     }
-
 }

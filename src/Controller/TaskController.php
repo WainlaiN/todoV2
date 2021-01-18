@@ -223,7 +223,6 @@ class TaskController extends AbstractController
     public function toggleTaskAction(Task $task): Response
     {
         if ($this->isGranted('validate', $task)) {
-
             if ($task->isDone()) {
                 $task->setIsDone(false)
                     ->setAssignedTo(null)
@@ -232,7 +231,6 @@ class TaskController extends AbstractController
                 $this->addFlash('success', sprintf('La tâche %s a été réinitialisé.', $task->getTitle()));
             } else {
                 $task->setIsDone(true);
-
                 $this->addFlash('success', sprintf('La tâche %s a été marqué comme validé.', $task->getTitle()));
             }
 
@@ -253,7 +251,6 @@ class TaskController extends AbstractController
         if ($this->isGranted('delete', $task)) {
             $this->manager->remove($task);
             $this->manager->flush();
-
             $this->addFlash('success', 'La tâche a bien été supprimée.');
 
             return $this->redirectToRoute('task_list');

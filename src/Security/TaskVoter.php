@@ -60,7 +60,6 @@ class TaskVoter extends Voter
                 return $this->canValidate($task, $user);
             case self::EDIT:
                 return $this->canEdit($task, $user);
-
         }
         throw new \LogicException('Vous n\'avez pas accès à cette fonction');
     }

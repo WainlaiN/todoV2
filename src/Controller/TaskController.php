@@ -24,7 +24,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class TaskController extends AbstractController
 {
-
     const LIMIT = 6;
     private PaginatorInterface $paginator;
 
@@ -193,12 +192,10 @@ class TaskController extends AbstractController
     public function editAction(Task $task, Request $request): Response
     {
         if ($this->isGranted('edit', $task)) {
-
             $form = $this->createForm(TaskType::class, $task);
 
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
-
                 $this->manager->flush();
 
                 $this->addFlash('success', 'La tâche a bien été modifiée.');
@@ -229,7 +226,6 @@ class TaskController extends AbstractController
         if ($this->isGranted('validate', $task)) {
 
             if ($task->isDone()) {
-
                 $task->setIsDone(false)
                     ->setAssignedTo(null)
                     ->setAssignedAt(null);
@@ -237,11 +233,9 @@ class TaskController extends AbstractController
                 $this->addFlash('success', sprintf('La tâche %s a été réinitialisé.', $task->getTitle()));
 
             } else {
-
                 $task->setIsDone(true);
 
                 $this->addFlash('success', sprintf('La tâche %s a été marqué comme validé.', $task->getTitle()));
-
             }
 
             $this->manager->flush();

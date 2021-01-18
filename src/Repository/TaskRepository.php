@@ -24,7 +24,6 @@ class TaskRepository extends ServiceEntityRepository
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
             ->getQuery();
-
     }
 
     public function findAllDone()
@@ -34,7 +33,6 @@ class TaskRepository extends ServiceEntityRepository
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
             ->getQuery();
-
     }
 
     public function findAllInProgress()
@@ -48,7 +46,6 @@ class TaskRepository extends ServiceEntityRepository
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
             ->getQuery();
-
     }
 
     public function findAllTodo()
@@ -62,7 +59,6 @@ class TaskRepository extends ServiceEntityRepository
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
             ->getQuery();
-
     }
 
 }

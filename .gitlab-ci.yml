@@ -8,8 +8,8 @@ cache:
     - vendor/
 
 stages:
-  #- SecurityChecker
-  #- CodingStandards
+  - SecurityChecker
+  - CodingStandards
   - UnitTests
 
 security-checker:

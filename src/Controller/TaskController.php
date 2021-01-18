@@ -222,7 +222,6 @@ class TaskController extends AbstractController
      */
     public function toggleTaskAction(Task $task): Response
     {
-
         if ($this->isGranted('validate', $task)) {
 
             if ($task->isDone()) {
@@ -231,7 +230,6 @@ class TaskController extends AbstractController
                     ->setAssignedAt(null);
 
                 $this->addFlash('success', sprintf('La tâche %s a été réinitialisé.', $task->getTitle()));
-
             } else {
                 $task->setIsDone(true);
 
@@ -247,14 +245,12 @@ class TaskController extends AbstractController
         return $this->redirectToRoute('task_list');
     }
 
-
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      */
     public function deleteTaskAction(Task $task): Response
     {
         if ($this->isGranted('delete', $task)) {
-
             $this->manager->remove($task);
             $this->manager->flush();
 

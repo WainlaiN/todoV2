@@ -52,7 +52,7 @@ phpunit:
     - apt-get update && apt-get install -y git libzip-dev
     - curl -sSk https://getcomposer.org/installer | php -- --disable-tls && mv composer.phar /usr/local/bin/composer
       - docker-php-ext-install mysqli pdo pdo_mysql zip
-      #- php bin/console doctrine:database:drop --force --env=test
+      - php bin/console doctrine:database:drop --force --env=test
       - php bin/console doctrine:database:create --env=test
       - php bin/console doctrine:schema:update --force --env=test
       #- php bin/console doctrine:migration:migrate --env=test --no-interaction

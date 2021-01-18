@@ -78,6 +78,8 @@ class TaskVoter extends Voter
     {
         return ($user === $task->getAssignedTo()
             || $this->security->isGranted(
-        	'ROLE_ADMIN')
-            || $user === $task->getUser());}
+                'ROLE_ADMIN'
+            )
+            || $user === $task->getUser());
+    }
 }

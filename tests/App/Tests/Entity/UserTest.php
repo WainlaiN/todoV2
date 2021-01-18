@@ -100,7 +100,7 @@ class UserTest extends AbstractEntityTest
         $user = $this->getDatabaseUser();
         $tasks = $user->getAssignedTasks();
         $user->removeAssignedTask($tasks[0]);
-        $this->assertCount("2", $tasks);
+        $this->assertCount("1", $tasks);
     }
 
     public function testAddAssignedTaskUser()
@@ -115,7 +115,7 @@ class UserTest extends AbstractEntityTest
     {
         $user = $this->getDatabaseUser();
         $tasks = $user->getAssignedTasks();
-        $this->assertCount("3", $tasks);
+        $this->assertCount("2", $tasks);
     }
 
     public function testUpgradePassword()

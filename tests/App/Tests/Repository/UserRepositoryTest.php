@@ -28,7 +28,4 @@ class UserRepositoryTest extends KernelTestCase
         $this->assertEquals(23, $users);
     }
 
-
-
-
 }

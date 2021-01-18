@@ -33,7 +33,7 @@ class ResetPasswordControllerTest extends AbstractControllerTest
         $user = $this->userRepository->findOneBy(['email' => 'user@gmail.com']);
 
         $this->assertInstanceOf(User::class, $user);
-        $this->assertEquals($user->getEmail(),'user@gmail.com' );
+        $this->assertEquals($user->getEmail(), 'user@gmail.com');
     }
 
     public function testInvalidRequestResetPassword()

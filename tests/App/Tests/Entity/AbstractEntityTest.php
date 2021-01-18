@@ -8,7 +8,7 @@ use App\Entity\Task;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class AbstractEntityTest extends KernelTestCase
+abstract class AbstractEntityTest extends KernelTestCase
 {
     public function assertTaskHasErrors(Task $task, int $number = 0)
     {

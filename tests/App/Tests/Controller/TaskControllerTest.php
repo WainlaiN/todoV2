@@ -55,9 +55,9 @@ class TaskControllerTest extends AbstractControllerTest
     {
         $this->loginWithUser();
 
-        $this->client->request('POST', '/task/assign/91');
+        $this->client->request('POST', '/task/assign/1');
 
-        $taskToAssign = $this->taskRepository->findOneBy(['id' => 91]);
+        $taskToAssign = $this->taskRepository->findOneBy(['id' => 1]);
 
         $this->assertEquals($taskToAssign->getAssignedTo(), "user@gmail.com");
     }
@@ -94,40 +94,28 @@ class TaskControllerTest extends AbstractControllerTest
     public function testEditTask()
     {
         $this->loginWithAdmin();
-        $crawler = $this->client->request('GET', 'tasks/95/edit');
+        $crawler = $this->client->request('GET', 'tasks/1/edit');
         $this->assertResponseIsSuccessful();
 
         $this->assertContains('Éditer une tâche', $crawler->filter('h2')->text());
 
         $form = $crawler->selectButton('Modifier')->form();
-        $form['task[title]'] = 'Etancheur';
-        //dd($form['task[content]']);
+        $form['task[title]'] = 'Solier-moquettiste';
 
         $this->client->submit($form);
 
-        //$error = self::$container->get('validator')->validate($form);
-
-        //dd($error);
-
-        //$this->client->followRedirect();
-
-        //$this->assertEquals(302, $this->client->getResponse()->getStatusCode());
-
-
         $this->assertResponseIsSuccessful();
-        //$this->assertEquals(1, $crawler->filter('div.alert-success')->count());
 
-        $task = $this->taskRepository->findOneBy(['id' => '95']);
-
+        $task = $this->taskRepository->findOneBy(['id' => '1']);
 
         $this->assertInstanceOf(Task::class, $task);
-        $this->assertEquals('Etancheur', $task->getTitle());
+        $this->assertEquals('Solier-moquettiste', $task->getTitle());
     }
 
     public function testCantEdit()
     {
         $this->loginWithUser();
-        $this->client->request('GET', 'tasks/95/edit');
+        $this->client->request('GET', 'tasks/1/edit');
 
         $crawler = $this->client->followRedirect();
 
@@ -139,14 +127,14 @@ class TaskControllerTest extends AbstractControllerTest
     {
         $this->loginWithAdmin();
 
-        $this->client->request('GET', '/tasks/150/toggle');
+        $this->client->request('GET', '/tasks/33/toggle');
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
         $crawler = $this->client->followRedirect();
 
         $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
 
-        $task = $this->taskRepository->findOneBy(['title' => 'Pilote de soutireuse']);
+        $task = $this->taskRepository->findOneBy(['id' => 33]);
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals(true, $task->getIsDone());
 
@@ -156,14 +144,14 @@ class TaskControllerTest extends AbstractControllerTest
     {
         $this->loginWithAdmin();
 
-        $this->client->request('GET', '/tasks/151/toggle');
+        $this->client->request('GET', '/tasks/61/toggle');
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
         $crawler = $this->client->followRedirect();
 
         $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
 
-        $task = $this->taskRepository->findOneBy(['title' => 'Pilote de soutireuse']);
+        $task = $this->taskRepository->findOneBy(['id' => 61]);
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals(false, $task->getIsDone());
         $this->assertEquals(null, $task->getAssignedTo());
@@ -173,7 +161,7 @@ class TaskControllerTest extends AbstractControllerTest
     {
         $this->loginWithUser();
 
-        $this->client->request('GET', '/tasks/151/toggle');
+        $this->client->request('GET', '/tasks/31/toggle');
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
         $crawler = $this->client->followRedirect();
@@ -186,7 +174,7 @@ class TaskControllerTest extends AbstractControllerTest
     {
         $this->loginWithAdmin();
 
-        $this->client->request('DELETE', '/tasks/95/delete');
+        $this->client->request('DELETE', '/tasks/8/delete');
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
 
@@ -195,7 +183,7 @@ class TaskControllerTest extends AbstractControllerTest
         $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
 
-        $task = $this->taskRepository->findOneBy(['title' => 'Etancheur']);
+        $task = $this->taskRepository->findOneBy(['id' => 8]);
         $this->assertEmpty($task);
     }
 
@@ -203,7 +191,7 @@ class TaskControllerTest extends AbstractControllerTest
     {
         $this->loginWithUser();
 
-        $this->client->request('DELETE', '/tasks/95/delete');
+        $this->client->request('DELETE', '/tasks/1/delete');
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
         $crawler = $this->client->followRedirect();

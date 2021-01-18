@@ -61,18 +61,18 @@ class UserControllerTest extends AbstractControllerTest
     public function testEditAction()
     {
         $this->loginWithAdmin();
-        $crawler = $this->client->request('GET', 'admin/users/26/edit');
+        $crawler = $this->client->request('GET', 'admin/users/4/edit');
         $this->assertResponseIsSuccessful();
 
         $form = $crawler->selectButton('Modifier')->form();
-        $form['user[email]'] = 'renault.georges2@orange.fr';
+        $form['user[email]'] = 'tperon2@nicolas.fr';
         $form['user[roles]'] = 'ROLE_ADMIN';
 
         $this->client->submit($form);
 
-        $user = $this->userRepository->findOneBy(['email' => 'renault.georges2@orange.fr']);
+        $user = $this->userRepository->findOneBy(['email' => 'tperon2@nicolas.fr']);
         $this->assertInstanceOf(User::class, $user);
-        $this->assertEquals('renault.georges2@orange.fr', $user->getEmail());
+        $this->assertEquals('tperon2@nicolas.fr', $user->getEmail());
         $this->assertEquals('ROLE_ADMIN', $user->getRoles()[0]);
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());

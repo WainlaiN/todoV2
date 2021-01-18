@@ -19,7 +19,8 @@ class TaskControllerTest extends AbstractControllerTest
 
     public function testInvalidAccess()
     {
-        $this->client->request('GET', '/task/all');
+        $client2 = static::createClient()
+        $client2->request('GET', '/task/all');
         $this->assertResponseRedirects("/login");
     }
 

@@ -59,6 +59,7 @@ phpunit:
     - php bin/console doctrine:database:create --env=test
     - php bin/console doctrine:migration:migrate --env=test --no-interaction
     - php bin/console doctrine:fixtures:load -n --env=test
+    - yarn build
   script:
     - php bin/phpunit --filter testHomepage
   allow_failure: false

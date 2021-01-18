@@ -5,38 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../Projet 3" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Controller/ResetPasswordControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Controller/ResetPasswordControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Controller/TaskControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Controller/TaskControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Controller/UserControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Controller/UserControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Entity/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Entity/UserTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Tests/Repository/UserRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Tests/Repository/UserRepositoryTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/UserController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/Admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/DefaultController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/DefaultController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/SecurityController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/SecurityController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/TaskController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/TaskController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/Task.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/Task.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/User.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/User.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Entity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Entity/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/ResetPasswordRequestRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/ResetPasswordRequestRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/TaskRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/TaskRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/UserRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/UserRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Repository/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Repository/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/LoginFormAuthenticator.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/LoginFormAuthenticator.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/TaskVoter.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/TaskVoter.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/Security/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Security/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test-coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +146,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bin/php/php7.4.12/php.exe" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -219,6 +188,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Utilisateur\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="35c0f74a-249f-48f9-b5f3-fe348068dd8b" name="Default Changelist" comment="" />
@@ -254,7 +226,9 @@
       <workItem from="1610384490793" duration="1716000" />
       <workItem from="1610386963137" duration="30000" />
       <workItem from="1610895724757" duration="11220000" />
-      <workItem from="1610960912309" duration="7392000" />
+      <workItem from="1610960912309" duration="8730000" />
+      <workItem from="1610973150108" duration="722000" />
+      <workItem from="1610977526754" duration="821000" />
     </task>
     <servers />
   </component>
@@ -274,10 +248,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609786729028" />
-    <state x="645" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610970960179">
+    <state x="645" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610971568091">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="645" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610970960179" />
+    <state x="645" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610971568091" />
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610028971103">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -290,22 +264,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610962519825" />
-    <state width="1877" height="359" key="GridCell.Tab.0.bottom" timestamp="1610962542788">
+    <state width="1877" height="359" key="GridCell.Tab.0.bottom" timestamp="1610973140188">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="359" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610962542788" />
-    <state width="1877" height="359" key="GridCell.Tab.0.center" timestamp="1610962542788">
+    <state width="1877" height="359" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610973140188" />
+    <state width="1877" height="359" key="GridCell.Tab.0.center" timestamp="1610973140188">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="359" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610962542788" />
-    <state width="1877" height="359" key="GridCell.Tab.0.left" timestamp="1610962542788">
+    <state width="1877" height="359" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610973140188" />
+    <state width="1877" height="359" key="GridCell.Tab.0.left" timestamp="1610973140188">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="359" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610962542788" />
-    <state width="1877" height="359" key="GridCell.Tab.0.right" timestamp="1610962542788">
+    <state width="1877" height="359" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610973140188" />
+    <state width="1877" height="359" key="GridCell.Tab.0.right" timestamp="1610973140188">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="359" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610962542788" />
+    <state width="1877" height="359" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610973140188" />
     <state x="788" y="247" key="NewPhpClassDialog" timestamp="1610028716547">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -314,10 +288,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="794" y="448" key="NewPhpFileDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609860872818" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1610962523782">
+    <state x="461" y="169" key="SettingsEditor" timestamp="1610973867628">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610962523782" />
+    <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610973867628" />
     <state x="2381" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1608141365937" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1610031440383">
       <screen x="0" y="0" width="1920" height="1050" />

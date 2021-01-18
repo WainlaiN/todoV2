@@ -50,14 +50,13 @@ phpunit:
     DATABASE_URL: 'mysql://runner:password@mysql:3306/todo_test'
   before_script:
     - apt-get update && apt-get install -y git libzip-dev
-    - curl -sSk https://getcomposer.org/installer | php -- --disable-tls && mv composer.phar /usr/local/bin/composer
+    - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer
     - docker-php-ext-install mysqli pdo pdo_mysql zip
     - php bin/console doctrine:database:drop --force --env=test
     - php bin/console doctrine:database:create --env=test
     - php bin/console doctrine:migration:migrate --env=test --no-interaction
     - php bin/console doctrine:fixtures:load -n --env=test
   script:
-    - yarn build
     - php bin/phpunit --filter TaskControllerTest
   allow_failure: false
 

@@ -40,7 +40,7 @@ class TaskTest extends AbstractEntityTest
         $this->assertTaskHasErrors($this->getEntityTask()->setAssignedAt(new \DateTime()), 0);
     }
 
-    public function testVIsDoneTask()
+    public function testIsDoneTask()
     {
         $task = $this->getEntityTask()->setIsDone(true);
         $this->assertEquals(true, $task->getIsDone());

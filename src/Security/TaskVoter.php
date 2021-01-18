@@ -76,10 +76,6 @@ class TaskVoter extends Voter
 
     private function canEdit(Task $task, User $user)
     {
-        return ($user === $task->getAssignedTo()
-            || $this->security->isGranted(
-                'ROLE_ADMIN'
-            )
-            || $user === $task->getUser());
-    }
+        return ($user === $task->getAssignedTo() || $this->security->isGranted(
+                'ROLE_ADMIN') || $user === $task->getUser());}
 }

@@ -5,7 +5,9 @@ before_script:
 
 cache:
   paths:
+    - node_modules/
     - vendor/
+    - var/.phpcs-cache
 
 stages:
   - SecurityChecker
@@ -48,6 +50,7 @@ phpunit:
     MYSQL_USER: runner
     MYSQL_PASSWORD: password
     DATABASE_URL: 'mysql://runner:password@mysql:3306/todo_test'
+    APP_DEBUG: 0
   before_script:
     - apt-get update && apt-get install -y git libzip-dev
     - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer

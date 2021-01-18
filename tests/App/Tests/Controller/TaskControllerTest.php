@@ -26,6 +26,7 @@ class TaskControllerTest extends AbstractControllerTest
     public function testIndexAllTasks()
     {
         $this->loginWithAdmin();
+        $this->client->followRedirect();
         $this->client->request('GET', '/task/all');
         $this->assertResponseIsSuccessful();
     }

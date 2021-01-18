@@ -53,16 +53,14 @@ phpunit:
     APP_DEBUG: 0
   before_script:
     - apt-get update && apt-get install -y git libzip-dev
-    - apt-get install yarn
     - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer
     - docker-php-ext-install mysqli pdo pdo_mysql zip
     - php bin/console doctrine:database:drop --force --env=test
     - php bin/console doctrine:database:create --env=test
     - php bin/console doctrine:migration:migrate --env=test --no-interaction
     - php bin/console doctrine:fixtures:load -n --env=test
-    - yarn build
   script:
-    - php bin/phpunit --filter TaskControllerTest
+    - php bin/phpunit --filter testHomepage
   allow_failure: false
 
 

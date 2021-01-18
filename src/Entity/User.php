@@ -88,7 +88,7 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
     /**
@@ -115,7 +115,7 @@ class User implements UserInterface
      */
     public function getPassword(): string
     {
-        return (string) $this->password;
+        return (string)$this->password;
     }
 
     public function setPassword(string $password): self
@@ -161,16 +161,16 @@ class User implements UserInterface
     }
 
     /**public function removeTask(Task $task): self
-    {
-        if ($this->tasks->removeElement($task)) {
-            // set the owning side to null (unless already changed)
-            if ($task->getUser() === $this) {
-                $task->setUser(null);
-            }
-        }
-
-        return $this;
-    }**/
+     * {
+     * if ($this->tasks->removeElement($task)) {
+     * // set the owning side to null (unless already changed)
+     * if ($task->getUser() === $this) {
+     * $task->setUser(null);
+     * }
+     * }
+     *
+     * return $this;
+     * }**/
 
     public function __toString()
     {
@@ -206,6 +206,4 @@ class User implements UserInterface
 
         return $this;
     }
-
-
 }

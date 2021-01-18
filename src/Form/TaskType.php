@@ -27,7 +27,6 @@ class TaskType extends AbstractType
                 'content',
                 TextareaType::class,
                 ['label' => 'Contenu']
-
             )
             ->add(
                 'assignedTo'

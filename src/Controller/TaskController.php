@@ -65,7 +65,6 @@ class TaskController extends AbstractController
                 'btn' => 'btnAll'
             ]
         );
-
     }
 
     /**
@@ -90,7 +89,6 @@ class TaskController extends AbstractController
                 'btn' => 'btnTodo'
             ]
         );
-
     }
 
     /**
@@ -115,7 +113,6 @@ class TaskController extends AbstractController
                 'btn' => 'btnDone'
             ]
         );
-
     }
 
     /**
@@ -140,7 +137,6 @@ class TaskController extends AbstractController
                 'btn' => 'btnInProgress'
             ]
         );
-
     }
 
     /**
@@ -178,7 +174,6 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $task->setUser($user);
 
             $this->manager->persist($task);
@@ -202,7 +197,6 @@ class TaskController extends AbstractController
             $form = $this->createForm(TaskType::class, $task);
 
             $form->handleRequest($request);
-
             if ($form->isSubmitted() && $form->isValid()) {
 
                 $this->manager->flush();
@@ -224,7 +218,6 @@ class TaskController extends AbstractController
         $this->addFlash('error', 'Vous n\'avez pas le droit d\'editer cette tâche.');
 
         return $this->redirectToRoute('task_list');
-
     }
 
     /**
@@ -279,7 +272,5 @@ class TaskController extends AbstractController
         $this->addFlash('error', 'Vous n\'avez pas le droit de supprimer cette tâche.');
 
         return $this->redirectToRoute('task_list');
-
     }
-
 }

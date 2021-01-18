@@ -60,7 +60,7 @@ phpunit:
     - php bin/console doctrine:migration:migrate --env=test --no-interaction
     - php bin/console doctrine:fixtures:load -n --env=test
   script:
-    - php bin/phpunit --filter TaskTest
+    - php bin/phpunit --filter TaskControllerTest
   allow_failure: false
 
 

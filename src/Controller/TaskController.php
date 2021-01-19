@@ -195,6 +195,7 @@ class TaskController extends AbstractController
             $form = $this->createForm(TaskType::class, $task);
 
             $form->handleRequest($request);
+
             if ($form->isSubmitted() && $form->isValid()) {
                 $this->manager->flush();
 
@@ -202,7 +203,6 @@ class TaskController extends AbstractController
 
                 return $this->redirectToRoute('task_list');
             }
-
             return $this->render(
                 'task/edit.html.twig',
                 [

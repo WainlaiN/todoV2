@@ -5,6 +5,7 @@ namespace App\Tests\Controller;
 
 use App\Entity\Task;
 use App\Repository\TaskRepository;
+use App\Repository\UserRepository;
 
 class TaskControllerTest extends AbstractControllerTest
 {
@@ -100,16 +101,24 @@ class TaskControllerTest extends AbstractControllerTest
         $this->assertContains('Éditer une tâche', $crawler->filter('h2')->text());
 
         $form = $crawler->selectButton('Modifier')->form();
-        $form['task[title]'] = 'Solier-moquettiste';
+        $form['task[title]'] = 'Tache de test';
+        $form['task[content]'] = 'Contenu de test';
 
         $this->client->submit($form);
 
-        $this->assertResponseIsSuccessful();
-
-        $task = $this->taskRepository->findOneBy(['id' => '1']);
+        $task = $this->taskRepository->findOneById('1');
 
         $this->assertInstanceOf(Task::class, $task);
-        $this->assertEquals('Solier-moquettiste', $task->getTitle());
+        $this->assertEquals('Tache de test', $task->getTitle());
+        $this->assertEquals('Contenu de test', $task->getContent());
+
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+
+        $crawler = $this->client->followRedirect();
+
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
+
     }
 
     public function testCantEdit()

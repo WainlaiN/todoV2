@@ -47,8 +47,7 @@ AssetsBuild:
     - npm install --global yarn@1.22.5
   script:
     - yarn
-    - yarn encore dev
-    - echo "{}" > /builds/WainlaiN/todov2/public/build/manifest.json
+    - yarn encore dev-server --hot
 
 phpunit:
   image: php:7.4-apache

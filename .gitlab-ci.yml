@@ -1,14 +1,19 @@
 image: jakzal/phpqa:php7.4
+
 before_script:
   -  composer install
+
 cache:
   paths:
+    - node_modules/
     - vendor/
+    - var/.phpcs-cache
+    - node_modules/
 
 stages:
   - SecurityChecker
   - CodingStandards
-  - Build
+  - AssetsBuild
   - UnitTests
 
 security-checker:
@@ -35,21 +40,17 @@ twig-lint:
     - twig-lint lint ./templates
   allow_failure: false
 
-build:
-  stage: Build
+AssetsBuild:
+  stage: AssetsBuild
   image: node:10.13.0
-  cache:
-    paths:
-      - node_modules/
+  before_script:
+    - npm install --global yarn@1.22.5
   script:
-    - ./node_modules/.bin/encore production
-  artifacts:
-    name: "assets"
-    paths:
-      - public/build/
+    - yarn
+    - yarn encore dev
 
 phpunit:
-  image: edbizarro/gitlab-ci-pipeline-php:7.4-alpine
+  image: php:7.4-apache
   stage: UnitTests
   services:
     - name: mysql:5.7

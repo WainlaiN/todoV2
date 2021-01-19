@@ -6,6 +6,7 @@ namespace App\Tests\Controller;
 use App\Entity\Task;
 use App\Repository\TaskRepository;
 use App\Repository\UserRepository;
+use http\Client\Curl\User;
 
 class TaskControllerTest extends AbstractControllerTest
 {
@@ -89,7 +90,6 @@ class TaskControllerTest extends AbstractControllerTest
 
         $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
-
     }
 
     public function testEditTask()
@@ -118,7 +118,6 @@ class TaskControllerTest extends AbstractControllerTest
 
         $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
-
     }
 
     public function testCantEdit()
@@ -183,7 +182,9 @@ class TaskControllerTest extends AbstractControllerTest
     {
         $this->loginWithAdmin();
 
-        $this->client->request('DELETE', '/tasks/8/delete');
+        $taskToDelete = $this->taskRepository->findOneBy(['user' => 1]);
+
+        $this->client->request('DELETE', '/tasks/' . $taskToDelete->getId() . '/delete');
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
 
@@ -192,7 +193,7 @@ class TaskControllerTest extends AbstractControllerTest
         $this->assertResponseIsSuccessful();
         $this->assertEquals(1, $crawler->filter('div.alert-success')->count());
 
-        $task = $this->taskRepository->findOneBy(['id' => 8]);
+        $task = $this->taskRepository->findOneBy(['id' => $taskToDelete->getId()]);
         $this->assertEmpty($task);
     }
 

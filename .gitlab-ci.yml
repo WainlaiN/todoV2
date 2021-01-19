@@ -1,8 +1,6 @@
 image: jakzal/phpqa:php7.4
-
 before_script:
   -  composer install
-
 cache:
   paths:
     - node_modules/
@@ -13,7 +11,6 @@ cache:
 stages:
   - SecurityChecker
   - CodingStandards
-  - AssetsBuild
   - UnitTests
 
 security-checker:
@@ -40,21 +37,10 @@ twig-lint:
     - twig-lint lint ./templates
   allow_failure: false
 
-AssetsBuild:
-  stage: AssetsBuild
-  image: node:10.13.0
-  before_script:
-    - npm install --global yarn@1.22.5
-  script:
-    - composer install
-    - yarn
-    - yarn add --dev @symfony/webpack-encore
-    - yarn add webpack-notifier --dev
-    - yarn encore dev
-    - bin/console assets:install
+
 
 phpunit:
-  image: php:7.4-apache
+  image: edbizarro/gitlab-ci-pipeline-php:7.4-alpine
   stage: UnitTests
   services:
     - name: mysql:5.7
@@ -67,6 +53,8 @@ phpunit:
     DATABASE_URL: 'mysql://runner:password@mysql:3306/todo_test'
     APP_DEBUG: 0
   before_script:
+    - yarn install
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress
     - apt-get update && apt-get install -y git libzip-dev
     - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer
     - docker-php-ext-install mysqli pdo pdo_mysql zip

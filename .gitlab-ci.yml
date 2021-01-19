@@ -46,7 +46,7 @@ AssetsBuild:
   before_script:
     - npm install --global yarn@1.22.5
   script:
-    - yarn
+    - encore dev
 
 
 

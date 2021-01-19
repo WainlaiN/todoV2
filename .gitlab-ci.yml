@@ -47,10 +47,9 @@ AssetsBuild:
     - npm install --global yarn@1.22.5
   script:
     - yarn
-    - yarn build
-    - ./node_modules/.bin/encore dev
-
-
+    - yarn add --dev @symfony/webpack-encore
+    - yarn add webpack-notifier --dev
+    - yarn encore dev
 
 phpunit:
   image: php:7.4-apache

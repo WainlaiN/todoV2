@@ -65,7 +65,7 @@ phpunit:
   before_script:
     - apt-get update && apt-get install -y git libzip-dev
     - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer
-    - php composer.phar
+    - composer install
     - docker-php-ext-install mysqli pdo pdo_mysql zip
     - php bin/console doctrine:database:drop --force --env=test
     - php bin/console doctrine:database:create --env=test

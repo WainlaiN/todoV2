@@ -48,7 +48,7 @@ AssetsBuild:
   script:
     - yarn
     - yarn encore dev
-    - echo "{}" > ./public/build/manifest.json
+    - echo "{}" > /builds/WainlaiN/todov2/public/build/manifest.json
 
 phpunit:
   image: php:7.4-apache

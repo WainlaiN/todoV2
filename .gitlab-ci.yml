@@ -48,6 +48,7 @@ AssetsBuild:
   script:
     - yarn
     - yarn build
+    - ./node_modules/.bin/encore dev
 
 
 

@@ -12,7 +12,9 @@
 
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        {% if app.environment != 'test' %}
         {{ encore_entry_link_tags('app') }}
+        {% endif %}
     {% endblock %}
 </head>
 
@@ -70,7 +72,9 @@
 
 {% block javascripts %}
     <script src="{{ asset('build/app.js') }}"></script>
+    {% if app.environment != 'test' %}
     {{ encore_entry_script_tags('app') }}
+    {% endif %}
 {% endblock %}
 </body>
 </html>

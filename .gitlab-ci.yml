@@ -13,6 +13,7 @@ cache:
 stages:
   - SecurityChecker
   - CodingStandards
+  - AssetsBuild
   - UnitTests
 
 security-checker:
@@ -38,6 +39,16 @@ twig-lint:
   script:
     - twig-lint lint ./templates
   allow_failure: false
+
+AssetsBuild:
+  stage: AssetsBuild
+  image: node:9.4.0
+  before_script:
+    - yarn install
+  script:
+    - yarn build
+
+
 
 phpunit:
   image: php:7.4-apache

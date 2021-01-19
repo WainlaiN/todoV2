@@ -42,11 +42,11 @@ twig-lint:
 
 AssetsBuild:
   stage: AssetsBuild
-  image: node:9.4.0
+  image: node:10.13.0
   before_script:
     - npm install --global yarn@1.22.5
   script:
-    - encore dev
+    - yarn
 
 
 

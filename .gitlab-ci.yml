@@ -3,14 +3,12 @@ before_script:
   -  composer install
 cache:
   paths:
-    - node_modules/
     - vendor/
-    - var/.phpcs-cache
-    - node_modules/
 
 stages:
   - SecurityChecker
   - CodingStandards
+  - Build
   - UnitTests
 
 security-checker:
@@ -37,7 +35,18 @@ twig-lint:
     - twig-lint lint ./templates
   allow_failure: false
 
-
+build:
+  stage: Build
+  image: node:10.13.0
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - ./node_modules/.bin/encore production
+  artifacts:
+    name: "assets"
+    paths:
+      - public/build/
 
 phpunit:
   image: edbizarro/gitlab-ci-pipeline-php:7.4-alpine
@@ -53,8 +62,6 @@ phpunit:
     DATABASE_URL: 'mysql://runner:password@mysql:3306/todo_test'
     APP_DEBUG: 0
   before_script:
-    - yarn install
-    - composer install --prefer-dist --no-ansi --no-interaction --no-progress
     - apt-get update && apt-get install -y git libzip-dev
     - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer
     - docker-php-ext-install mysqli pdo pdo_mysql zip

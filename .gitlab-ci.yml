@@ -50,6 +50,7 @@ AssetsBuild:
     - yarn add --dev @symfony/webpack-encore
     - yarn add webpack-notifier --dev
     - yarn encore dev
+    - php bin/console assets:install
 
 phpunit:
   image: php:7.4-apache

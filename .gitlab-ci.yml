@@ -47,6 +47,7 @@ AssetsBuild:
     - npm install --global yarn@1.22.5
   script:
     - yarn
+    - yarn build
 
 
 

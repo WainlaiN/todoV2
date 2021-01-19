@@ -71,6 +71,7 @@ phpunit:
     - php bin/console doctrine:migration:migrate --env=test --no-interaction
     - php bin/console doctrine:fixtures:load -n --env=test
   script:
+    - echo "{}" > /public/build/manifest.json
     - php bin/phpunit
   allow_failure: false
 

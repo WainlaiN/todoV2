@@ -40,7 +40,7 @@ twig-lint:
   allow_failure: false
 
 phpunit:
-  image: php:7.4-apache
+  image: edbizarro/gitlab-ci-pipeline-php:7.4-alpine
   stage: UnitTests
   services:
     - name: mysql:5.7

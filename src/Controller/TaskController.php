@@ -33,6 +33,7 @@ class TaskController extends AbstractController
      * TaskController constructor.
      *
      * @param PaginatorInterface $paginator
+     * @param EntityManagerInterface $manager
      */
     public function __construct(PaginatorInterface $paginator, EntityManagerInterface $manager)
     {
@@ -70,6 +71,7 @@ class TaskController extends AbstractController
      * @Route("/task/todo", name="task_list_todo")
      *
      * @param TaskRepository $repo
+     * @param Request $request
      * @return Response
      */
     public function indexTodo(TaskRepository $repo, Request $request): Response
@@ -94,6 +96,7 @@ class TaskController extends AbstractController
      * @Route("/task/done", name="task_list_done")
      *
      * @param TaskRepository $repo
+     * @param Request $request
      * @return Response
      */
     public function indexDone(TaskRepository $repo, Request $request): Response
@@ -118,6 +121,7 @@ class TaskController extends AbstractController
      * @Route("/task/inprogress", name="task_list_progress")
      *
      * @param TaskRepository $repo
+     * @param Request $request
      * @return Response
      */
     public function indexInProgress(TaskRepository $repo, Request $request): Response
@@ -161,6 +165,9 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/create", name="task_create")
      * @IsGranted("ROLE_USER")
+     *
+     * @param Request $request
+     * @return Response
      */
     public function createAction(Request $request): Response
     {
@@ -186,8 +193,13 @@ class TaskController extends AbstractController
         return $this->render('task/create.html.twig', ['form' => $form->createView()]);
     }
 
+
     /**
      * @Route("/tasks/{id}/edit", name="task_edit")
+     *
+     * @param Task $task
+     * @param Request $request
+     * @return Response
      */
     public function editAction(Task $task, Request $request): Response
     {
@@ -217,8 +229,12 @@ class TaskController extends AbstractController
         return $this->redirectToRoute('task_list');
     }
 
+
     /**
      * @Route("/tasks/{id}/toggle", name="task_toggle")
+     *
+     * @param Task $task
+     * @return Response
      */
     public function toggleTaskAction(Task $task): Response
     {

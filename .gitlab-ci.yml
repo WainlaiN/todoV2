@@ -39,8 +39,23 @@ twig-lint:
     - twig-lint lint ./templates
   allow_failure: false
 
+AssetsBuild:
+  stage: AssetsBuild
+  image: node:10.13.0
+  before_script:
+    - npm install --global yarn@1.22.5
+  script:
+    - yarn
+    - yarn add --dev @symfony/webpack-encore
+    - yarn add webpack-notifier --dev
+    - yarn encore dev
+  artifacts:
+    name: "assets"
+    paths:
+      - public/build/
+
 phpunit:
-  image: edbizarro/gitlab-ci-pipeline-php:7.4-alpine
+  image: php:7.4-apache
   stage: UnitTests
   services:
     - name: mysql:5.7
@@ -53,9 +68,8 @@ phpunit:
     DATABASE_URL: 'mysql://runner:password@mysql:3306/todo_test'
   before_script:
     - apt-get update && apt-get install -y git libzip-dev
-    - composer install --prefer-dist --no-ansi --no-interaction --no-progress
-    - yarn install
-    - yarn encore dev
+    - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer
+    - composer install
     - docker-php-ext-install mysqli pdo pdo_mysql zip
     - php bin/console doctrine:database:drop --force --env=test
     - php bin/console doctrine:database:create --env=test
@@ -63,6 +77,8 @@ phpunit:
     - php bin/console doctrine:fixtures:load -n --env=test
   script:
     - php bin/phpunit
+  dependencies:
+    - AssetsBuild
   allow_failure: false
 
 

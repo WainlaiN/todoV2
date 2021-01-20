@@ -52,6 +52,7 @@ AssetsBuild:
     name: "assets"
     paths:
       - public/build/
+    expire_in: 1 hour
 
 phpunit:
   image: php:7.4-apache

@@ -53,8 +53,7 @@ phpunit:
     DATABASE_URL: 'mysql://runner:password@mysql:3306/todo_test'
   before_script:
     - apt-get update && apt-get install -y git libzip-dev
-    - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer
-    - composer install
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress
     - yarn install
     - yarn encore dev
     - docker-php-ext-install mysqli pdo pdo_mysql zip

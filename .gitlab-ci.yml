@@ -13,6 +13,7 @@ cache:
 stages:
   - SecurityChecker
   - CodingStandards
+  - AssetsBuild
   - UnitTests
 
 security-checker:

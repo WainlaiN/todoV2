@@ -154,7 +154,8 @@ class ResetPasswordController extends AbstractController
         );
 
         // Marks that you are allowed to see the app_check_email page.
-        $this->setCanCheckEmailInSession();
+        //$this->setCanCheckEmailInSession();
+        $this->setTokenObjectInSession();
 
         // Do not reveal whether a user account was found or not.
         if ($user) {

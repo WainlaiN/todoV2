@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35c0f74a-249f-48f9-b5f3-fe348068dd8b" name="Default Changelist" comment="" />
+    <list default="true" id="35c0f74a-249f-48f9-b5f3-fe348068dd8b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prod" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +141,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todoTEST" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todooriginal" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -249,6 +252,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610999049731" />
+    <state x="912" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1611141931614">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="912" y="231" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611141931614" />
     <state x="645" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610971568091">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -261,10 +268,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="675" y="347" width="570" height="588" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608026328404" />
-    <state x="770" y="377" key="FileChooserDialogImpl" timestamp="1611136455153">
+    <state x="770" y="377" key="FileChooserDialogImpl" timestamp="1611143553511">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611136455153" />
+    <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611143553511" />
     <state width="1877" height="359" key="GridCell.Tab.0.bottom" timestamp="1611090212230">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

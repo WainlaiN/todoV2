@@ -86,7 +86,7 @@ class UserController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-            $this->addFlash('success', "L'utilisateur a bien été ajouté.");
+            $this->addFlash('success', "L'utilisateur a bien été ajouté et l'email envoyé");
 
             //generate token and send email for new password
             $resetToken = $resetPasswordHelper->generateResetToken($user);
@@ -94,7 +94,7 @@ class UserController extends AbstractController
                 ->from(new Address('nicodupblog@gmail.com', 'Todo List'))
                 ->to($user->getEmail())
                 ->subject('Generation de votre mot de passe')
-                ->htmlTemplate('reset_password/email.html.twig')
+                ->htmlTemplate('reset_password/generate_password.html.twig')
                 ->context(
                     [
                         'resetToken' => $resetToken,

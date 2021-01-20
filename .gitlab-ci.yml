@@ -13,7 +13,6 @@ cache:
 stages:
   - SecurityChecker
   - CodingStandards
-  - AssetsBuild
   - UnitTests
 
 security-checker:
@@ -63,11 +62,12 @@ phpunit:
     MYSQL_USER: runner
     MYSQL_PASSWORD: password
     DATABASE_URL: 'mysql://runner:password@mysql:3306/todo_test'
-    APP_DEBUG: 0
   before_script:
     - apt-get update && apt-get install -y git libzip-dev
     - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer
     - composer install
+    - yarn install
+    - yarn encore dev
     - docker-php-ext-install mysqli pdo pdo_mysql zip
     - php bin/console doctrine:database:drop --force --env=test
     - php bin/console doctrine:database:create --env=test

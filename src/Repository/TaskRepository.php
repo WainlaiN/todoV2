@@ -18,77 +18,43 @@ class TaskRepository extends ServiceEntityRepository
         parent::__construct($registry, Task::class);
     }
 
-    public function findAll (){
+    public function findAll()
+    {
         return $this->createQueryBuilder('t')
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
-            ->getQuery()
-            ;
-
+            ->getQuery();
     }
 
-    public function findAllDone (){
+    public function findAllDone()
+    {
         return $this->createQueryBuilder('t')
             ->andWhere('t.isDone = true')
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
-            ->getQuery()
-            ;
-
+            ->getQuery();
     }
 
-    public function findAllInProgress (){
-        $qb = $this->createQueryBuilder('t');
-        return $qb
+    public function findAllInProgress()
+    {
+        return $this->createQueryBuilder('t')
             ->andWhere('t.isDone = false')
             ->andWhere('t.assignedTo != :val')
             ->setParameter('val', 'null')
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
-            ->getQuery()
-            ;
-
+            ->getQuery();
     }
 
-    public function findAllTodo (){
+    public function findAllTodo()
+    {
+        $qb = $this->createQueryBuilder('t');
 
-        $qb =$this->createQueryBuilder('t');
         return $this->createQueryBuilder('t')
             ->where('t.isDone = false')
             ->andWhere($qb->expr()->isNull('t.assignedTo'))
             ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(10)
-            ->getQuery()
-            ;
-
+            ->getQuery();
     }
-
-    // /**
-    //  * @return Task[] Returns an array of Task objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Task
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

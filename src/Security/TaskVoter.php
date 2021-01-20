@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Security;
-
 
 use App\Entity\Task;
 use App\Entity\User;
@@ -13,9 +11,9 @@ use Symfony\Component\Security\Core\Security;
 
 class TaskVoter extends Voter
 {
-    const DELETE = 'delete';
-    const VALIDATE = 'validate';
-    const EDIT = 'edit';
+    private const DELETE = 'delete';
+    private const VALIDATE = 'validate';
+    private const EDIT = 'edit';
 
     private SessionInterface $session;
 
@@ -62,10 +60,8 @@ class TaskVoter extends Voter
                 return $this->canValidate($task, $user);
             case self::EDIT:
                 return $this->canEdit($task, $user);
-
         }
         throw new \LogicException('Vous n\'avez pas accès à cette fonction');
-
     }
 
     private function canDelete(Task $task, User $user)
@@ -80,6 +76,10 @@ class TaskVoter extends Voter
 
     private function canEdit(Task $task, User $user)
     {
-        return ($user === $task->getAssignedTo() || $this->security->isGranted('ROLE_ADMIN') || $user === $task->getUser());
+        return (
+            $user === $task->getAssignedTo()
+            || $this->security->isGranted('ROLE_ADMIN')
+            || $user === $task->getUser()
+        );
     }
 }

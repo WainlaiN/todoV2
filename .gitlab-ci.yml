@@ -1,1 +1,80 @@
-test
+image: jakzal/phpqa:php7.4
+
+before_script:
+  -  composer install
+
+cache:
+  paths:
+    - node_modules/
+    - vendor/
+    - var/.phpcs-cache
+    - node_modules/
+
+stages:
+  - SecurityChecker
+  - CodingStandards
+  - AssetsBuild
+  - UnitTests
+
+security-checker:
+  stage: SecurityChecker
+  script:
+    - security-checker security:check composer.lock
+  allow_failure: false
+
+phpcs:
+  stage: CodingStandards
+  script:
+    - phpcs -v --standard=PSR12 --ignore=./src/Kernel.php ./src
+  allow_failure: false
+
+phpstan:
+  stage: CodingStandards
+  script:
+    - phpstan analyse ./src
+  allow_failure: false
+
+twig-lint:
+  stage: CodingStandards
+  script:
+    - twig-lint lint ./templates
+  allow_failure: false
+
+AssetsBuild:
+  stage: AssetsBuild
+  image: node:10.13.0
+  before_script:
+    - npm install --global yarn@1.22.5
+  script:
+    - yarn
+    - yarn add --dev @symfony/webpack-encore
+    - yarn add webpack-notifier --dev
+    - yarn encore dev
+
+phpunit:
+  image: php:7.4-apache
+  stage: UnitTests
+  services:
+    - name: mysql:5.7
+      alias: mysql
+  variables:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_DATABASE: todo_test
+    MYSQL_USER: runner
+    MYSQL_PASSWORD: password
+    DATABASE_URL: 'mysql://runner:password@mysql:3306/todo_test'
+    APP_DEBUG: 0
+  before_script:
+    - apt-get update && apt-get install -y git libzip-dev
+    - curl -sSk https://getcomposer.org/installer | php -- && mv composer.phar /usr/local/bin/composer
+    - composer install
+    - docker-php-ext-install mysqli pdo pdo_mysql zip
+    - php bin/console doctrine:database:drop --force --env=test
+    - php bin/console doctrine:database:create --env=test
+    - php bin/console doctrine:migration:migrate --env=test --no-interaction
+    - php bin/console doctrine:fixtures:load -n --env=test
+  script:
+    - php bin/phpunit
+  allow_failure: false
+
+

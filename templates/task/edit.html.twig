@@ -7,19 +7,22 @@
             {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
             {{ form_row(form.title) }}
             {{ form_row(form.content) }}
+            {{ form_row(form._token) }}
             {% if is_granted('ROLE_ADMIN') %}
-            {{ form_row(form.assignedTo) }}
+                {{ form_row(form.assignedTo) }}
             {% endif %}
 
             <p>Auteur : {{ task.user }}</p>
 
 
             <button type="submit" class="btn btn-success pull-right m-2">Modifier</button>
+            <a href="{{ path('task_list') }}" class="btn btn-primary">Retour à la liste des tâches</a>
         </section>
 
         <div id="divCheckbox" style="display: none;">
-            {{ form_rest(form) }}
+
         </div>
+        {{ form_end(form) }}
 
 
     </div>

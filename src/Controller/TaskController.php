@@ -24,8 +24,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class TaskController extends AbstractController
 {
-
-    const LIMIT = 6;
+    private const LIMIT = 6;
     private PaginatorInterface $paginator;
 
     private EntityManagerInterface $manager;
@@ -65,7 +64,6 @@ class TaskController extends AbstractController
                 'btn' => 'btnAll'
             ]
         );
-
     }
 
     /**
@@ -90,7 +88,6 @@ class TaskController extends AbstractController
                 'btn' => 'btnTodo'
             ]
         );
-
     }
 
     /**
@@ -115,7 +112,6 @@ class TaskController extends AbstractController
                 'btn' => 'btnDone'
             ]
         );
-
     }
 
     /**
@@ -140,7 +136,6 @@ class TaskController extends AbstractController
                 'btn' => 'btnInProgress'
             ]
         );
-
     }
 
     /**
@@ -178,7 +173,6 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $task->setUser($user);
 
             $this->manager->persist($task);
@@ -198,20 +192,17 @@ class TaskController extends AbstractController
     public function editAction(Task $task, Request $request): Response
     {
         if ($this->isGranted('edit', $task)) {
-
             $form = $this->createForm(TaskType::class, $task);
 
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-
                 $this->manager->flush();
 
                 $this->addFlash('success', 'La tâche a bien été modifiée.');
 
                 return $this->redirectToRoute('task_list');
             }
-
             return $this->render(
                 'task/edit.html.twig',
                 [
@@ -224,7 +215,6 @@ class TaskController extends AbstractController
         $this->addFlash('error', 'Vous n\'avez pas le droit d\'editer cette tâche.');
 
         return $this->redirectToRoute('task_list');
-
     }
 
     /**
@@ -232,23 +222,16 @@ class TaskController extends AbstractController
      */
     public function toggleTaskAction(Task $task): Response
     {
-
         if ($this->isGranted('validate', $task)) {
-
             if ($task->isDone()) {
-
                 $task->setIsDone(false)
                     ->setAssignedTo(null)
                     ->setAssignedAt(null);
 
                 $this->addFlash('success', sprintf('La tâche %s a été réinitialisé.', $task->getTitle()));
-
             } else {
-
                 $task->setIsDone(true);
-
                 $this->addFlash('success', sprintf('La tâche %s a été marqué comme validé.', $task->getTitle()));
-
             }
 
             $this->manager->flush();
@@ -260,17 +243,14 @@ class TaskController extends AbstractController
         return $this->redirectToRoute('task_list');
     }
 
-
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      */
     public function deleteTaskAction(Task $task): Response
     {
         if ($this->isGranted('delete', $task)) {
-
             $this->manager->remove($task);
             $this->manager->flush();
-
             $this->addFlash('success', 'La tâche a bien été supprimée.');
 
             return $this->redirectToRoute('task_list');
@@ -279,7 +259,5 @@ class TaskController extends AbstractController
         $this->addFlash('error', 'Vous n\'avez pas le droit de supprimer cette tâche.');
 
         return $this->redirectToRoute('task_list');
-
     }
-
 }

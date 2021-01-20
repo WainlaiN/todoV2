@@ -11,7 +11,7 @@
     <title>To Do List app</title>
 
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        <link rel="stylesheet" href="{{ ('build/app.css') }}">
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
@@ -69,7 +69,7 @@
 </div>
 
 {% block javascripts %}
-    <script src="{{ asset('build/app.js') }}"></script>
+    <script src="{{ ('build/app.js') }}"></script>
     {{ encore_entry_script_tags('app') }}
 {% endblock %}
 </body>

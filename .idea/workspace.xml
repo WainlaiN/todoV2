@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/../SnowTricks" beforeDir="false" afterPath="$PROJECT_DIR$/../SnowTricks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock2.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../todooriginal" beforeDir="false" afterPath="$PROJECT_DIR$/../todooriginal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +145,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bin/php/php7.4.12/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todooriginal" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -229,6 +230,9 @@
       <workItem from="1610960912309" duration="8730000" />
       <workItem from="1610973150108" duration="722000" />
       <workItem from="1610977526754" duration="821000" />
+      <workItem from="1610978453700" duration="25795000" />
+      <workItem from="1611040198717" duration="41337000" />
+      <workItem from="1611129932157" duration="3032000" />
     </task>
     <servers />
   </component>
@@ -240,46 +244,50 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="540" y="179" key="#CLI_Interpreters/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610962522073" />
+    <state x="758" y="0" key="#PHP" timestamp="1610982696485">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="758" y="0" key="#PHP/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610982696485" />
     <state x="540" y="179" key="#Test_Frameworks" timestamp="1607439474175">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="540" y="179" key="#Test_Frameworks/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1607439474175" />
-    <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609786729028">
+    <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610999049731">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609786729028" />
+    <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610999049731" />
     <state x="645" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610971568091">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="645" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610971568091" />
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610028971103">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611063445543">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610028971103" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611063445543" />
     <state x="675" y="347" width="570" height="588" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1608026328404">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="675" y="347" width="570" height="588" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608026328404" />
-    <state x="770" y="377" key="FileChooserDialogImpl" timestamp="1610962519826">
+    <state x="770" y="377" key="FileChooserDialogImpl" timestamp="1611042458492">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610962519825" />
-    <state width="1877" height="359" key="GridCell.Tab.0.bottom" timestamp="1610973140188">
+    <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611042458492" />
+    <state width="1877" height="359" key="GridCell.Tab.0.bottom" timestamp="1611090212230">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="359" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610973140188" />
-    <state width="1877" height="359" key="GridCell.Tab.0.center" timestamp="1610973140188">
+    <state width="1877" height="359" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611090212230" />
+    <state width="1877" height="359" key="GridCell.Tab.0.center" timestamp="1611090212230">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="359" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610973140188" />
-    <state width="1877" height="359" key="GridCell.Tab.0.left" timestamp="1610973140188">
+    <state width="1877" height="359" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611090212230" />
+    <state width="1877" height="359" key="GridCell.Tab.0.left" timestamp="1611090212230">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="359" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610973140188" />
-    <state width="1877" height="359" key="GridCell.Tab.0.right" timestamp="1610973140188">
+    <state width="1877" height="359" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611090212230" />
+    <state width="1877" height="359" key="GridCell.Tab.0.right" timestamp="1611090212230">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="359" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610973140188" />
+    <state width="1877" height="359" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611090212230" />
     <state x="788" y="247" key="NewPhpClassDialog" timestamp="1610028716547">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -301,10 +309,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609856005180" />
-    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1610906633738">
+    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1611089135082">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610906633738" />
+    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611089135082" />
+    <state x="2587" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1611043610786" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/todoV2@TaskControllerTest.xml" NAME="TaskControllerTest Coverage Results" MODIFIED="1609856011333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

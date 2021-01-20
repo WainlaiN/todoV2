@@ -39,17 +39,6 @@ twig-lint:
     - twig-lint lint ./templates
   allow_failure: false
 
-AssetsBuild:
-  stage: AssetsBuild
-  image: node:10.13.0
-  before_script:
-    - npm install --global yarn@1.22.5
-  script:
-    - yarn
-    - yarn add --dev @symfony/webpack-encore
-    - yarn add webpack-notifier --dev
-    - yarn encore dev
-
 phpunit:
   image: php:7.4-apache
   stage: UnitTests

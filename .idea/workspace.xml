@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35c0f74a-249f-48f9-b5f3-fe348068dd8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/Authentication.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Authentication.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Authentication.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +229,7 @@
       <workItem from="1610978453700" duration="25795000" />
       <workItem from="1611040198717" duration="41337000" />
       <workItem from="1611129932157" duration="3032000" />
-      <workItem from="1611214624839" duration="6990000" />
+      <workItem from="1611214624839" duration="9598000" />
     </task>
     <servers />
   </component>
@@ -319,10 +315,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609856005180" />
-    <state x="667" y="229" width="883" height="670" key="find.popup" timestamp="1611218959781">
+    <state x="667" y="229" width="1038" height="670" key="find.popup" timestamp="1611223291207">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611218959781" />
+    <state x="667" y="229" width="1038" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611223291207" />
     <state x="2587" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1611154933107" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

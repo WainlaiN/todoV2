@@ -9,7 +9,7 @@ Cette classe doit implémenter l'interface `UserInterface` et donc implémenter 
 Vous trouverez plus d'informations dans la [documentation officielle de Symfony](https://symfony.com/doc/current/security.html#a-create-your-user-class)  
 Dans notre cas, cette classe a déjà été implementée :
 
-```yaml
+```php
 # src/Entity/User.php
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -19,7 +19,7 @@ class User implements UserInterface
 {
 ```
 
-## L'authentification
+## L'Authentification
 La gestion de l'authentification est gérée grâce à l'utilisation du MakerBundle de symfony et à la commande `php bin/console make:auth`, elle génère :
 ```yaml
 # src/Controller/SecurityController.php
@@ -99,4 +99,65 @@ Cette partie permet d'établir une hiérarchie dans les rôles, dans notre cas l
 # config/packages/security.yaml
 role_hierarchy:
         ROLE_ADMIN: ROLE_USER
+```
+
+## Le TaskVoter
+Un système d'autorisation a été mis en place grâce à un Voter custom.
+La vérification se déclenche à l'intérieur des controlleurs, ex:
+
+```php
+($this->isGranted('edit', $task))  
+```
+
+Il permet de gérer les accès à certaines fonctionnalitées:
+
+```php
+# src/security/TaskVoter.php
+class TaskVoter extends Voter
+{
+    private const DELETE = 'delete';
+    private const VALIDATE = 'validate';
+    private const EDIT = 'edit';
+```
+
+chaque accès est définit dans cette classe:
+
+```php
+switch ($attribute) {
+            case self::DELETE:
+                return $this->canDelete($task, $user);
+            case self::VALIDATE:
+                return $this->canValidate($task, $user);
+            case self::EDIT:
+                return $this->canEdit($task, $user);
+```
+
+Les autorisations d'accès sont définit ensuite:
+
+`Seul l'utilisateur ayant créé la tâche peut la supprimer:`
+```php
+private function canDelete(Task $task, User $user)
+    {
+        return $user === $task->getUser();
+    }
+```
+
+`Seul l'utilisateur assigné à la tâche ou ROLE_ADMIN peut la valider:`
+```php
+private function canValidate(Task $task, User $user)
+    {
+        return ($user === $task->getAssignedTo() || $this->security->isGranted('ROLE_ADMIN'));
+    }
+```
+
+`Un utilisateur assigné, un ROLE_ADMIN ou l'utilisateur qui a créé la tâche peut l'éditer`
+```php
+private function canEdit(Task $task, User $user)
+    {
+        return (
+            $user === $task->getAssignedTo()
+            || $this->security->isGranted('ROLE_ADMIN')
+            || $user === $task->getUser()
+        );
+    }
 ```

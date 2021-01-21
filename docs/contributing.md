@@ -25,7 +25,7 @@ qu'elle soit acceptée.
 
 <h4>Les règles à respecter</h4>
 
-Respect des norme PSR-1 / PSR-12 / PSR-4.
+Respect des normes PSR-1 / PSR-12 / PSR-4.
 Vérifiez les bonnes pratique de [Symfony](https://symfony.com/doc/current/best_practices.html)
 
 <h1>Contributing Guide sur GitLab avec intégration continue</h1>
@@ -46,23 +46,28 @@ Lors d'un push sur le repository ce fichier sera détecté et lancera une [pipel
 Ce fichier determine les étapes que va suivre la pipeline et les images dont il a besoin :  
  
 <h4>Premiere étape : CodingStandards</h4>
-- `SecurityChecker` : Outil de sensiolabs qui va vérifier si votre application utilise des dépendances avec des vulnérabilités de sécurité connues.  
-- `PHP_CodeSniffer` : détecte les violations de code sur une norme spécifique (PSR-12 ici).
-- `phpstan` : détecte les erreurs dans le code.
-- `twig-lint` : vérifie la syntaxe des fichiers twigs.
+
+- `SecurityChecker` Outil de sensiolabs qui va vérifier si votre application utilise des dépendances avec des vulnérabilités de sécurité connues.  
+- `PHP_CodeSniffer` détecte les violations de code sur une norme spécifique (PSR-12 ici).
+- `phpstan` détecte les erreurs dans le code.
+- `twig-lint` vérifie la syntaxe des fichiers twigs.
 
 <h4>Deuxième étape : BuildAssets</h4>
+
 - Cette étape build les assets de l'application (évitant les erreurs lors des tests fonctionnels) et les archives pour le job suivant.
 
 <h4>Troisième étape : PHPUnit</h4>
+
 - Le job installe les dépendances nécessaires (mysql, composer, pdo, etc...).
 - Mise en place de la BDD et chargement des fixtures pour les tests:
-```yaml
+
+```composer
 - php bin/console doctrine:database:drop --force --env=test
 - php bin/console doctrine:database:create --env=test
 - php bin/console doctrine:migration:migrate --env=test --no-interaction
 - php bin/console doctrine:fixtures:load -n --env=test
 ```
+
 - lancement de la commande phpunit pour executer les tests:  
 `php bin/phpunit`
 

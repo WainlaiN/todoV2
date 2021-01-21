@@ -137,7 +137,6 @@ Les autorisations d'accès sont définit ensuite:
 `Seul l'utilisateur ayant créé la tâche peut la supprimer ou le ROLE_ADMIN si la task est anonyme:`
 ```php
 private function canDelete(Task $task, User $user)
-    private function canDelete(Task $task, User $user)
         {
             return (
                 $user === $task->getUser()

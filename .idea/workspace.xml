@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35c0f74a-249f-48f9-b5f3-fe348068dd8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/contributing.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/TaskVoter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/TaskVoter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Authentication.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Authentication.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +231,7 @@
       <workItem from="1610978453700" duration="25795000" />
       <workItem from="1611040198717" duration="41337000" />
       <workItem from="1611129932157" duration="3032000" />
-      <workItem from="1611214624839" duration="11373000" />
+      <workItem from="1611214624839" duration="17049000" />
     </task>
     <servers />
   </component>

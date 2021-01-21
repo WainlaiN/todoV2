@@ -18,8 +18,6 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class TaskController
  *
- * @IsGranted("ROLE_USER")
- *
  * @package App\Controller
  */
 class TaskController extends AbstractController
@@ -164,7 +162,6 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/create", name="task_create")
-     * @IsGranted("ROLE_USER")
      *
      * @param Request $request
      * @return Response

@@ -7,7 +7,6 @@ use App\Form\UserType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,7 +19,6 @@ use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface;
 
 /**
  * @Route("/admin")
- * @IsGranted("ROLE_ADMIN")
  *
  * Class UserController
  *
@@ -28,7 +26,6 @@ use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface;
  */
 class UserController extends AbstractController
 {
-
     /**
      * @Route("/user", name="user_list")
      *

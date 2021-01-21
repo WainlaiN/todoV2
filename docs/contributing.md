@@ -72,3 +72,5 @@ Ce fichier determine les étapes que va suivre la pipeline et les images dont il
 `php bin/phpunit`
 
 Vous pourrez suivre l'état d'avancement de la pipeline et vérifier si les jobs sont validés.
+
+Une fois tous les éléments validés vous pouvez soumettre une [merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html).

@@ -30,6 +30,9 @@ Vérifiez les bonnes pratique de [Symfony](https://symfony.com/doc/current/best_
 
 <h1>Contributing Guide sur GitLab avec intégration continue</h1>
 
+(le repository GitHub est automatiquement [cloné](https://docs.gitlab.com/ee/user/project/repository/repository_mirroring.html) lors des push sur GitLab)
+
+
 - Demandez un accès de [membre](https://docs.gitlab.com/ee/user/project/members/#project-membership-and-requesting-access) sur le repository [Gitlab](https://gitlab.com/WainlaiN/todov2).
 - Ajoutez votre clé [SSH](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account) dans vos settings de compte sur GitLab. (Votre passphrase sera nécessaire pour chaque push que vous ferez).
 - Cloner le projet sur votre machine.

@@ -1,1 +1,3 @@
 <a href="https://codeclimate.com/github/WainlaiN/todoV2/maintainability"><img src="https://api.codeclimate.com/v1/badges/038d6d437a52dce7989e/maintainability" /></a>
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/01a1a2b6771f4c3a8d5c8b970635b01f)](https://www.codacy.com/gh/WainlaiN/todoV2/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=WainlaiN/todoV2&amp;utm_campaign=Badge_Grade)

@@ -66,7 +66,10 @@ class TaskVoter extends Voter
 
     private function canDelete(Task $task, User $user)
     {
-        return $user === $task->getUser();
+        return (
+            $user === $task->getUser()
+            || ($task->getUser()->getEmail() == "anonymous" && $user == $this->security->isGranted('ROLE_ADMIN'))
+        );
     }
 
     private function canValidate(Task $task, User $user)

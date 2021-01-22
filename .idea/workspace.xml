@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35c0f74a-249f-48f9-b5f3-fe348068dd8b" name="Default Changelist" comment="" />
+    <list default="true" id="35c0f74a-249f-48f9-b5f3-fe348068dd8b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,9 +141,9 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todooriginal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MarkdownNavigator.Settings.Preview" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -228,6 +230,7 @@
       <workItem from="1611040198717" duration="41337000" />
       <workItem from="1611129932157" duration="3032000" />
       <workItem from="1611214624839" duration="18616000" />
+      <workItem from="1611334131981" duration="877000" />
     </task>
     <servers />
   </component>
@@ -272,10 +275,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="675" y="347" width="570" height="588" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608026328404" />
-    <state x="770" y="377" key="FileChooserDialogImpl" timestamp="1611143553511">
+    <state x="770" y="377" key="FileChooserDialogImpl" timestamp="1611334275987">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611143553511" />
+    <state x="770" y="377" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611334275987" />
     <state width="1877" height="359" key="GridCell.Tab.0.bottom" timestamp="1611090212230">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -300,10 +303,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="794" y="448" key="NewPhpFileDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609860872818" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1611334089344">
+    <state x="461" y="169" key="SettingsEditor" timestamp="1611334181844">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611334089344" />
+    <state x="461" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611334181844" />
     <state x="2381" y="169" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1608141365937" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1610031440383">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -318,6 +321,10 @@
     </state>
     <state x="667" y="229" width="1038" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611223291207" />
     <state x="2587" y="229" width="883" height="670" key="find.popup/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1611154933107" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/todoV2@TaskControllerTest.xml" NAME="TaskControllerTest Coverage Results" MODIFIED="1609856011333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

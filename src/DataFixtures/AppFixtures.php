@@ -45,7 +45,7 @@ class AppFixtures extends Fixture
             ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
             ->setIsDone(false)
             ->setCreatedAt($faker->dateTimeBetween('-1 years', 'now'));
-        $task->setUser(user);
+        $task->setUser($user);
 
         $manager->persist($user);
         $users[] = $user;

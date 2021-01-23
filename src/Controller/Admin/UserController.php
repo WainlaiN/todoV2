@@ -64,7 +64,7 @@ class UserController extends AbstractController
      * @throws \SymfonyCasts\Bundle\ResetPassword\Exception\ResetPasswordExceptionInterface
      * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
      */
-    public function createAction(
+    public function createUser(
         Request $request,
         EntityManagerInterface $manager,
         ResetPasswordHelperInterface $resetPasswordHelper,
@@ -117,7 +117,7 @@ class UserController extends AbstractController
      * @param UserPasswordEncoderInterface $encoder
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function editAction(
+    public function editUser(
         User $user,
         Request $request,
         EntityManagerInterface $manager
@@ -140,7 +140,7 @@ class UserController extends AbstractController
     /**
      * @Route("/users/{id}/delete", name="user_delete")
      */
-    /**public function deleteUserAction(User $user, EntityManagerInterface $manager): Response
+    /**public function deleteUser(User $user, EntityManagerInterface $manager): Response
     {
 
         $manager->remove($user);

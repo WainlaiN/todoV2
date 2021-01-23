@@ -166,7 +166,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function createAction(Request $request): Response
+    public function createTask(Request $request): Response
     {
         $task = new Task();
         $user = $this->getUser();
@@ -198,7 +198,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function editAction(Task $task, Request $request): Response
+    public function editTask(Task $task, Request $request): Response
     {
         if ($this->isGranted('edit', $task)) {
             $form = $this->createForm(TaskType::class, $task);
@@ -233,7 +233,7 @@ class TaskController extends AbstractController
      * @param Task $task
      * @return Response
      */
-    public function toggleTaskAction(Task $task): Response
+    public function toggleTask(Task $task): Response
     {
         if ($this->isGranted('validate', $task)) {
             if ($task->isDone()) {
@@ -259,7 +259,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      */
-    public function deleteTaskAction(Task $task): Response
+    public function deleteTask(Task $task): Response
     {
         if ($this->isGranted('delete', $task)) {
             $this->manager->remove($task);

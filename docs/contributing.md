@@ -13,10 +13,10 @@ Pour contribuer au projet:
 Toutes modification devra être testée avec PhpUnit. Les tests devront être executés avec la commande `php bin/phpunit`
 
 Voici les commandes liées à phpunit :
-- `vendor\bin\simple-phpunit` Lance tous les tests
-- `vendot\bin\simple-phpunit <NomDuFichier>.php` Lance tous les tests d'un fichier
-- `vendor\bin\simple-phpunit --filter <NomDeLaMéthode>` Test d'une méthode spécifique
-- `vendor\bin\simple-phpunit --coverage-html web\test-coverage` Coverage généré par xDebug
+- `php bin/phpunit` Lance tous les tests
+- `php bin/phpunit <NomDuFichier>.php` Lance tous les tests d'un fichier
+- `php bin/phpunit --filter <NomDeLaMéthode>` Test d'une méthode spécifique
+- `php bin/phpunit --coverage-html web\test-coverage` Coverage généré par xDebug
 
 
 Quand vos modification sont terminés et que les tests sont valides, vous pouvez soumettre votre [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) et attendre
@@ -36,7 +36,7 @@ Vérifiez les bonnes pratique de [Symfony](https://symfony.com/doc/current/best_
 - Demandez un accès de [membre](https://docs.gitlab.com/ee/user/project/members/#project-membership-and-requesting-access) sur le repository [Gitlab](https://gitlab.com/WainlaiN/todov2).
 - Ajoutez votre clé [SSH](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account) dans vos settings de compte sur GitLab. (Votre passphrase sera nécessaire pour chaque push que vous ferez).
 - Cloner le projet sur votre machine.
-- Suivre les mêmes instructions que pour la contribution sur Github (branche, code).
+- Suivre les mêmes instructions que pour la contribution sur Github (branche, code, mise en place des nouveaux tests).
 
 <h4>Tests et Analyse du code</h4>
 
@@ -48,18 +48,21 @@ Lors d'un push sur le repository ce fichier sera détecté et lancera une [pipel
 
 Ce fichier determine les étapes que va suivre la pipeline et les images dont il a besoin :  
  
-<h4>Premiere étape : CodingStandards</h4>
+<h4>Premiere étape : security checker</h4>
 
 - `SecurityChecker` Outil de sensiolabs qui va vérifier si votre application utilise des dépendances avec des vulnérabilités de sécurité connues.  
+
+<h4>Deuxième étape : CodingStandards</h4>
+
 - `PHP_CodeSniffer` détecte les violations de code sur une norme spécifique (PSR-12 ici).
 - `phpstan` détecte les erreurs dans le code.
 - `twig-lint` vérifie la syntaxe des fichiers twigs.
 
-<h4>Deuxième étape : BuildAssets</h4>
+<h4>Troisième étape : BuildAssets</h4>
 
 - Cette étape build les assets de l'application (évitant les erreurs lors des tests fonctionnels) et les archives pour le job suivant.
 
-<h4>Troisième étape : PHPUnit</h4>
+<h4>Quatrième étape : PHPUnit</h4>
 
 - Le job installe les dépendances nécessaires (mysql, composer, pdo, etc...).
 - Mise en place de la BDD et chargement des fixtures pour les tests:
@@ -71,7 +74,7 @@ Ce fichier determine les étapes que va suivre la pipeline et les images dont il
 - php bin/console doctrine:fixtures:load -n --env=test
 ```
 
-- lancement de la commande phpunit pour executer les tests:  
+- lancement automatique de phpunit:  
 `php bin/phpunit`
 
 Vous pourrez suivre l'état d'avancement de la pipeline et vérifier si les jobs sont validés.

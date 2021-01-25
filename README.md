@@ -81,7 +81,7 @@ Choisissez votre serveur en fonction de votre système d'exploitation:
 
 12. Authentification :
 
-    Consultez [authentication.md](https://github.com/WainlaiN/todoV2/blob/master/docs/Authentication.md)?
+    Consultez [authentication.md](https://github.com/WainlaiN/todoV2/blob/master/docs/Authentication.md).
 
 
 ## Auteur

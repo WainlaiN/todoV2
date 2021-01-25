@@ -30,6 +30,14 @@ class AppFixtures extends Fixture
             ->setPassword($this->encoder->encodePassword($user, "admin"))
             ->setRoles(['ROLE_ADMIN']);
 
+        //add one task to admin for test
+        $task = new Task();
+        $task->setTitle($faker->jobTitle)
+            ->setContent($faker->sentence($nbWords = 15, $variableNbWords = true))
+            ->setIsDone(false)
+            ->setCreatedAt($faker->dateTimeBetween('-1 years', 'now'));
+        $task->setUser($user);
+
         $manager->persist($user);
         $users[] = $user;
 

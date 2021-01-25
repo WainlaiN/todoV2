@@ -68,10 +68,21 @@ Choisissez votre serveur en fonction de votre système d'exploitation:
 ```
     php bin/console server:run
 ```
-9. Le projet est maintenant installé, vous pouvez tester l'application sur cette URL:
+
+10. Le projet est maintenant installé, vous pouvez tester l'application sur cette URL:
+
 ```
     http://127.0.0.1:8000
 ```
+
+11. Pour contribuer au projet :
+
+    Consultez [contributing.md](https://github.com/WainlaiN/todoV2/blob/master/docs/contributing.md).
+
+12. Authentification :
+
+    Consultez [authentication.md](https://github.com/WainlaiN/todoV2/blob/master/docs/Authentication.md)?
+
 
 ## Auteur
 

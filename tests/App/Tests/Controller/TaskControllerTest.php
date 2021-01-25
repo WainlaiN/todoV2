@@ -169,7 +169,7 @@ class TaskControllerTest extends AbstractControllerTest
     {
         $this->loginWithUser();
 
-        $this->client->request('GET', '/tasks/31/toggle');
+        $this->client->request('GET', '/tasks/33/toggle');
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
         $crawler = $this->client->followRedirect();

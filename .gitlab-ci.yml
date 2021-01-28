@@ -42,9 +42,9 @@ AssetsBuild:
   stage: AssetsBuild
   image: node:10.22.1
   before_script:
-    - npm install --global yarn@1.22.5
+    - npm install --global yarn@1.22.10
   script:
-    - yarn
+    - yarn install -ignore-engines
     - yarn add --dev @symfony/webpack-encore
     - yarn add webpack-notifier --dev
     - yarn encore dev

@@ -40,7 +40,7 @@ twig-lint:
 
 AssetsBuild:
   stage: AssetsBuild
-  image: node:10.13.0
+  image: node:10.22.1
   before_script:
     - npm install --global yarn@1.22.10
   script:

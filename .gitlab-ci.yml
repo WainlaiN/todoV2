@@ -40,9 +40,9 @@ twig-lint:
 
 AssetsBuild:
   stage: AssetsBuild
-  image: node:11.15.0
+  image: node:10.13.0
   before_script:
-    - npm install --global yarn@1.22.5
+    - npm install --global
   script:
     - yarn
     - yarn add --dev @symfony/webpack-encore

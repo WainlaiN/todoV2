@@ -1,6 +1,5 @@
 <div class="container-fluid shadow-sm">
-    <nav class="navbar navbar-expand-lg">
-
+    <nav class="navbar navbar-expand-lg navbar-light">
 
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -10,23 +9,30 @@
                 </a>
             </li>
         </ul>
-
-        <form class="form-inline my-2 my-lg-0">
-            <ul class="navbar-nav mr-auto">
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
 
                 {% if not app.user and 'login' != app.request.attributes.get('_route') %}
                     <li class="nav-item">
-                        <a href="{{ path('app_login') }}" class="nav-link"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+                        <a href="{{ path('app_login') }}" class="nav-link"><i class="fas fa-sign-in-alt"></i>
+                            Connexion</a>
                     </li>
 
                 {% endif %}
                 {% if  app.user %}
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">
-                            <a href="{{ path('user_create') }}" class="nav-link"><i class="far fa-user"></i> Créer un utilisateur</a>
+                            <a href="{{ path('user_create') }}" class="nav-link"><i class="far fa-user"></i> Créer
+                                un utilisateur</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ path('user_list') }}" class="nav-link"><i class="fas fa-users-cog"></i> Admin</a>
+                            <a href="{{ path('user_list') }}" class="nav-link"><i class="fas fa-users-cog"></i>
+                                Admin</a>
                         </li>
                     {% endif %}
                     <li class="nav-item">
@@ -36,7 +42,6 @@
                 {% endif %}
 
             </ul>
-
-        </form>
+        </div>
     </nav>
 </div>

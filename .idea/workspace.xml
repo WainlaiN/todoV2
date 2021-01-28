@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35c0f74a-249f-48f9-b5f3-fe348068dd8b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/task.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/task.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/_menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/_menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +238,7 @@
       <workItem from="1611602172298" duration="753000" />
       <workItem from="1611655216319" duration="5902000" />
       <workItem from="1611690452066" duration="308000" />
-      <workItem from="1611818836549" duration="7923000" />
+      <workItem from="1611818836549" duration="8327000" />
     </task>
     <servers />
   </component>

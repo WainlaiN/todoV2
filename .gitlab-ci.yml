@@ -42,7 +42,7 @@ AssetsBuild:
   stage: AssetsBuild
   image: node:10.13.0
   before_script:
-    - npm install --global yarn@1.22.5
+    - yarn install --ignore-engines
   script:
     - yarn
     - yarn add --dev @symfony/webpack-encore

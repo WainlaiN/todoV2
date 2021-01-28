@@ -44,7 +44,7 @@ AssetsBuild:
   before_script:
     - npm install --global yarn
   script:
-    - yarn install -ignore-engines
+    - yarn
     - yarn add --dev @symfony/webpack-encore
     - yarn add webpack-notifier --dev
     - yarn encore dev

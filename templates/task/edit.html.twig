@@ -9,7 +9,7 @@
             {{ form_row(form.content) }}
             {{ form_row(form._token) }}
             {% if is_granted('ROLE_ADMIN') %}
-                {{ form_row(form.assignedTo) }}
+                {{ form_row(form.assignedTo, { 'label': 'Assigné à:' }) }}
             {% endif %}
 
             <p>Auteur : {{ task.user }}</p>
@@ -20,9 +20,10 @@
         </section>
 
         <div id="divCheckbox" style="display: none;">
+            {{ form_rest(form) }}
 
         </div>
-        {{ form_end(form) }}
+
 
 
     </div>
